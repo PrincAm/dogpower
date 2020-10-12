@@ -12064,6 +12064,11 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
+typeface-rubik@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/typeface-rubik/-/typeface-rubik-1.1.13.tgz#c01d40f05718590bc05d08ea404666a8ef56377a"
+  integrity sha512-mMWgn3bYfT6V4WWA3yvdEM3AkTA7iK1XwhlOX3+vWfqHc6O9I2RUsi9krEXzNdQ1UE/eoEFBRigMtu30PsdEDg==
+
 ua-parser-js@^0.7.18:
   version "0.7.19"
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.19.tgz#94151be4c0a7fb1d001af7022fdaca4642659e4b"
