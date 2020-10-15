@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
+import { Text } from '../../title/title.css';
+
 const Container = styled.div`
   padding-right: 4rem;
   ul {
@@ -24,13 +26,19 @@ const Nav = () => (
   <Container>
     <ul>
       <li>
-        <Link to="/training">Výchova a výcvik</Link>
+        <Link to="/training">
+          <Text>Výchova a výcvik</Text>
+        </Link>
       </li>
       <li>
-        <Link to="/contact">Kontakt</Link>
+        <Link to="/contact">
+          <Text>Kontakt</Text>
+        </Link>
       </li>
       <li>
-        <Link to="/contact">Kontakt 2</Link>
+        <Link to="/contact">
+          <Text>Kontakt 2</Text>
+        </Link>
       </li>
     </ul>
   </Container>

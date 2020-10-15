@@ -10,15 +10,16 @@ const Container = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4rem 0;
+  padding: 2.5rem 0;
   background-color: #1a1a2e;
   opacity: 0.9;
 
   a {
-    color: #757575;
+    color: #fff;
     transition: color 0.2s ease;
     text-decoration: none;
 
@@ -29,13 +30,15 @@ const Container = styled.header`
 `;
 
 const HomeLink = styled(Link)`
-  padding-left: 4rem;
+  padding-left: 10rem;
 `;
 
 const Header = ({ title }) => (
   <Container>
     <HomeLink to="/">
-      <Title as="h1">{title}</Title>
+      <Title as="h1" size="large">
+        {title}
+      </Title>
     </HomeLink>
 
     <Nav />
