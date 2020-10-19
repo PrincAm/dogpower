@@ -1,14 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Text } from './title.css';
+import Text from '../Text';
 
-const Title = ({ children, as = 'span', size }) => {
-  return (
-    <Text as={as} size={size}>
-      {children}
-    </Text>
-  );
-};
+const Title = ({ children, as = 'span', size }) => (
+  <Text as={as} size={size}>
+    {children}
+  </Text>
+);
 
 Title.propTypes = {
   children: PropTypes.string.isRequired,

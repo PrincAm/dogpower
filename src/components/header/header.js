@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import Title from 'components/title';
+import Title from '../Welcome/node_modules/components/title';
 import Nav from 'components/header/nav';
 
 const Container = styled.header`
   position: fixed;
   top: 0;
+  z-index: 1;
   width: 100%;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;

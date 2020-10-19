@@ -1,22 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
-import styled from 'styled-components';
 
 import Head from 'components/head';
 import Header from 'components/header';
 import GlobalStyle from 'global.css.js';
-
-const Content = styled.div`
-  padding-top: 9rem;
-`;
 
 const Layout = ({ data, children }) => (
   <div>
     <GlobalStyle />
     <Head />
     <Header title={data.site.siteMetadata.siteTitle} />
-    <Content>{children}</Content>
+    {children}
   </div>
 );
 

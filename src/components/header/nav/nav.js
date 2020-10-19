@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import { Text } from '../../title/title.css';
+import Text from '../../Text';
 
 const Container = styled.div`
   padding-right: 4rem;

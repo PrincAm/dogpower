@@ -38,8 +38,8 @@ export default createGlobalStyle`
     font-family: "Rubik","Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     line-height: 2.5rem;
     font-size: 2.2rem;
-    color: #fff;
-    background-color: #000;
+    color: #333333;
+    background-color: #eeeeee;
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

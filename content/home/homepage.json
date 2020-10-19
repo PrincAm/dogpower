@@ -1,6 +1,7 @@
 {
   "title": "Home",
   "content": "intro.md",
+  "backgroundImage": "../images/gallery/react-context.jpg",
   "gallery": [{
     "title": "React Context",
     "copy": "For global styles.",

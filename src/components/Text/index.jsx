@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import MEDIA from 'helpers/mediaTemplates';
 
-export const Text = styled.span`
+const Text = styled.span`
   display: block;
   font-weight: ${({ size }) => () => {
     switch (size) {
@@ -32,3 +32,5 @@ export const Text = styled.span`
     }};
   `};
 `;
+
+export default Text;
