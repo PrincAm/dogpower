@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import Title from '../Welcome/node_modules/components/title';
+import Title from 'components/title';
 import Nav from 'components/header/nav';
 
 const Container = styled.header`

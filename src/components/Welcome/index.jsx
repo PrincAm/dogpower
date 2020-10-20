@@ -3,9 +3,6 @@ import styled from 'styled-components';
 import BackgroundImage from 'gatsby-background-image';
 import { motion } from 'framer-motion';
 
-import Box from 'components/box';
-import Title from 'components/title';
-
 const BackgroundImageStyled = styled(BackgroundImage)`
   width: 100%;
   min-height: 100vh;
