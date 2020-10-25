@@ -27,17 +27,22 @@ const Nav = () => (
     <ul>
       <li>
         <Link to="/training">
-          <Text>Výchova a výcvik</Text>
+          <Text>Výchova a trénink</Text>
+        </Link>
+      </li>
+      <li>
+        <Link to="/about">
+          <Text>O mně</Text>
+        </Link>
+      </li>
+      <li>
+        <Link to="/service">
+          <Text>Služby</Text>
         </Link>
       </li>
       <li>
         <Link to="/contact">
           <Text>Kontakt</Text>
-        </Link>
-      </li>
-      <li>
-        <Link to="/contact">
-          <Text>Kontakt 2</Text>
         </Link>
       </li>
     </ul>

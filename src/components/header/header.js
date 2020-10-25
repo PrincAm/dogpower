@@ -14,12 +14,13 @@ const Container = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2.5rem 0;
-  background-color: #1a1a2e;
-  opacity: 0.9;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-weight: 800;
+  height: 8rem;
 
   a {
     color: #fff;
+    font-weight: 600;
     transition: color 0.2s ease;
     text-decoration: none;
 
@@ -29,6 +30,11 @@ const Container = styled.header`
   }
 `;
 
+const CompanyName = styled.h1`
+  font-weight: 500;
+  font-size: 3rem;
+`;
+
 const HomeLink = styled(Link)`
   padding-left: 10rem;
 `;
@@ -36,9 +42,7 @@ const HomeLink = styled(Link)`
 const Header = ({ title }) => (
   <Container>
     <HomeLink to="/">
-      <Title as="h1" size="large">
-        {title}
-      </Title>
+      <CompanyName>{title}</CompanyName>
     </HomeLink>
 
     <Nav />

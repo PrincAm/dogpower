@@ -2,6 +2,8 @@
   "title": "Home",
   "content": "intro.md",
   "backgroundImage": "../images/gallery/react-context.jpg",
+  "trainingImage1": "../images/gallery/page-transitions.jpg",
+  "trainingImage2": "../images/gallery/intersection-observer.jpg",
   "gallery": [{
     "title": "React Context",
     "copy": "For global styles.",
