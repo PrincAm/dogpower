@@ -96,7 +96,6 @@ const Welcome = ({ data, trainingRef }) => {
     opacity: animationReady ? 1 : 0,
     x: animationReady ? 0 : 20,
     height: animationReady ? 120 : 0,
-    from: { opacity: 0, x: 20, height: 0 },
   });
 
   const handleScroll = () => scrollToRef(trainingRef);

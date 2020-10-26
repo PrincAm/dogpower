@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  siteTitle: `DOGPOWER.CZ`,
+  siteTitle: `DOGPOWER`,
   siteTitleShort: `Dog Power`,
   siteDescription: 'Výchova a výcvik psů',
   siteUrl: `https://www.dogpower.cz/`,
