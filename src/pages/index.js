@@ -5,6 +5,7 @@ import Gallery from 'components/gallery';
 import IOExample from 'components/io-example';
 import Welcome from 'components/Welcome';
 import Training from 'components/Training';
+import Reviews from 'components/Reviews';
 import { graphql } from 'gatsby';
 
 const Index = ({ data }) => {
@@ -14,6 +15,7 @@ const Index = ({ data }) => {
     <Layout>
       <Welcome data={data.homeJson} trainingRef={trainingRef} />
       <Training ref={trainingRef} data={data.homeJson} />
+      <Reviews />
       <Gallery items={data.homeJson.gallery} />
       <div style={{ height: '50vh' }} />
       <IOExample />

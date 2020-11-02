@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useSpring, useTrail, a } from 'react-spring';
 import Img from 'gatsby-image';
@@ -21,7 +21,7 @@ const Image = styled(Img)`
 const Paragraph = styled.p`
   width: 500px;
   font-size: 3rem;
-  line-height: 3.2rem;
+  line-height: 4.2rem;
 `;
 
 const TextContainer = styled.div`
@@ -31,15 +31,23 @@ const TextContainer = styled.div`
 `;
 
 const Item = ({ isVisible, imageFluid, imageOnLeft = true, texts }) => {
+  // TODO  rename
+  const [isDisplayed, setIsDisplayed] = useState(false);
+
+  useEffect(() => {
+    if (!isDisplayed && isVisible) {
+      setIsDisplayed(true);
+    }
+  }, [isVisible]);
   const imageProps = useSpring({
-    config: { mass: 5, tension: 800, friction: 200 },
-    opacity: isVisible ? 1 : 0,
-    transform: isVisible ? 'translate3d(0,-60px,0)' : 'translate3d(0,0px,0)',
+    config: { mass: 5, tension: 1000, friction: 500 },
+    opacity: isDisplayed ? 1 : 0,
+    transform: isDisplayed ? 'translate3d(0,-60px,0)' : 'translate3d(0,0px,0)',
   });
   const trail = useTrail(texts.length, {
     config: { mass: 5, tension: 800, friction: 200 },
-    opacity: isVisible ? 1 : 0,
-    transform: isVisible ? 'translate3d(0,-60px,0)' : 'translate3d(0,0px,0)',
+    opacity: isDisplayed ? 1 : 0,
+    transform: isDisplayed ? 'translate3d(0,-60px,0)' : 'translate3d(0,0px,0)',
   });
   return (
     <Part>

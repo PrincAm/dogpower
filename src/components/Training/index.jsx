@@ -90,7 +90,7 @@ const Training = forwardRef(({ data }, ref) => {
   return (
     <div>
       <TrainingContainer ref={ref}>
-        <IO rootMargin="-50px">
+        <IO rootMargin="-100px">
           {({ isVisible }) => (
             <Item
               isVisible={isVisible}
@@ -100,7 +100,7 @@ const Training = forwardRef(({ data }, ref) => {
           )}
         </IO>
 
-        <IO rootMargin="-50px">
+        <IO rootMargin="-150px">
           {({ isVisible }) => (
             <Item
               isVisible={isVisible}
