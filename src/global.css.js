@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import { accent } from 'constants/theme';
 import 'typeface-rubik';
 
 export default createGlobalStyle`
@@ -38,7 +37,7 @@ export default createGlobalStyle`
     font-family: "Rubik","Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     line-height: 2.5rem;
     font-size: 2.2rem;
-    color: #333333;
+    color: #222222;
     background-color: #eeeeee;
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
@@ -59,7 +58,8 @@ export default createGlobalStyle`
   }
 
   a {
-    color: ${accent};
+    /* TODO replace color */
+    color: #222222;
   }
 
   pre {
@@ -70,7 +70,7 @@ export default createGlobalStyle`
     font-size: 85%;
     line-height: 1.45;
     border-radius: 5px;
-    color: ${accent};
+    color: #222222;
     border: 1px solid #ddd;
     font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
   }

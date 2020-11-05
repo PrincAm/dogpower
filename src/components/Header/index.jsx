@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import Nav from 'components/header/nav';
+import ThemeContext from '../../store/theme';
+import Nav from './Nav';
 
 const Container = styled.header`
   position: fixed;
@@ -18,7 +19,7 @@ const Container = styled.header`
   height: 8rem;
 
   a {
-    color: #fff;
+    color: ${({ theme }) => theme.colorSecondary};
     font-weight: 600;
     transition: color 0.2s ease;
     text-decoration: none;
@@ -38,15 +39,18 @@ const HomeLink = styled(Link)`
   padding-left: 10rem;
 `;
 
-const Header = ({ title }) => (
-  <Container>
-    <HomeLink to="/">
-      <CompanyName>{title}</CompanyName>
-    </HomeLink>
+const Header = ({ title }) => {
+  const theme = useContext(ThemeContext);
+  return (
+    <Container theme={theme}>
+      <HomeLink to="/">
+        <CompanyName>{title}</CompanyName>
+      </HomeLink>
 
-    <Nav />
-  </Container>
-);
+      <Nav />
+    </Container>
+  );
+};
 
 Header.propTypes = {
   title: PropTypes.string.isRequired,

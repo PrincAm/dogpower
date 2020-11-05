@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import styled, { keyframes } from 'styled-components';
 import BackgroundImage from 'gatsby-background-image';
 import { useTrail, a } from 'react-spring';
 
+import ThemeContext from '../../store/theme';
 import ArrowIcon from '../../images/arrow-down-regular.svg';
 
 const BackgroundImageStyled = styled(BackgroundImage)`
@@ -14,8 +15,8 @@ const BackgroundImageStyled = styled(BackgroundImage)`
 `;
 
 const WelcomeContainer = styled.div`
+  color: ${({ theme }) => theme.colorSecondary};
   padding-top: 10%;
-  color: #fff;
   margin-left: 10%;
 `;
 
@@ -29,7 +30,6 @@ const TrailText = styled(a.div)`
   width: 100%;
   height: 120px;
   line-height: 120px;
-  color: #fff;
   font-size: 7em;
   font-weight: 500;
   letter-spacing: -9px;
@@ -62,15 +62,14 @@ const Arrow = styled(ArrowIcon)`
 `;
 
 const ArrowContainer = styled(a.div)`
+  color: ${({ theme }) => theme.colorSecondary};
   font-size: 4rem;
   display: flex;
   align-items: center;
-  color: #fff;
   transition: color 0.5s ease;
   letter-spacing: 0;
   &:hover {
     cursor: pointer;
-    /* color: inherit; FIXME */
   }
 `;
 
@@ -86,6 +85,8 @@ const scrollToRef = ref =>
 
 const Welcome = ({ data, trainingRef }) => {
   const [animationReady, setAnimationReady] = useState(false);
+  const theme = useContext(ThemeContext);
+
   useEffect(() => {
     setTimeout(() => {
       setAnimationReady(true);
@@ -104,9 +105,9 @@ const Welcome = ({ data, trainingRef }) => {
     <div>
       <BackgroundImageStyled
         fluid={data.backgroundImage.childImageSharp.fluid}
-        backgroundColor="#eeeeee"
+        backgroundColor={theme.background}
       >
-        <WelcomeContainer>
+        <WelcomeContainer theme={theme}>
           <Trails>
             <div>
               {trail.map(({ x, height, ...rest }, index) => (
@@ -127,7 +128,7 @@ const Welcome = ({ data, trainingRef }) => {
                       style={height}
                       onClick={handleScroll}
                     >
-                      <Arrow />
+                      <Arrow theme={theme} />
                       <More>{items[index]}</More>
                     </ArrowContainer>
                   )}
