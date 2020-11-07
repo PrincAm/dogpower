@@ -78,7 +78,7 @@ const More = styled.div`
   font-weight: 400;
 `;
 
-const items = ['DOGPOWER.', 'TRÉNINK', 'AWESOME', 'SUPREME', 'chci vědět více'];
+const items = ['SUPER', 'GREAT', 'AWESOME', 'SUPREME', 'chci vědět více'];
 
 const scrollToRef = ref =>
   ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });

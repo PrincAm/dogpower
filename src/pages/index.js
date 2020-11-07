@@ -1,7 +1,6 @@
 import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
 import Layout from 'components/Layout';
-import Gallery from 'components/gallery';
 import Welcome from 'components/Welcome';
 import Training from 'components/Training';
 import Reviews from 'components/Reviews';
@@ -15,8 +14,6 @@ const Index = ({ data }) => {
       <Welcome data={data.homeJson} trainingRef={trainingRef} />
       <Training ref={trainingRef} data={data.homeJson} />
       <Reviews />
-      <Gallery items={data.homeJson.gallery} />
-      <div style={{ height: '50vh' }} />
     </Layout>
   );
 };
