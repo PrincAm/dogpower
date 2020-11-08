@@ -4,6 +4,7 @@ import Layout from 'components/Layout';
 import Welcome from 'components/Welcome';
 import Training from 'components/Training';
 import Reviews from 'components/Reviews';
+import ContactMe from 'components/ContactMe';
 import { graphql } from 'gatsby';
 
 const Index = ({ data }) => {
@@ -13,7 +14,8 @@ const Index = ({ data }) => {
     <Layout>
       <Welcome data={data.homeJson} trainingRef={trainingRef} />
       <Training ref={trainingRef} data={data.homeJson} />
-      <Reviews />
+      <Reviews data={data.homeJson} />
+      <ContactMe />
     </Layout>
   );
 };

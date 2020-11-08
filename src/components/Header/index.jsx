@@ -16,7 +16,7 @@ const Container = styled.header`
   align-items: center;
   background-color: rgba(0, 0, 0, 0.6);
   font-weight: 800;
-  height: 8rem;
+  height: ${({ theme }) => theme.heightHeader};
 
   a {
     color: ${({ theme }) => theme.colorSecondary};

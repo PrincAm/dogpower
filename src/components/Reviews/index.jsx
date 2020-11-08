@@ -1,54 +1,64 @@
 import React from 'react';
 import styled from 'styled-components';
+import Slider from 'react-slick';
+import Img from 'gatsby-image';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-const reviewsData = {
-  Honza:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  Petr:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  Jakub:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  Adam:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-};
+import { ArrowLeft, ArrowRight } from './Arrows';
+import { reviews } from './data';
 
 const ReviewsContainer = styled.div`
-  display: flex;
-  /* height: 30rem; */
-  width: 100%;
-  background-color: goldenrod;
-  padding: 5rem 0;
-  color: #fff;
+  padding: 40px;
+  width: 1000px;
+  margin: 0 auto 3rem auto;
 `;
 
-const Title = styled.h3`
-  margin-bottom: 0.5rem;
+const Review = styled.div`
+  display: flex;
+  margin: 0 3rem;
 `;
 
 const Paragraph = styled.p`
   font-style: italic;
 `;
 
-const Review = styled.div`
-  &:first-child {
-    margin-left: 5rem;
-  }
-  &:last-child {
-    margin-right: 5rem;
-  }
+const Image = styled(Img)`
+  flex-shrink: 0;
+  height: 300px;
+  width: 500px;
+  margin-right: 1rem;
 `;
 
-const Reviews = () => (
-  <ReviewsContainer>
-    {Object.keys(reviewsData).map(name => (
-      <Review key={name}>
-        <Title>{name}</Title>
-        <Paragraph>
-          <q>{reviewsData[name]}</q>
-        </Paragraph>
-      </Review>
-    ))}
-  </ReviewsContainer>
-);
+const Reviews = ({ data }) => {
+  const settings = {
+    dots: false,
+    slidesToShow: 1,
+    infinite: true,
+    nextArrow: <ArrowRight />,
+    prevArrow: <ArrowLeft />,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 8000,
+    pauseOnHover: true,
+    swipeToSlide: true,
+  };
+  return (
+    <ReviewsContainer>
+      <Slider {...settings}>
+        {Object.keys(reviews).map(name => (
+          <div key={name}>
+            <Review>
+              <Image fluid={data.trainingImage1.childImageSharp.fluid} />
+              <Paragraph>
+                <q>{reviews[name]}</q>
+              </Paragraph>
+            </Review>
+          </div>
+        ))}
+      </Slider>
+    </ReviewsContainer>
+  );
+};
 
 export default Reviews;

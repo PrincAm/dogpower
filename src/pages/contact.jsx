@@ -16,18 +16,27 @@ const TitleWrapper = styled.div`
   margin-bottom: 2rem;
 `;
 
-const NotFound = () => {
+const Contact = () => {
   const theme = useContext(ThemeContext);
   return (
     <Layout>
       <TrainigContainer theme={theme}>
         <TitleWrapper>
-          <Title size="large">Nenašli jsme, co jste hledali :(</Title>
+          <Title size="large">Kontakt</Title>
         </TitleWrapper>
-        <Text as="p">Zkuste jinou stránku z menu.</Text>
+        <Text as="p">
+          Adresa
+          <br />
+          Jakub Slavík
+          <br />
+          Wiesenthalova 1034/6
+          <br /> Praha 5 – Řeporyje
+          <br /> 155 00
+          <br /> IČO 07655584
+        </Text>
       </TrainigContainer>
     </Layout>
   );
 };
 
-export default NotFound;
+export default Contact;

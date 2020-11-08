@@ -9,4 +9,4 @@ export const wrapRootElement = ({ element }) => {
 };
 
 // Page Transitions
-export const wrapPageElement = wrapPageElementWithTransition;
+// export const wrapPageElement = wrapPageElementWithTransition;
