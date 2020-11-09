@@ -12,9 +12,9 @@ const Index = ({ data }) => {
 
   return (
     <Layout>
-      <Welcome data={data.homeJson} trainingRef={trainingRef} />
-      <Training ref={trainingRef} data={data.homeJson} />
-      <Reviews data={data.homeJson} />
+      <Welcome data={data.homepageJson} trainingRef={trainingRef} />
+      <Training ref={trainingRef} data={data.homepageJson} />
+      <Reviews data={data.homepageJson} />
       <ContactMe />
     </Layout>
   );
@@ -28,25 +28,8 @@ export default Index;
 
 export const query = graphql`
   query HomepageQuery {
-    homeJson {
+    homepageJson {
       title
-      content {
-        childMarkdownRemark {
-          html
-          rawMarkdownBody
-        }
-      }
-      gallery {
-        title
-        copy
-        image {
-          childImageSharp {
-            fluid(maxHeight: 500, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-      }
       backgroundImage {
         childImageSharp {
           fluid(maxHeight: 500, quality: 90) {
@@ -62,6 +45,55 @@ export const query = graphql`
         }
       }
       trainingImage2 {
+        childImageSharp {
+          fluid(maxHeight: 500, quality: 90) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      landingImg {
+        childImageSharp {
+          fluid(maxHeight: 500, quality: 90) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      dog1Img {
+        childImageSharp {
+          fluid(maxHeight: 500, quality: 90) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      dog2Img {
+        childImageSharp {
+          fluid(maxHeight: 500, quality: 90) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      dog3Img {
+        childImageSharp {
+          fluid(maxHeight: 500, quality: 90) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      dog4Img {
+        childImageSharp {
+          fluid(maxHeight: 500, quality: 90) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      dog5Img {
+        childImageSharp {
+          fluid(maxHeight: 500, quality: 90) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      dog6Img {
         childImageSharp {
           fluid(maxHeight: 500, quality: 90) {
             ...GatsbyImageSharpFluid_withWebp

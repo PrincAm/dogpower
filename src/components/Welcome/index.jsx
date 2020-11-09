@@ -104,7 +104,7 @@ const Welcome = ({ data, trainingRef }) => {
   return (
     <div>
       <BackgroundImageStyled
-        fluid={data.backgroundImage.childImageSharp.fluid}
+        fluid={data.landingImg.childImageSharp.fluid}
         backgroundColor={theme.background}
       >
         <WelcomeContainer theme={theme}>

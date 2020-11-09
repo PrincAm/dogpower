@@ -5,8 +5,10 @@ const Text = styled.span`
   display: block;
   font-weight: ${({ size }) => () => {
     switch (size) {
-      case 'xlarge':
+      case 'xxlarge':
         return '500';
+      case 'xlarge':
+        return '400';
       case 'large':
         return '400';
       case 'medium':
@@ -17,6 +19,8 @@ const Text = styled.span`
   }};
   font-size: ${({ size }) => () => {
     switch (size) {
+      case 'xxlarge':
+        return '6.0rem';
       case 'xlarge':
         return '4.0rem';
       case 'large':
@@ -29,6 +33,8 @@ const Text = styled.span`
   }};
   line-height: ${({ size }) => () => {
     switch (size) {
+      case 'xxlarge':
+        return '5.8rem';
       case 'xlarge':
         return '4.2rem';
       case 'large':
