@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Layout from 'components/Layout';
 import Welcome from 'components/Welcome';
 import Training from 'components/Training';
-import Reviews from 'components/Reviews';
+import References from 'components/References';
 import ContactMe from 'components/ContactMe';
 import { graphql } from 'gatsby';
 
@@ -14,7 +14,7 @@ const Index = ({ data }) => {
     <Layout>
       <Welcome data={data.homepageJson} trainingRef={trainingRef} />
       <Training ref={trainingRef} data={data.homepageJson} />
-      <Reviews data={data.homepageJson} />
+      <References data={data.referencesJson} />
       <ContactMe />
     </Layout>
   );
@@ -28,6 +28,19 @@ export default Index;
 
 export const query = graphql`
   query HomepageQuery {
+    referencesJson {
+      references {
+        name
+        text
+        image {
+          childImageSharp {
+            fluid(maxHeight: 800, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    }
     homepageJson {
       title
       backgroundImage {

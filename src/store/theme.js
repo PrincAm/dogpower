@@ -6,6 +6,7 @@ export const theme = {
   color: '#222222',
   colorSecondary: '#eeeeee',
   colorLight: '#f7f4e9',
+  colorLightSecondary: '#fbf9f4',
   colorDark: '#1d1d2c',
   heightHeader: '8rem',
   marginHeader: '14rem',

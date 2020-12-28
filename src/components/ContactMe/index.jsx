@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
 import Text from '../Text';
 import Title from '../Title';
+
+import ThemeContext from '../../store/theme';
+import ArrowIcon from '../../images/arrow-right-regular.svg';
 
 const ContactMeContainer = styled.div`
   display: flex;
@@ -14,7 +17,8 @@ const ContactMeContainer = styled.div`
 `;
 
 const TitleWrapper = styled.div`
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
+  text-align: center;
 `;
 
 const ButtonWrapper = styled.div`
@@ -22,33 +26,44 @@ const ButtonWrapper = styled.div`
   justify-content: center;
 `;
 
-const ContactButton = styled(Link)`
-  background-color: #ffffff;
-  color: #1d2120;
-  border-radius: 4px;
-  padding: 0.6em 1.5em;
-  font-weight: 600;
-  width: 9rem;
+const ContactLink = styled(Link)`
+  display: flex;
   text-decoration: none;
-
+  color: ${({ theme }) => theme.colorLight};}
   &:hover {
     cursor: pointer;
   }
 `;
 
-const ContactMe = () => (
-  <ContactMeContainer>
-    <TitleWrapper>
-      <Title size="large">Pojďme si popovídat o vašem psím kamarádovi</Title>
-    </TitleWrapper>
-    <Text size="medium" as="p">
-      Neváhejte a obraťte se na mě. Velmi rád uslyším, jak vám můžu být
-      nápomocen. // PLACEHOLDER pro text
-    </Text>
-    <ButtonWrapper>
-      <ContactButton to="/contact">Kontakt</ContactButton>
-    </ButtonWrapper>
-  </ContactMeContainer>
-);
+// TODO replace by nicer arrow
+const Arrow = styled(ArrowIcon)`
+  height: 4rem;
+  width: 4rem;
+  margin-left: 1rem;
+`;
+
+const ContactMe = () => {
+  const theme = useContext(ThemeContext);
+
+  return (
+    <ContactMeContainer>
+      <TitleWrapper>
+        <Title size="xxlarge" as="h2">
+          Pojďme si popovídat
+        </Title>
+      </TitleWrapper>
+      <Text size="medium" as="p">
+        Neváhejte a obraťte se na mě. Velmi rád uslyším, jak vám můžu být
+        nápomocen s vaším psím kamarádem.
+      </Text>
+      <ButtonWrapper>
+        <ContactLink to="/contact" theme={theme}>
+          <Text size="large">Zeptejte se na cokoliv</Text>
+          <Arrow />
+        </ContactLink>
+      </ButtonWrapper>
+    </ContactMeContainer>
+  );
+};
 
 export default ContactMe;

@@ -7,12 +7,6 @@ const Text = styled.span`
     switch (size) {
       case 'xxlarge':
         return '500';
-      case 'xlarge':
-        return '400';
-      case 'large':
-        return '400';
-      case 'medium':
-        return '400';
       default:
         return '400';
     }
@@ -26,23 +20,25 @@ const Text = styled.span`
       case 'large':
         return '3.2rem';
       case 'medium':
-        return '2.8rem';
       default:
-        return '2rem';
+        return '2.8rem';
+      case 'small':
+        return '2.2rem';
     }
   }};
   line-height: ${({ size }) => () => {
     switch (size) {
       case 'xxlarge':
-        return '5.8rem';
+        return '7.8rem';
       case 'xlarge':
-        return '4.2rem';
+        return '5.6rem';
       case 'large':
-        return '3.4rem';
+        return '4.6rem';
       case 'medium':
-        return '3.0rem';
       default:
-        return '2.2rem';
+        return '4.0rem';
+      case 'small':
+        return '3.2rem';
     }
   }};
 

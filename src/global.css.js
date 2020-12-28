@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import 'typeface-rubik';
+import '@fontsource/rubik';
+import '@fontsource/rubik/500.css';
 
 export default createGlobalStyle`
   html, body, div, span, applet, object, iframe,

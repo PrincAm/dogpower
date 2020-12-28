@@ -19,6 +19,7 @@
     ]
   },
   "dependencies": {
+    "@fontsource/rubik": "^4.0.1",
     "@reach/dialog": "^0.2.0",
     "@reach/router": "^1.2.1",
     "@reach/visually-hidden": "^0.1.1",
@@ -46,9 +47,9 @@
     "react-pose": "^4.0.5",
     "react-slick": "^0.27.13",
     "react-spring": "^8.0.27",
+    "shortid": "^2.2.16",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^5.2.0",
-    "typeface-rubik": "^1.1.13"
+    "styled-components": "^5.2.0"
   },
   "devDependencies": {
     "ava": "^0.25.0",

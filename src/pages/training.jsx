@@ -22,7 +22,7 @@ const Training = () => {
     <Layout>
       <TrainigContainer theme={theme}>
         <TitleWrapper>
-          <Title size="large">Výchova a trénink</Title>
+          <Title size="xlarge">Výchova a trénink</Title>
         </TitleWrapper>
         <Text as="p">
           Výběrem a koupí psa vše začíná a záleží jen na Vás, jak bude probíhat
