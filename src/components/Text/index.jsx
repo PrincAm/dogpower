@@ -29,7 +29,7 @@ const Text = styled.span`
   line-height: ${({ size }) => () => {
     switch (size) {
       case 'xxlarge':
-        return '7.8rem';
+        return '6.0rem';
       case 'xlarge':
         return '5.6rem';
       case 'large':

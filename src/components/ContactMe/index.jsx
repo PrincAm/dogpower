@@ -8,17 +8,22 @@ import Title from '../Title';
 import ThemeContext from '../../store/theme';
 import ArrowIcon from '../../images/arrow-right-regular.svg';
 
-const ContactMeContainer = styled.div`
+const Container = styled.div`
+  background-color: #ff3860;
+  padding: 6rem 0;
+`;
+
+// TODO rename or merge with Container
+const Flex = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   max-width: 1000px;
-  margin-bottom: 3rem;
+  text-align: center;
 `;
 
 const TitleWrapper = styled.div`
   margin-bottom: 4rem;
-  text-align: center;
 `;
 
 const ButtonWrapper = styled.div`
@@ -46,23 +51,25 @@ const ContactMe = () => {
   const theme = useContext(ThemeContext);
 
   return (
-    <ContactMeContainer>
-      <TitleWrapper>
-        <Title size="xxlarge" as="h2">
-          Pojďme si popovídat
-        </Title>
-      </TitleWrapper>
-      <Text size="medium" as="p">
-        Neváhejte a obraťte se na mě. Velmi rád uslyším, jak vám můžu být
-        nápomocen s vaším psím kamarádem.
-      </Text>
-      <ButtonWrapper>
-        <ContactLink to="/contact" theme={theme}>
-          <Text size="large">Zeptejte se na cokoliv</Text>
-          <Arrow />
-        </ContactLink>
-      </ButtonWrapper>
-    </ContactMeContainer>
+    <Container>
+      <Flex>
+        <TitleWrapper>
+          <Title size="xxlarge" as="h2">
+            Pojďme si popovídat
+          </Title>
+        </TitleWrapper>
+        <Text size="medium" as="p">
+          Neváhejte a obraťte se na mě. Velmi rád uslyším, jak vám můžu být
+          nápomocen s vaším psím kamarádem.
+        </Text>
+        <ButtonWrapper>
+          <ContactLink to="/contact" theme={theme}>
+            <Text size="large">Zeptejte se na cokoliv</Text>
+            <Arrow />
+          </ContactLink>
+        </ButtonWrapper>
+      </Flex>
+    </Container>
   );
 };
 

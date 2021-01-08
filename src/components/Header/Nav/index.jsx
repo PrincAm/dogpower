@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Text from '../../Text';
 
 const Container = styled.div`
-  padding-right: 4rem;
+  padding-right: 12rem;
   ul {
     display: flex;
     list-style: none;
@@ -16,7 +16,7 @@ const Container = styled.div`
       font-size: 1.3rem;
 
       & + li {
-        margin-left: 2rem;
+        margin-left: 3rem;
       }
     }
   }
@@ -27,7 +27,7 @@ const Nav = () => (
     <ul>
       <li>
         <Link to="/training">
-          <Text>Výchova a trénink</Text>
+          <Text>Trénink</Text>
         </Link>
       </li>
       <li>
@@ -37,7 +37,7 @@ const Nav = () => (
       </li>
       <li>
         <Link to="/service">
-          <Text>Služby</Text>
+          <Text>Ceník</Text>
         </Link>
       </li>
       <li>

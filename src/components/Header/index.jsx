@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 import ThemeContext from '../../store/theme';
+import dogpowerLogo from '../../images/dogpower-logo.png';
 import Nav from './Nav';
 
 const Container = styled.header`
@@ -30,13 +31,12 @@ const Container = styled.header`
   }
 `;
 
-const CompanyName = styled.h1`
-  font-weight: 500;
-  font-size: 3rem;
+const Logo = styled.img`
+  height: 6rem;
 `;
 
 const HomeLink = styled(Link)`
-  padding-left: 10rem;
+  padding-left: 12rem;
 `;
 
 const Header = ({ title }) => {
@@ -44,7 +44,7 @@ const Header = ({ title }) => {
   return (
     <Container theme={theme}>
       <HomeLink to="/">
-        <CompanyName>{title}</CompanyName>
+        <Logo src={dogpowerLogo} />
       </HomeLink>
 
       <Nav />

@@ -1,10 +1,12 @@
 import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
+
 import Layout from 'components/Layout';
 import Welcome from 'components/Welcome';
 import Training from 'components/Training';
 import References from 'components/References';
 import ContactMe from 'components/ContactMe';
+import Instagram from 'components/Instagram';
 import { graphql } from 'gatsby';
 
 const Index = ({ data }) => {
@@ -15,6 +17,7 @@ const Index = ({ data }) => {
       <Welcome data={data.homepageJson} trainingRef={trainingRef} />
       <Training ref={trainingRef} data={data.homepageJson} />
       <References data={data.referencesJson} />
+      {/* <Instagram /> */}
       <ContactMe />
     </Layout>
   );

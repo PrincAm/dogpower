@@ -6,13 +6,12 @@ import { texts } from './data/texts';
 import ThemeContext from '../../store/theme';
 
 const TrainingContainer = styled.div`
-  width: 100%;
-  min-height: 100vh;
-  padding-top: 8rem;
+  padding: 12rem;
   display: flex;
   flex-direction: column;
-  color: ${({ theme }) => theme.colorDark};
-  background-color: ${({ theme }) => theme.colorLight};
+  color: ${({ theme }) => theme.colorDarkSec};
+  // FIXME unify colors, store to theme
+  background-color: #fff;//${({ theme }) => theme.colorLight};
 `;
 
 // eslint-disable-next-line react/display-name

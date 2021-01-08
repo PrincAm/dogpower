@@ -17,7 +17,7 @@ const BackgroundImageStyled = styled(BackgroundImage)`
 const WelcomeContainer = styled.div`
   color: ${({ theme }) => theme.colorSecondary};
   padding-top: 10%;
-  margin-left: 10%;
+  margin-left: 12rem;
 `;
 
 const Trails = styled.div`
@@ -28,11 +28,12 @@ const Trails = styled.div`
 const TrailText = styled(a.div)`
   position: relative;
   width: 100%;
-  height: 120px;
-  line-height: 120px;
+  height: 12rem;
+  line-height: 12rem;
   font-size: 7em;
   font-weight: 500;
-  letter-spacing: -9px;
+  letter-spacing: -1rem;
+  text-indent: -0.3rem;
   will-change: transform, opacity;
   overflow: hidden;
 

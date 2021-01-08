@@ -13,12 +13,10 @@ import Title from '../Title';
 import Text from '../Text';
 
 const ReferencesContainer = styled.div`
-  min-height: 100vh;
-  padding: ${({ theme }) => `${theme.marginHeader} 8rem 4rem 8rem`};
-  /* width: 1000px; */
-  margin: 0 auto 3rem auto;
-  background-color: ${({ theme }) => theme.colorLightSecondary};
-  color: ${({ theme }) => theme.colorDark};
+  padding: 6rem 8rem 6rem 8rem;
+  // FIXME unify colors, store to theme
+  background-color: #f6f6f6; // ${({ theme }) => theme.colorLightSecondary};
+  color: ${({ theme }) => theme.colorDarkSec};
 `;
 
 const Reference = styled.div`
@@ -36,6 +34,7 @@ const Image = styled(Img)`
 const TitleWrapper = styled.div`
   margin-bottom: 4rem;
   text-align: center;
+  color: ${({ theme }) => theme.color};
 `;
 
 const NameWrapper = styled.div`
@@ -63,7 +62,7 @@ const References = ({ data }) => {
   };
   return (
     <ReferencesContainer theme={theme}>
-      <TitleWrapper>
+      <TitleWrapper theme={theme}>
         <Title size="xxlarge" as="h2">
           Spokojení zákazníci
         </Title>
@@ -79,7 +78,7 @@ const References = ({ data }) => {
                     {name}
                   </Title>
                 </NameWrapper>
-                <Text as="p" size="medium">
+                <Text as="p" size="small">
                   {text}
                 </Text>
               </TextContainer>
