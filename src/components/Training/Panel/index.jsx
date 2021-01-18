@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 import IO from 'components/IO';
 import Text from 'components/Text';
 import Title from 'components/Title';
+import Boop from 'components/Boop';
 import Image from './ImageAnimated';
 import TextAnimated from './TextAnimated';
 import ThemeContext from '../../../store/theme';
@@ -29,6 +31,17 @@ const Box = styled.div`
 
 const TitleWrapper = styled.div`
   color: ${({ theme }) => theme.colorDarkSec};
+`;
+
+const StyledLink = styled(Link)`
+  display: inline-block;
+  text-decoration: none;
+  color: ${({ theme }) => theme.colorDarkSec};}
+  transition: color 0.5s ease;
+
+  &:hover {
+    color: #4f868e;
+  }
 `;
 
 const Panel = ({ imageOnLeft = true, texts, imageFluid }) => {
@@ -83,7 +96,11 @@ const Panel = ({ imageOnLeft = true, texts, imageFluid }) => {
               translateYFrom="80px"
               translateYTo="-20px"
             >
-              <Text size="medium">{texts[2].text}</Text>
+              <StyledLink to="/training" theme={theme}>
+                <Boop x={10}>
+                  <Text size="medium">{texts[2].text}</Text>
+                </Boop>
+              </StyledLink>
             </TextAnimated>
           )}
         </IO>

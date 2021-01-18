@@ -5,8 +5,9 @@ import { Link } from 'gatsby';
 import Text from '../Text';
 import Title from '../Title';
 
+import Boop from '../Boop';
+
 import ThemeContext from '../../store/theme';
-import ArrowIcon from '../../images/arrow-right-regular.svg';
 
 const Container = styled.div`
   background-color: #ff3860;
@@ -35,16 +36,11 @@ const ContactLink = styled(Link)`
   display: flex;
   text-decoration: none;
   color: ${({ theme }) => theme.colorLight};}
-  &:hover {
-    cursor: pointer;
-  }
-`;
+  transition: color 0.5s ease;
 
-// TODO replace by nicer arrow
-const Arrow = styled(ArrowIcon)`
-  height: 4rem;
-  width: 4rem;
-  margin-left: 1rem;
+  &:hover {
+    color: #4f868e;
+  }
 `;
 
 const ContactMe = () => {
@@ -64,8 +60,9 @@ const ContactMe = () => {
         </Text>
         <ButtonWrapper>
           <ContactLink to="/contact" theme={theme}>
-            <Text size="large">Zeptejte se na cokoliv</Text>
-            <Arrow />
+            <Boop x={10}>
+              <Text size="large">Zeptejte se na cokoliv</Text>
+            </Boop>
           </ContactLink>
         </ButtonWrapper>
       </Flex>
