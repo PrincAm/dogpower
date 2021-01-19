@@ -7,6 +7,8 @@ const Text = styled.span`
     switch (size) {
       case 'xxlarge':
         return '500';
+      case 'small':
+        return '200';
       default:
         return '400';
     }
@@ -38,7 +40,7 @@ const Text = styled.span`
       default:
         return '4.0rem';
       case 'small':
-        return '3.2rem';
+        return '2.4rem';
     }
   }};
 

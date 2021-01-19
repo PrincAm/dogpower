@@ -10,10 +10,23 @@ import ThemeContext from '../../store/theme';
 
 import { ArrowLeft, ArrowRight } from './Arrows';
 import Title from '../Title';
-import Text from '../Text';
+
+const pFontSizes = {
+  large: '2.4rem',
+  medium: '2.2rem',
+  small: '1.9rem',
+  xsmall: '1.7rem',
+};
+
+const pLineHeights = {
+  large: '2.5rem',
+  medium: '2.4rem',
+  small: '2.2rem',
+  xsmall: '1.9rem',
+};
 
 const ReferencesContainer = styled.div`
-  padding: 6rem 8rem 6rem 8rem;
+  padding: 10rem 14rem;
   // FIXME unify colors, store to theme
   background-color: #f6f6f6; // ${({ theme }) => theme.colorLightSecondary};
   color: ${({ theme }) => theme.colorDarkSec};
@@ -22,6 +35,7 @@ const ReferencesContainer = styled.div`
 const Reference = styled.div`
   display: flex;
   margin: 0 3rem;
+  height: 100%;
 `;
 
 const Image = styled(Img)`
@@ -38,12 +52,18 @@ const TitleWrapper = styled.div`
 `;
 
 const NameWrapper = styled.div`
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 `;
 
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+const Paragraph = styled.p`
+  font-size: ${({ size }) => pFontSizes[size]};
+  line-height: ${({ size }) => pLineHeights[size]};
+  color: ${({ theme }) => theme.colorDarkSec};
 `;
 
 const References = ({ data }) => {
@@ -68,7 +88,7 @@ const References = ({ data }) => {
         </Title>
       </TitleWrapper>
       <Slider {...settings}>
-        {data.references.map(({ text, image, name }) => (
+        {data.references.map(({ text, image, name, size }) => (
           <div key={shortid.generate()}>
             <Reference>
               <Image fluid={image.childImageSharp.fluid} />
@@ -78,9 +98,9 @@ const References = ({ data }) => {
                     {name}
                   </Title>
                 </NameWrapper>
-                <Text as="p" size="small">
+                <Paragraph size={size} theme={theme}>
                   {text}
-                </Text>
+                </Paragraph>
               </TextContainer>
             </Reference>
           </div>

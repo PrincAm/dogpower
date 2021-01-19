@@ -37,11 +37,12 @@ export const query = graphql`
         text
         image {
           childImageSharp {
-            fluid(maxHeight: 800, quality: 90) {
+            fluid(maxHeight: 500, quality: 90) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
+        size
       }
     }
     homepageJson {

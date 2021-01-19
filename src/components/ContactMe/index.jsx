@@ -11,7 +11,8 @@ import ThemeContext from '../../store/theme';
 
 const Container = styled.div`
   background-color: #ff3860;
-  padding: 6rem 0;
+  color: ${({ theme }) => theme.colorLight};}
+  padding: 10rem 0;
 `;
 
 // TODO rename or merge with Container
@@ -47,7 +48,7 @@ const ContactMe = () => {
   const theme = useContext(ThemeContext);
 
   return (
-    <Container>
+    <Container theme={theme}>
       <Flex>
         <TitleWrapper>
           <Title size="xxlarge" as="h2">

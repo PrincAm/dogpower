@@ -27,7 +27,6 @@ const Trails = styled.div`
 
 const TrailText = styled(a.div)`
   position: relative;
-  width: 100%;
   height: 12rem;
   line-height: 12rem;
   font-size: 7em;
@@ -56,25 +55,26 @@ const bounce = keyframes`
 }
 `;
 
+const ArrowContainer = styled.div`
+  color: ${({ theme }) => theme.colorSecondary};
+  font-size: 4rem;
+  display: inline-flex;
+  align-items: center;
+  letter-spacing: 0;
+  transition: color 0.5s ease;
+  &:hover {
+    color: #4f868e;
+    cursor: pointer;
+  }
+`;
+
 const Arrow = styled(ArrowIcon)`
   height: 4rem;
   width: 4rem;
   animation: ${bounce} 2.5s 4;
 `;
 
-const ArrowContainer = styled(a.div)`
-  color: ${({ theme }) => theme.colorSecondary};
-  font-size: 4rem;
-  display: flex;
-  align-items: center;
-  transition: color 0.5s ease;
-  letter-spacing: 0;
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
-const More = styled.div`
+const More = styled.span`
   margin-left: 0.8rem;
   font-weight: 400;
 `;
@@ -119,20 +119,16 @@ const Welcome = ({ data, trainingRef }) => {
                     transform: x.interpolate(x => `translate3d(0,${x}px,0)`),
                   }}
                 >
-                  {index < items.length - 1 ? (
-                    <a.div key={items[index]} style={{ height }}>
-                      {items[index]}
-                    </a.div>
-                  ) : (
-                    <ArrowContainer
-                      key={items[index]}
-                      style={height}
-                      onClick={handleScroll}
-                    >
-                      <Arrow theme={theme} />
-                      <More>{items[index]}</More>
-                    </ArrowContainer>
-                  )}
+                  <a.div key={items[index]} style={{ height }}>
+                    {index < items.length - 1 ? (
+                      items[index]
+                    ) : (
+                      <ArrowContainer onClick={handleScroll}>
+                        <Arrow theme={theme} />
+                        <More>{items[index]}</More>
+                      </ArrowContainer>
+                    )}
+                  </a.div>
                 </TrailText>
               ))}
             </div>

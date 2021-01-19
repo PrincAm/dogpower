@@ -12,7 +12,6 @@ const Container = styled.div`
     padding: 0;
 
     li {
-      text-transform: uppercase;
       font-size: 1.3rem;
 
       & + li {
@@ -22,27 +21,43 @@ const Container = styled.div`
   }
 `;
 
+const Bold = styled.span`
+  transition: color 0.5s ease;
+
+  &:hover {
+    color: #4f868e;
+  }
+`;
+
 const Nav = () => (
   <Container>
     <ul>
       <li>
         <Link to="/training">
-          <Text>Trénink</Text>
+          <Text>
+            <Bold>Trénink</Bold>
+          </Text>
         </Link>
       </li>
       <li>
         <Link to="/about">
-          <Text>O mně</Text>
+          <Text>
+            <Bold>O mně</Bold>
+          </Text>
         </Link>
       </li>
       <li>
         <Link to="/service">
-          <Text>Ceník</Text>
+          <Text>
+            <Bold>Ceník</Bold>
+          </Text>
         </Link>
       </li>
       <li>
         <Link to="/contact">
-          <Text>Kontakt</Text>
+          <Text>
+            <Bold>Kontakt</Bold>
+          </Text>
         </Link>
       </li>
     </ul>

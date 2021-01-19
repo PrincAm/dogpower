@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Layout from 'components/Layout';
 import Title from 'components/Title';
 import Text from 'components/Text';
+import ContactMe from 'components/ContactMe';
 import ThemeContext from '../store/theme';
 
 const TrainigContainer = styled.div`
@@ -46,6 +47,7 @@ const Training = () => {
           poradenství po telefonu, a to v době: pondělí – pátek, 9.00 – 17.00.
         </Text>
       </TrainigContainer>
+      <ContactMe />
     </Layout>
   );
 };

@@ -4,12 +4,13 @@ import styled from 'styled-components';
 import Layout from 'components/Layout';
 import Title from 'components/Title';
 import Text from 'components/Text';
+import ContactMe from 'components/ContactMe';
 import ThemeContext from '../store/theme';
 
 const TrainigContainer = styled.div`
   min-height: 100vh;
   max-width: ${({ theme }) => theme.width};
-  margin: ${({ theme }) => theme.marginHeader} auto 0 auto;
+  margin: ${({ theme }) => theme.marginHeader} auto 12rem auto;
 `;
 
 const TitleWrapper = styled.div`
@@ -34,6 +35,7 @@ const Service = () => {
           culpa qui officia deserunt mollit anim id est laborum.
         </Text>
       </TrainigContainer>
+      <ContactMe />
     </Layout>
   );
 };
