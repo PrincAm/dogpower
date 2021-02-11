@@ -17,7 +17,7 @@ const Index = ({ data }) => {
       <Welcome data={data.homepageJson} trainingRef={trainingRef} />
       <Training ref={trainingRef} data={data.homepageJson} />
       <References data={data.referencesJson} />
-      {/* <Instagram /> */}
+      <Instagram data={data.instagramJson} />
       <ContactMe />
     </Layout>
   );
@@ -43,6 +43,29 @@ export const query = graphql`
           }
         }
         size
+      }
+    }
+    instagramJson {
+      photo1 {
+        childImageSharp {
+          fluid(maxHeight: 200, maxWidth: 200, quality: 90) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      photo2 {
+        childImageSharp {
+          fluid(maxHeight: 200, maxWidth: 200, quality: 90) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      photo3 {
+        childImageSharp {
+          fluid(maxHeight: 200, maxWidth: 200, quality: 90) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
       }
     }
     homepageJson {

@@ -1,14 +1,16 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
+import Img from 'gatsby-image';
 
-import Title from '../Title';
+import InstagramIcon from '../../images/icons/instagram-brands.svg';
+import Title from 'components/Title';
+import Text from 'components/Text';
 
 import ThemeContext from '../../store/theme';
 
 const Background = styled.div`
-  background-color: #fff;
-  padding: 6rem 0;
+  background-color: #ffdc80;
+  padding: 10rem 0;
 `;
 
 const Container = styled.div`
@@ -22,42 +24,91 @@ const TitleWrapper = styled.div`
   text-align: center;
 `;
 
-const Link = styled.a`
-  color: ${({ theme }) => theme.colorSecondary};
-  text-decoration: none;
+const Images = styled.div`
+  display: flex;
+`;
+
+const ImgWrapper = styled.div`
+  width: 100%;
+  margin-right: 2rem;
+  &:last-of-type {
+    margin-right: 0;
+  }
+`;
+
+const Icon = styled(InstagramIcon)`
+  width: 12rem;
+  height: 12rem;
+  margin: 3rem 0 1rem;
   transition: color 0.5s ease;
 
   &:hover {
     color: #4f868e;
   }
+  &:last-of-type {
+    padding-left: 0.5rem;
+  }
+  color: ${({ theme }) => theme.color};
 `;
 
-const Instagram = () => {
+const IconWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
+
+const Instagram = ({ data }) => {
   const theme = useContext(ThemeContext);
-  useEffect(async () => {
-    const result = await axios('https://www.instagram.com/dogpower.cz/?__a=1');
-    if (result) {
-      console.log(result);
-      const edges = result.graphql.user.edge_owner_to_timeline_media.edges;
-      const postCodes = edges.map(edge => edge.node.shortcode);
-    }
-  });
+
   return (
     <Background theme={theme}>
       <Container theme={theme}>
         <TitleWrapper>
           <Title size="xxlarge" as="h2">
-            Sledujte{' '}
-            <Link
-              href="https://www.instagram.com/dogpower.cz"
+            Navštivte nás na Instagramu
+          </Title>
+        </TitleWrapper>
+        <Images>
+          <ImgWrapper>
+            <a
+              href="https://www.instagram.com/dogpower_cz/"
               target="_blank"
               rel="noreferrer"
             >
-              @dogpower.cz
-            </Link>{' '}
-            na Instagramu
-          </Title>
-        </TitleWrapper>
+              <Img fluid={data.photo1.childImageSharp.fluid} />
+            </a>
+          </ImgWrapper>
+          <ImgWrapper>
+            <a
+              href="https://www.instagram.com/dogpower_cz/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Img fluid={data.photo2.childImageSharp.fluid} />
+            </a>
+          </ImgWrapper>
+          <ImgWrapper>
+            <a
+              href="https://www.instagram.com/dogpower_cz/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Img fluid={data.photo3.childImageSharp.fluid} />
+            </a>
+          </ImgWrapper>
+        </Images>
+        <IconWrapper>
+          <a
+            href="https://www.instagram.com/dogpower.cz/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Icon theme={theme} />
+          </a>
+          <Text size="small">@dogpower_cz</Text>
+        </IconWrapper>
       </Container>
     </Background>
   );

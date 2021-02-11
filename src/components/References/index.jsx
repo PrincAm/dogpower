@@ -68,6 +68,7 @@ const Paragraph = styled.p`
 
 const References = ({ data }) => {
   const theme = useContext(ThemeContext);
+
   const settings = {
     dots: false,
     slidesToShow: 1,
@@ -79,6 +80,7 @@ const References = ({ data }) => {
     autoplaySpeed: 8000,
     pauseOnHover: true,
     swipeToSlide: true,
+    fade: true,
   };
   return (
     <ReferencesContainer theme={theme}>
