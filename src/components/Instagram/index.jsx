@@ -30,9 +30,14 @@ const Images = styled.div`
 
 const ImgWrapper = styled.div`
   width: 100%;
+  transform: scale(1);
   margin-right: 2rem;
+  transition: .3s ease-in-out;
   &:last-of-type {
     margin-right: 0;
+  }
+  & + {Img}:hover {
+  	transform: scale(1.1);
   }
 `;
 
@@ -101,7 +106,7 @@ const Instagram = ({ data }) => {
         </Images>
         <IconWrapper>
           <a
-            href="https://www.instagram.com/dogpower.cz/"
+            href="https://www.instagram.com/dogpower_cz/"
             target="_blank"
             rel="noreferrer"
           >

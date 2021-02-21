@@ -25,7 +25,9 @@ const Text = styled.span`
       default:
         return '2.8rem';
       case 'small':
-        return '2.2rem';
+        return '2.0rem';
+      case 'xsmall':
+        return '1.8rem';
     }
   }};
   line-height: ${({ size }) => () => {
@@ -40,7 +42,9 @@ const Text = styled.span`
       default:
         return '4.0rem';
       case 'small':
-        return '2.4rem';
+        return '2.8rem';
+      case 'xsmall':
+        return '2.6rem';
     }
   }};
 

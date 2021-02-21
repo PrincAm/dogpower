@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 import Layout from 'components/Layout';
-import Title from 'components/Title';
 import Text from 'components/Text';
 import ContactMe from 'components/ContactMe';
 import ThemeContext from '../store/theme';
@@ -10,21 +11,39 @@ import ThemeContext from '../store/theme';
 const TrainigContainer = styled.div`
   min-height: 100vh;
   max-width: ${({ theme }) => theme.width};
-  margin: ${({ theme }) => theme.marginHeader} auto 12rem auto;
+  margin: ${({ theme }) => theme.marginHeader} auto 10rem auto;
 `;
 
 const TitleWrapper = styled.div`
   margin-bottom: 2rem;
 `;
 
-const Service = () => {
+const ImageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const ImageWrapper = styled.div`
+  width: 100%;
+  margin-bottom: 3rem;
+  max-width: 50rem;
+`;
+
+const Service = ({ data }) => {
   const theme = useContext(ThemeContext);
   return (
     <Layout>
       <TrainigContainer theme={theme}>
         <TitleWrapper>
-          <Title size="large">Služby</Title>
+          <Text size="xlarge" as="h1">
+            Ceník
+          </Text>
         </TitleWrapper>
+        <ImageContainer>
+          <ImageWrapper>
+            <Img fluid={data.priceJson.image1.childImageSharp.fluid} />
+          </ImageWrapper>
+        </ImageContainer>
         <Text as="p">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -41,3 +60,17 @@ const Service = () => {
 };
 
 export default Service;
+
+export const query = graphql`
+  query PriceQuery {
+    priceJson {
+      image1 {
+        childImageSharp {
+          fluid(maxWidth: 200, maxHeight: 200, quality: 90) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  }
+`;

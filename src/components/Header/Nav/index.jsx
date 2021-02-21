@@ -33,28 +33,28 @@ const Nav = () => (
   <Container>
     <ul>
       <li>
-        <Link to="/training">
+        <Link to="/trenink">
           <Text>
             <Bold>Trénink</Bold>
           </Text>
         </Link>
       </li>
       <li>
-        <Link to="/about">
+        <Link to="/o-mne">
           <Text>
             <Bold>O mně</Bold>
           </Text>
         </Link>
       </li>
       <li>
-        <Link to="/service">
+        <Link to="/cenik">
           <Text>
             <Bold>Ceník</Bold>
           </Text>
         </Link>
       </li>
       <li>
-        <Link to="/contact">
+        <Link to="/kontakt">
           <Text>
             <Bold>Kontakt</Bold>
           </Text>

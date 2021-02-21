@@ -1,29 +1,48 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 import Layout from 'components/Layout';
-import Title from 'components/Title';
 import Text from 'components/Text';
 import ThemeContext from '../store/theme';
 
 const TrainigContainer = styled.div`
   min-height: 100vh;
   max-width: ${({ theme }) => theme.width};
-  margin: ${({ theme }) => theme.marginHeader} auto 0 auto;
+  margin: ${({ theme }) => theme.marginHeader} auto 10rem auto;
 `;
 
 const TitleWrapper = styled.div`
   margin-bottom: 2rem;
 `;
 
-const About = () => {
+const ImageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const ImageWrapper = styled.div`
+  width: 100%;
+  margin-bottom: 3rem;
+  max-width: 50rem;
+`;
+
+const About = ({ data }) => {
   const theme = useContext(ThemeContext);
   return (
     <Layout>
       <TrainigContainer theme={theme}>
         <TitleWrapper>
-          <Title size="large">Kdo jsem?</Title>
+          <Text size="xlarge" as="h1">
+            Kdo jsem?
+          </Text>
         </TitleWrapper>
+        <ImageContainer>
+          <ImageWrapper>
+            <Img fluid={data.aboutMeJson.image1.childImageSharp.fluid} />
+          </ImageWrapper>
+        </ImageContainer>
         <Text as="p">
           Jmenuji se Jakub Slavík a rád bych se Vám prostřednictvím tohoto textu
           představil. V mé rodině se vášeň pro přírodu, a zejména pro trénování
@@ -60,3 +79,17 @@ const About = () => {
 };
 
 export default About;
+
+export const query = graphql`
+  query AboutMeQuery {
+    aboutMeJson {
+      image1 {
+        childImageSharp {
+          fluid(maxWidth: 200, maxHeight: 200, quality: 90) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  }
+`;

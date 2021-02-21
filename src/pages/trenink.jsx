@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 import Layout from 'components/Layout';
 import Title from 'components/Title';
@@ -8,23 +10,41 @@ import ContactMe from 'components/ContactMe';
 import ThemeContext from '../store/theme';
 
 const TrainigContainer = styled.div`
-  min-height: 100vh;
+  min-height: calc(100vh - 14rem);
   max-width: ${({ theme }) => theme.width};
-  margin: ${({ theme }) => theme.marginHeader} auto 0 auto;
+  margin: ${({ theme }) => theme.marginHeader} auto 10rem auto;
 `;
 
 const TitleWrapper = styled.div`
   margin-bottom: 2rem;
 `;
 
-const Training = () => {
+const ImageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const ImageWrapper = styled.div`
+  width: 100%;
+  margin-bottom: 3rem;
+  max-width: 50rem;
+`;
+
+const Training = ({ data }) => {
   const theme = useContext(ThemeContext);
   return (
     <Layout>
       <TrainigContainer theme={theme}>
         <TitleWrapper>
-          <Title size="xlarge">Výchova a trénink</Title>
+          <Text size="xlarge" as="h1">
+            Výchova a trénink
+          </Text>
         </TitleWrapper>
+        <ImageContainer>
+          <ImageWrapper>
+            <Img fluid={data.trainingJson.image1.childImageSharp.fluid} />
+          </ImageWrapper>
+        </ImageContainer>
         <Text as="p">
           Výběrem a koupí psa vše začíná a záleží jen na Vás, jak bude probíhat
           Váš společný život. Snad všichni znají nějaké takové obecné moudro.
@@ -53,3 +73,17 @@ const Training = () => {
 };
 
 export default Training;
+
+export const query = graphql`
+  query TrainingQuery {
+    trainingJson {
+      image1 {
+        childImageSharp {
+          fluid(maxWidth: 200, maxHeight: 200, quality: 90) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  }
+`;

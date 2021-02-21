@@ -2,11 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Text from '../Text';
 
-const Title = ({ children, as = 'h3', size }) => (
-  <Text as={as} size={size}>
-    {children}
-  </Text>
-);
+const Title = ({ children, size }) => <Text size={size}>{children}</Text>;
 
 Title.propTypes = {
   children: PropTypes.string.isRequired,
