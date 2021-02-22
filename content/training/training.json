@@ -1,3 +1,4 @@
 {
-  "image1": "../images/gallery/dog1.jpg"
+  "image1": "../images/gallery/dog1.jpg",
+  "bgImage": "../images/training_bg.jpg"
 }
