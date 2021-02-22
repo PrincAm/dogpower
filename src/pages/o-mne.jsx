@@ -13,8 +13,8 @@ const TrainigContainer = styled.div`
   margin: ${({ theme }) => theme.marginHeader} auto 10rem auto;
 `;
 
-const TitleWrapper = styled.div`
-  margin-bottom: 2rem;
+const Title = styled(Text)`
+  margin-bottom: 4rem;
 `;
 
 const ImageContainer = styled.div`
@@ -33,11 +33,9 @@ const About = ({ data }) => {
   return (
     <Layout>
       <TrainigContainer theme={theme}>
-        <TitleWrapper>
-          <Text size="xlarge" as="h1">
-            Kdo jsem?
-          </Text>
-        </TitleWrapper>
+        <Title size="xxlarge" as="h1">
+          O mně
+        </Title>
         <ImageContainer>
           <ImageWrapper>
             <Img fluid={data.aboutMeJson.image1.childImageSharp.fluid} />

@@ -45,15 +45,15 @@ const Icon = styled(InstagramIcon)`
   width: 12rem;
   height: 12rem;
   margin: 3rem 0 1rem;
-  transition: color 0.5s ease;
+  color: ${({ theme }) => theme.color};
+  transition: color 0.2s ease;
 
   &:hover {
-    color: #4f868e;
+    color: ${({ theme }) => theme.linkColor};
   }
   &:last-of-type {
     padding-left: 0.5rem;
   }
-  color: ${({ theme }) => theme.color};
 `;
 
 const IconWrapper = styled.div`

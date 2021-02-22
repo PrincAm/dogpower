@@ -37,10 +37,11 @@ const StyledLink = styled(Link)`
   display: inline-block;
   text-decoration: none;
   color: ${({ theme }) => theme.colorDarkSec};}
-  transition: color 0.5s ease;
+  transition: color 0.2s ease;
 
   &:hover {
-    color: #4f868e;
+    color: ${({ theme }) => theme.linkColor};
+    text-decoration: underline;
   }
 `;
 

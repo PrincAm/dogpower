@@ -12,15 +12,14 @@ import Title from '../Title';
 import Text from '../Text';
 
 const ReferencesContainer = styled.div`
-  padding: 10rem 14rem;
-  // FIXME unify colors, store to theme
-  background-color: #f6f6f6; // ${({ theme }) => theme.colorLightSecondary};
+  padding: 10rem 14rem 0 14rem;
+  background-color: #3f8ef1;
   color: ${({ theme }) => theme.colorDarkSec};
 `;
 
 const Reference = styled.div`
   display: flex;
-  margin: 2rem 5rem 5rem 5rem;
+  margin: 2rem 5rem 15rem 5rem;
   padding: 3rem;
   height: 100%;
   transition-property: box-shadow, transform;
@@ -39,19 +38,18 @@ const TextContainer = styled.div`
 `;
 
 const Name = styled(Text)`
-  font-weight: 500;
+  font-weight: 600;
   margin-top: 1rem;
-  opacity: 0.8;
 `;
 
 const SliderWrapper = styled.div`
-  width: 700px;
+  width: 900px;
   margin: 0 auto;
 
   .slick-center ${Reference} {
     background-color: white;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     transform: scale(1.1);
   }
 `;

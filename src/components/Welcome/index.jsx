@@ -61,10 +61,11 @@ const ArrowContainer = styled.div`
   display: inline-flex;
   align-items: center;
   letter-spacing: 0;
-  transition: color 0.5s ease;
+  transition: color 0.2s ease;
   &:hover {
-    color: #4f868e;
+    color: ${({ theme }) => theme.linkColor};
     cursor: pointer;
+    text-decoration: underline;
   }
 `;
 
@@ -123,8 +124,8 @@ const Welcome = ({ data, trainingRef }) => {
                     {index < items.length - 1 ? (
                       items[index]
                     ) : (
-                      <ArrowContainer onClick={handleScroll}>
-                        <Arrow theme={theme} />
+                      <ArrowContainer onClick={handleScroll} theme={theme}>
+                        <Arrow />
                         <More>{items[index]}</More>
                       </ArrowContainer>
                     )}

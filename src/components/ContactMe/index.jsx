@@ -37,10 +37,11 @@ const ContactLink = styled(Link)`
   display: flex;
   text-decoration: none;
   color: ${({ theme }) => theme.colorLight};}
-  transition: color 0.5s ease;
+  transition: color 0.2s ease;
 
   &:hover {
-    color: #4f868e;
+    color: #FFDC80;
+    text-decoration: underline;
   }
 `;
 

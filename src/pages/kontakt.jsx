@@ -14,8 +14,8 @@ const TrainigContainer = styled.div`
   margin: ${({ theme }) => theme.marginHeader} auto 0 auto;
 `;
 
-const StyledTitle = styled(Text)`
-  margin-bottom: 1.5rem;
+const Title = styled(Text)`
+  margin-bottom: 4rem;
 `;
 
 const Address = styled.div`
@@ -32,10 +32,11 @@ const Link = styled.a`
   text-decoration: none;
   font-size: 3.2rem;
   line-height: 4.4rem;
-  transition: color 0.5s ease;
+  transition: color 0.2s ease;
 
   &:hover {
-    color: #4f868e;
+    color: ${({ theme }) => theme.linkColor};
+    text-decoration: underline;
   }
 
   &:first-of-type {
@@ -50,15 +51,17 @@ const Content = styled.div`
 const SocialMedia = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 100%;
 `;
 
 const iconStyles = css`
   width: 12rem;
   height: 12rem;
-  transition: color 0.5s ease;
+  transition: color 0.2s ease;
 
   &:hover {
-    color: #4f868e;
+    color: ${({ theme }) => theme.linkColor};
   }
   &:last-of-type {
     padding-left: 0.5rem;
@@ -78,23 +81,20 @@ const Contact = () => {
   return (
     <Layout>
       <TrainigContainer theme={theme}>
-        <StyledTitle size="xlarge" as="h1">
+        <Title size="xxlarge" as="h1">
           Kontakt
-        </StyledTitle>
+        </Title>
         <Content>
-          <Block>
-            <Text>
-              Rádi by jste si sjednali úvodní lekci nebo se na cokoliv zeptali?
-              <br />
-              Prosím zavolejte.
-            </Text>
-            <Link href="tel:+420775553021">775 553 021</Link>
-            <Link href="mailto:info@dogpower.cz">info@dogpower.cz</Link>
-          </Block>
           <Block>
             <Text size="large" as="h2">
               Jakub Slavík
             </Text>
+            <Link href="tel:+420775553021" theme={theme}>
+              775 553 021
+            </Link>
+            <Link href="mailto:info@dogpower.cz" theme={theme}>
+              info@dogpower.cz
+            </Link>
             <Address>
               <Text size="medium" as="h3">
                 Cvičebna i sídlo
@@ -107,23 +107,25 @@ const Contact = () => {
               </Text>
             </Address>
           </Block>
+          <Block>
+            <SocialMedia>
+              <a
+                href="https://www.instagram.com/dogpower.cz/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Instagram theme={theme} />
+              </a>
+              <a
+                href="https://www.youtube.com/channel/UCvUMW1zxD2ZX1ORkNfUklSw"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Youtube theme={theme} />
+              </a>
+            </SocialMedia>
+          </Block>
         </Content>
-        <SocialMedia>
-          <a
-            href="https://www.instagram.com/dogpower.cz/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Instagram />
-          </a>
-          <a
-            href="https://www.youtube.com/channel/UCvUMW1zxD2ZX1ORkNfUklSw"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Youtube />
-          </a>
-        </SocialMedia>
       </TrainigContainer>
     </Layout>
   );

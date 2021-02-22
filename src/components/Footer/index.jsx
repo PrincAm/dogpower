@@ -28,10 +28,11 @@ const Link = styled.a`
   color: ${({ theme }) => theme.colorSecondary};
   text-decoration: none;
   font-size: 1.8rem;
-  transition: color 0.5s ease;
+  transition: color 0.2s ease;
 
   &:hover {
-    color: #4f868e;
+    color: ${({ theme }) => theme.linkColor};
+    text-decoration: underline;
   }
 
   &:last-of-type {
@@ -47,10 +48,10 @@ const IconsContainer = styled.div`
 const iconStyles = css`
   width: 3rem;
   height: 3rem;
-  transition: color 0.5s ease;
+  transition: color 0.2s ease;
 
   &:hover {
-    color: #4f868e;
+    color: ${({ theme }) => theme.linkColor};
   }
   &:last-of-type {
     padding-left: 0.5rem;

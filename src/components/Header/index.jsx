@@ -26,7 +26,8 @@ const Container = styled.header`
     text-decoration: none;
 
     &:hover {
-      color: inherit;
+      color: ${({ theme }) => theme.linkColor};
+      text-decoration: underline;
     }
   }
 `;

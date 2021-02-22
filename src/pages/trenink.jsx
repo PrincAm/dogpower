@@ -4,7 +4,6 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import Layout from 'components/Layout';
-import Title from 'components/Title';
 import Text from 'components/Text';
 import ContactMe from 'components/ContactMe';
 import ThemeContext from '../store/theme';
@@ -15,8 +14,8 @@ const TrainigContainer = styled.div`
   margin: ${({ theme }) => theme.marginHeader} auto 10rem auto;
 `;
 
-const TitleWrapper = styled.div`
-  margin-bottom: 2rem;
+const Title = styled(Text)`
+  margin-bottom: 4rem;
 `;
 
 const ImageContainer = styled.div`
@@ -35,11 +34,9 @@ const Training = ({ data }) => {
   return (
     <Layout>
       <TrainigContainer theme={theme}>
-        <TitleWrapper>
-          <Text size="xlarge" as="h1">
-            Výchova a trénink
-          </Text>
-        </TitleWrapper>
+        <Title size="xxlarge" as="h1">
+          Výchova a trénink
+        </Title>
         <ImageContainer>
           <ImageWrapper>
             <Img fluid={data.trainingJson.image1.childImageSharp.fluid} />

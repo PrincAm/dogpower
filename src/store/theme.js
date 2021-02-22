@@ -12,6 +12,7 @@ export const theme = {
   heightHeader: '8rem',
   marginHeader: '14rem',
   width: '100rem',
+  linkColor: '#FF4634',
 };
 
 const ThemeContext = createContext(theme);
