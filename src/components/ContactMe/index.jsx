@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 
 import Text from '../Text';
-import Title from '../Title';
+import MEDIA, { Desktop } from '../../helpers/mediaTemplates';
 
 import Boop from '../Boop';
 
@@ -13,6 +13,9 @@ const Container = styled.div`
   background-color: #ff3860;
   color: ${({ theme }) => theme.colorLight};}
   padding: 10rem 0;
+  ${MEDIA.MOBILE`
+    padding: 5rem 2rem;
+ `};
 `;
 
 // TODO rename or merge with Container
@@ -52,9 +55,9 @@ const ContactMe = () => {
     <Container theme={theme}>
       <Flex>
         <TitleWrapper>
-          <Title size="xxlarge" as="h2">
+          <Text size="xxlarge" as="h2">
             Pojďme si popovídat
-          </Title>
+          </Text>
         </TitleWrapper>
         <Text size="medium" as="p">
           Neváhejte a obraťte se na mě. Velmi rád uslyším, jak vám můžu být

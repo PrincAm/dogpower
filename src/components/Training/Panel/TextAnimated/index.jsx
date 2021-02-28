@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useSpring, a } from 'react-spring';
 
-const Paragraph = styled.p`
-  width: 500px;
+const AnimatedContainer = styled(a.div)`
+  max-width: 500px;
   font-size: 3rem;
   line-height: 4.2rem;
 `;
@@ -28,11 +28,7 @@ const TextAnimated = ({
       : `translate3d(0,${translateYFrom},0)`,
   });
 
-  return (
-    <a.div style={props}>
-      <Paragraph>{children}</Paragraph>
-    </a.div>
-  );
+  return <AnimatedContainer style={props}>{children}</AnimatedContainer>;
 };
 
 export default TextAnimated;

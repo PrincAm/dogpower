@@ -1,11 +1,14 @@
-import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 import ThemeContext from '../../store/theme';
 import dogpowerLogo from '../../images/dogpower-logo.png';
 import Nav from './Nav';
+import MobileMenu from './MobileMenu';
+import Hamburger from './MobileMenu/Hamburger';
+import { Mobile, Desktop } from '../../helpers/mediaTemplates';
+import MEDIA from '../../helpers/mediaTemplates';
 
 const Container = styled.header`
   position: fixed;
@@ -30,6 +33,9 @@ const Container = styled.header`
       text-decoration: underline;
     }
   }
+  ${MEDIA.MOBILE`
+    background-color: transparent;
+ `};
 `;
 
 const Logo = styled.img`
@@ -38,23 +44,40 @@ const Logo = styled.img`
 
 const HomeLink = styled(Link)`
   padding-left: 12rem;
+
+  ${MEDIA.MOBILE`
+    padding-left: 2rem;
+ `};
 `;
 
-const Header = ({ title }) => {
+const Header = () => {
+  const [isMenuOpened, setMenuOpened] = useState(false);
   const theme = useContext(ThemeContext);
+
+  useEffect(() => {
+    if (isMenuOpened) {
+      document.documentElement.style.overflow = 'hidden';
+      document.body.scroll = 'no';
+    } else {
+      document.documentElement.style.overflow = 'scroll';
+      document.body.scroll = 'yes';
+    }
+  }, [isMenuOpened]);
+
   return (
     <Container theme={theme}>
       <HomeLink to="/">
         <Logo src={dogpowerLogo} />
       </HomeLink>
-
-      <Nav />
+      <Desktop>
+        <Nav />
+      </Desktop>
+      <Mobile>
+        <MobileMenu isMenuOpened={isMenuOpened} onOpenMenu={setMenuOpened} />
+        <Hamburger isMenuOpened={isMenuOpened} onOpenMenu={setMenuOpened} />
+      </Mobile>
     </Container>
   );
-};
-
-Header.propTypes = {
-  title: PropTypes.string.isRequired,
 };
 
 export default Header;

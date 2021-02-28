@@ -48,13 +48,40 @@ const Text = styled.span`
     }
   }};
 
-  ${MEDIA.TABLET`
+  ${MEDIA.MOBILE`
     font-size: ${({ size }) => () => {
       switch (size) {
+        case 'xxlarge':
+          return '4.0rem';
+        case 'xlarge':
+          return '3.0rem';
         case 'large':
-          return '2.6rem';
+          return '2.4rem';
+        case 'medium':
         default:
           return '2rem';
+        case 'small':
+          return '1.8rem';
+        case 'xsmall':
+          return '1.6rem';
+      }
+    }};
+
+    line-height: ${({ size }) => () => {
+      switch (size) {
+        case 'xxlarge':
+          return '4.0rem';
+        case 'xlarge':
+          return '3.0rem';
+        case 'large':
+          return '2.4rem';
+        case 'medium':
+        default:
+          return '2rem';
+        case 'small':
+          return '1.8rem';
+        case 'xsmall':
+          return '1.6rem';
       }
     }};
   `};

@@ -5,6 +5,7 @@ import { useTrail, a } from 'react-spring';
 
 import ThemeContext from '../../store/theme';
 import ArrowIcon from '../../images/arrow-down-regular.svg';
+import MEDIA from '../../helpers/mediaTemplates';
 
 const BackgroundImageStyled = styled(BackgroundImage)`
   width: 100%;
@@ -18,6 +19,10 @@ const WelcomeContainer = styled.div`
   color: ${({ theme }) => theme.colorSecondary};
   padding-top: 10%;
   margin-left: 12rem;
+  ${MEDIA.MOBILE`
+    margin-left: 2rem;
+    padding-top: 30%;
+ `};
 `;
 
 const Trails = styled.div`
@@ -39,6 +44,12 @@ const TrailText = styled(a.div)`
   div {
     overflow: hidden;
   }
+
+  ${MEDIA.MOBILE`
+    height: 6rem;
+    line-height: 6rem;
+    font-size: 3em;
+ `};
 `;
 
 const bounce = keyframes`

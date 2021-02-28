@@ -7,6 +7,7 @@ import BackgroundImage from 'gatsby-background-image';
 import Layout from 'components/Layout';
 import Text from 'components/Text';
 import ThemeContext from '../store/theme';
+import MEDIA from '../helpers/mediaTemplates';
 
 const BackgroundImageStyled = styled(BackgroundImage)`
   width: 100%;
@@ -18,6 +19,11 @@ const TrainigContainer = styled.div`
   max-width: ${({ theme }) => theme.width};
   padding-top: ${({ theme }) => theme.marginHeader};
   margin: 0 auto 10rem auto;
+
+  ${MEDIA.MOBILE`
+    min-height: calc(100vh - 15rem);
+    margin: 0 2rem 5rem 2rem;
+ `};
 `;
 
 const Title = styled(Text)`

@@ -1,13 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import { useSpring, a } from 'react-spring';
 import Img from 'gatsby-image';
-
-const ImgStyled = styled(Img)`
-  flex-shrink: 0;
-  height: 500px;
-  width: 500px;
-`;
 
 const Image = ({
   isVisible,
@@ -31,7 +24,7 @@ const Image = ({
 
   return (
     <a.div style={props}>
-      <ImgStyled fluid={imageFluid} />
+      <Img fluid={imageFluid} />
     </a.div>
   );
 };

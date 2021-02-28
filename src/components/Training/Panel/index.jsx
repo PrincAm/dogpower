@@ -4,19 +4,23 @@ import { Link } from 'gatsby';
 
 import IO from 'components/IO';
 import Text from 'components/Text';
-import Title from 'components/Title';
 import Boop from 'components/Boop';
 import Image from './ImageAnimated';
 import TextAnimated from './TextAnimated';
 import ThemeContext from '../../../store/theme';
+import MEDIA from '../../../helpers/mediaTemplates';
 
 const Part = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: start;
   width: 100%;
-  max-width: 1100px;
+  max-width: 110rem;
   margin: 5rem auto;
+  ${MEDIA.MOBILE`
+    flex-direction: column;
+    margin: 4rem auto;
+ `};
 `;
 
 const TextContainer = styled.div`
@@ -26,7 +30,10 @@ const TextContainer = styled.div`
 `;
 
 const Box = styled.div`
-  padding-bottom: 4rem;
+  margin-bottom: 4rem;
+  ${MEDIA.MOBILE`
+    margin-top: 2rem;
+ `};
 `;
 
 const TitleWrapper = styled.div`
@@ -45,21 +52,28 @@ const StyledLink = styled(Link)`
   }
 `;
 
+const ImgWrapper = styled.div`
+  width: 100%;
+  max-width: 50rem;
+`;
+
 const Panel = ({ imageOnLeft = true, texts, imageFluid }) => {
   const theme = useContext(ThemeContext);
   return (
     <Part>
       {imageOnLeft && (
-        <IO rootMargin="0px">
-          {({ isVisible }) => (
-            <Image
-              isVisible={isVisible}
-              imageFluid={imageFluid}
-              translateYFrom="60px"
-              translateYTo="-20px"
-            />
-          )}
-        </IO>
+        <ImgWrapper>
+          <IO rootMargin="0px">
+            {({ isVisible }) => (
+              <Image
+                isVisible={isVisible}
+                imageFluid={imageFluid}
+                translateYFrom="60px"
+                translateYTo="-20px"
+              />
+            )}
+          </IO>
+        </ImgWrapper>
       )}
       <TextContainer imageOnLeft={imageOnLeft}>
         <IO rootMargin="0px">
@@ -71,9 +85,9 @@ const Panel = ({ imageOnLeft = true, texts, imageFluid }) => {
             >
               <Box>
                 <TitleWrapper theme={theme}>
-                  <Title size="xxlarge" as="h1">
+                  <Text size="xxlarge" as="h1">
                     {texts[0].text}
-                  </Title>
+                  </Text>
                 </TitleWrapper>
               </Box>
             </TextAnimated>
@@ -86,7 +100,9 @@ const Panel = ({ imageOnLeft = true, texts, imageFluid }) => {
               translateYFrom="70px"
               translateYTo="-20px"
             >
-              <Text size="large">{texts[1].text}</Text>
+              <Text size="large" as="p">
+                {texts[1].text}
+              </Text>
             </TextAnimated>
           )}
         </IO>
@@ -107,16 +123,18 @@ const Panel = ({ imageOnLeft = true, texts, imageFluid }) => {
         </IO>
       </TextContainer>
       {!imageOnLeft && (
-        <IO rootMargin="0px">
-          {({ isVisible }) => (
-            <Image
-              isVisible={isVisible}
-              imageFluid={imageFluid}
-              translateYFrom="60px"
-              translateYTo="-20px"
-            />
-          )}
-        </IO>
+        <ImgWrapper>
+          <IO rootMargin="0px">
+            {({ isVisible }) => (
+              <Image
+                isVisible={isVisible}
+                imageFluid={imageFluid}
+                translateYFrom="60px"
+                translateYTo="-20px"
+              />
+            )}
+          </IO>
+        </ImgWrapper>
       )}
     </Part>
   );

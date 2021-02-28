@@ -7,11 +7,17 @@ import ThemeContext from '../store/theme';
 
 import InstagramIcon from '../images/icons/instagram-brands.svg';
 import YoutubeIcon from '../images/icons/youtube-brands.svg';
+import MEDIA from '../helpers/mediaTemplates';
 
 const TrainigContainer = styled.div`
   min-height: calc(100vh - 14rem);
   max-width: ${({ theme }) => theme.width};
   margin: ${({ theme }) => theme.marginHeader} auto 0 auto;
+
+  ${MEDIA.MOBILE`
+    min-height: calc(100vh - 15rem);
+    margin: 10rem 2rem 5rem 2rem;
+ `};
 `;
 
 const Title = styled(Text)`
@@ -26,6 +32,9 @@ const Block = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
+  ${MEDIA.MOBILE`
+    width: 100%;
+ `};
 `;
 
 const Link = styled.a`
@@ -46,6 +55,10 @@ const Link = styled.a`
 
 const Content = styled.div`
   display: flex;
+
+  ${MEDIA.MOBILE`
+    flex-direction: column;
+ `};
 `;
 
 const SocialMedia = styled.div`

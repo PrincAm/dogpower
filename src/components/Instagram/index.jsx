@@ -3,14 +3,18 @@ import styled from 'styled-components';
 import Img from 'gatsby-image';
 
 import InstagramIcon from '../../images/icons/instagram-brands.svg';
-import Title from 'components/Title';
 import Text from 'components/Text';
+import MEDIA, { Desktop } from '../../helpers/mediaTemplates';
 
 import ThemeContext from '../../store/theme';
 
 const Background = styled.div`
   background-color: #ffdc80;
   padding: 10rem 0;
+
+  ${MEDIA.MOBILE`
+    padding: 5rem 2rem;
+ `};
 `;
 
 const Container = styled.div`
@@ -51,9 +55,10 @@ const Icon = styled(InstagramIcon)`
   &:hover {
     color: ${({ theme }) => theme.linkColor};
   }
-  &:last-of-type {
-    padding-left: 0.5rem;
-  }
+
+  ${MEDIA.MOBILE`
+    margin: 0;
+ `};
 `;
 
 const IconWrapper = styled.div`
@@ -71,39 +76,41 @@ const Instagram = ({ data }) => {
     <Background theme={theme}>
       <Container theme={theme}>
         <TitleWrapper>
-          <Title size="xxlarge" as="h2">
+          <Text size="xxlarge" as="h1">
             Navštivte nás na Instagramu
-          </Title>
+          </Text>
         </TitleWrapper>
-        <Images>
-          <ImgWrapper>
-            <a
-              href="https://www.instagram.com/dogpower_cz/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Img fluid={data.photo1.childImageSharp.fluid} />
-            </a>
-          </ImgWrapper>
-          <ImgWrapper>
-            <a
-              href="https://www.instagram.com/dogpower_cz/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Img fluid={data.photo2.childImageSharp.fluid} />
-            </a>
-          </ImgWrapper>
-          <ImgWrapper>
-            <a
-              href="https://www.instagram.com/dogpower_cz/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Img fluid={data.photo3.childImageSharp.fluid} />
-            </a>
-          </ImgWrapper>
-        </Images>
+        <Desktop>
+          <Images>
+            <ImgWrapper>
+              <a
+                href="https://www.instagram.com/dogpower_cz/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Img fluid={data.photo1.childImageSharp.fluid} />
+              </a>
+            </ImgWrapper>
+            <ImgWrapper>
+              <a
+                href="https://www.instagram.com/dogpower_cz/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Img fluid={data.photo2.childImageSharp.fluid} />
+              </a>
+            </ImgWrapper>
+            <ImgWrapper>
+              <a
+                href="https://www.instagram.com/dogpower_cz/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Img fluid={data.photo3.childImageSharp.fluid} />
+              </a>
+            </ImgWrapper>
+          </Images>
+        </Desktop>
         <IconWrapper>
           <a
             href="https://www.instagram.com/dogpower_cz/"
