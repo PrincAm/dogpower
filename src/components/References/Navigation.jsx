@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import ThemeContext from '../../store/theme';
 
@@ -18,7 +18,7 @@ const Link = styled.span`
   &:hover {
     color: ${({ isDisabled, theme }) =>
       isDisabled ? '#CECECE' : theme.linkColor};
-    text-decoration: underline;
+    text-decoration: ${({ isDisabled }) => !isDisabled && 'underline'};
   }
 `;
 

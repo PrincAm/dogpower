@@ -77,8 +77,8 @@ const Panel = ({ imageOnLeft = true, texts, imageFluid }) => {
               <Image
                 isVisible={isVisible}
                 imageFluid={imageFluid}
-                translateYFrom="60px"
-                translateYTo="-20px"
+                translateYFrom="10rem"
+                translateYTo="-2rem"
               />
             )}
           </IO>
@@ -89,8 +89,8 @@ const Panel = ({ imageOnLeft = true, texts, imageFluid }) => {
           {({ isVisible }) => (
             <TextAnimated
               isVisible={isVisible}
-              translateYFrom="60px"
-              translateYTo="-20px"
+              translateYFrom="10rem"
+              translateYTo="-2rem"
             >
               <Box>
                 <TitleWrapper theme={theme}>
@@ -106,8 +106,8 @@ const Panel = ({ imageOnLeft = true, texts, imageFluid }) => {
           {({ isVisible }) => (
             <TextAnimated
               isVisible={isVisible}
-              translateYFrom="70px"
-              translateYTo="-20px"
+              translateYFrom="10rem"
+              translateYTo="-2rem"
             >
               <Text size="large" as="p">
                 {texts[1].text}
@@ -119,10 +119,10 @@ const Panel = ({ imageOnLeft = true, texts, imageFluid }) => {
           {({ isVisible }) => (
             <TextAnimated
               isVisible={isVisible}
-              translateYFrom="80px"
-              translateYTo="-20px"
+              translateYFrom="10rem"
+              translateYTo="-2rem"
             >
-              <StyledLink to="/training" theme={theme}>
+              <StyledLink to="/trenink" theme={theme}>
                 <Boop x={10}>
                   <Text size="medium">{texts[2].text}</Text>
                 </Boop>
@@ -138,8 +138,8 @@ const Panel = ({ imageOnLeft = true, texts, imageFluid }) => {
               <Image
                 isVisible={isVisible}
                 imageFluid={imageFluid}
-                translateYFrom="60px"
-                translateYTo="-20px"
+                translateYFrom="10rem"
+                translateYTo="-2rem"
               />
             )}
           </IO>

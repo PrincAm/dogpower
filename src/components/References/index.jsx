@@ -11,10 +11,15 @@ import Navigation from './Navigation';
 import Title from '../Title';
 import Text from '../Text';
 
-const ReferencesContainer = styled.div`
-  padding: 10rem 14rem 0 14rem;
+const Background = styled.div`
   background-color: #3f8ef1;
   color: ${({ theme }) => theme.colorDarkSec};
+`;
+
+const Container = styled.div`
+  padding-top: 10rem;
+  margin: 0 auto;
+  max-width: ${({ theme }) => theme.width};
 `;
 
 const Reference = styled.div`
@@ -43,9 +48,6 @@ const Name = styled(Text)`
 `;
 
 const SliderWrapper = styled.div`
-  width: 900px;
-  margin: 0 auto;
-
   .slick-center ${Reference} {
     background-color: white;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
@@ -66,29 +68,31 @@ const References = ({ data }) => {
     infinite: false,
   };
   return (
-    <ReferencesContainer theme={theme}>
-      <TitleWrapper theme={theme}>
-        <Title size="xxlarge" as="h2">
-          Milá slova
-        </Title>
-      </TitleWrapper>
-      <SliderWrapper>
-        <Slider {...settings}>
-          {data.references.map(({ text, name }) => (
-            <div key={shortid.generate()}>
-              <Reference>
-                <TextContainer>
-                  <Text size="xsmall" theme={theme}>
-                    &quot;{text}&quot;
-                  </Text>
-                  <Name size="small">- {name}</Name>
-                </TextContainer>
-              </Reference>
-            </div>
-          ))}
-        </Slider>
-      </SliderWrapper>
-    </ReferencesContainer>
+    <Background theme={theme}>
+      <Container theme={theme}>
+        <TitleWrapper theme={theme}>
+          <Title size="xxlarge" as="h2">
+            Milá slova
+          </Title>
+        </TitleWrapper>
+        <SliderWrapper>
+          <Slider {...settings}>
+            {data.references.map(({ text, name }) => (
+              <div key={shortid.generate()}>
+                <Reference>
+                  <TextContainer>
+                    <Text size="xsmall" theme={theme}>
+                      &quot;{text}&quot;
+                    </Text>
+                    <Name size="small">- {name}</Name>
+                  </TextContainer>
+                </Reference>
+              </div>
+            ))}
+          </Slider>
+        </SliderWrapper>
+      </Container>
+    </Background>
   );
 };
 

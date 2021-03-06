@@ -11,8 +11,8 @@ const AnimatedContainer = styled(a.div)`
 const TextAnimated = ({
   isVisible,
   children,
-  translateYFrom = '20px',
-  translateYTo = '-20px',
+  translateYFrom,
+  translateYTo,
 }) => {
   const [isDisplayed, setIsDisplayed] = useState(false);
   useEffect(() => {
@@ -21,7 +21,7 @@ const TextAnimated = ({
     }
   }, [isVisible]);
   const props = useSpring({
-    config: { mass: 5, tension: 1000, friction: 500 },
+    config: { mass: 15, tension: 200, friction: 100 },
     opacity: isDisplayed ? 1 : 0,
     transform: isDisplayed
       ? `translate3d(0,${translateYTo},0)`

@@ -8,16 +8,16 @@ import MEDIA, { Mobile, Tablet, Desktop } from '../../helpers/mediaTemplates';
 
 const Background = styled.div`
   background-color: #fff;
+  color: ${({ theme }) => theme.colorDarkSec};
 `;
-const TrainingContainer = styled.div`
-  padding: 12rem;
+const Container = styled.div`
+  padding: 10rem 0 7rem 0;
   display: flex;
   flex-direction: column;
-  color: ${({ theme }) => theme.colorDarkSec};
+
   max-width: ${({ theme }) => theme.width};
   margin: 0 auto;
-  // FIXME unify colors, store to theme
-  background-color: #fff;//${({ theme }) => theme.colorLight};
+
   ${MEDIA.MOBILE`
     padding: 5rem 2rem;
  `};
@@ -27,8 +27,8 @@ const TrainingContainer = styled.div`
 const Training = forwardRef(({ data }, ref) => {
   const theme = useContext(ThemeContext);
   return (
-    <Background>
-      <TrainingContainer ref={ref} theme={theme}>
+    <Background theme={theme}>
+      <Container ref={ref} theme={theme}>
         <Panel texts={texts} imageFluid={data.dog1Img.childImageSharp.fluid} />
         <Desktop>
           <Panel
@@ -50,7 +50,7 @@ const Training = forwardRef(({ data }, ref) => {
           />
         </Tablet>
         <Panel texts={texts} imageFluid={data.dog3Img.childImageSharp.fluid} />
-      </TrainingContainer>
+      </Container>
     </Background>
   );
 });

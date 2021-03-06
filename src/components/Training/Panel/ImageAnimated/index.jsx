@@ -2,12 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSpring, a } from 'react-spring';
 import Img from 'gatsby-image';
 
-const Image = ({
-  isVisible,
-  imageFluid,
-  translateYFrom = '20px',
-  translateYTo = '-20px',
-}) => {
+const Image = ({ isVisible, imageFluid, translateYFrom, translateYTo }) => {
   const [isDisplayed, setIsDisplayed] = useState(false);
   useEffect(() => {
     if (!isDisplayed && isVisible) {
@@ -15,7 +10,7 @@ const Image = ({
     }
   }, [isVisible]);
   const props = useSpring({
-    config: { mass: 5, tension: 1000, friction: 500 },
+    config: { mass: 15, tension: 200, friction: 100 },
     opacity: isDisplayed ? 1 : 0,
     transform: isDisplayed
       ? `translate3d(0,${translateYTo},0)`

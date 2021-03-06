@@ -7,6 +7,7 @@ import Training from 'components/Training';
 import References from 'components/References';
 import ContactMe from 'components/ContactMe';
 import Instagram from 'components/Instagram';
+import { Desktop } from '../helpers/mediaTemplates';
 import { graphql } from 'gatsby';
 
 const Index = ({ data }) => {
@@ -16,7 +17,9 @@ const Index = ({ data }) => {
     <Layout>
       <Welcome data={data.homepageJson} trainingRef={trainingRef} />
       <Training ref={trainingRef} data={data.homepageJson} />
-      {/* <References data={data.referencesJson} /> */}
+      <Desktop>
+        <References data={data.referencesJson} />
+      </Desktop>
       <Instagram data={data.instagramJson} />
       <ContactMe />
     </Layout>
