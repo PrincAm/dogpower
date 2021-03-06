@@ -18,7 +18,13 @@ const BackgroundImageStyled = styled(BackgroundImage)`
 const WelcomeContainer = styled.div`
   color: ${({ theme }) => theme.colorSecondary};
   padding-top: 10%;
-  margin-left: 12rem;
+  max-width: ${({ theme }) => theme.width};
+  margin: 0 auto;
+  ${MEDIA.TABLET`
+    margin-left: 5rem;
+    padding-top: 30%;
+ `};
+
   ${MEDIA.MOBILE`
     margin-left: 2rem;
     padding-top: 30%;
@@ -44,7 +50,11 @@ const TrailText = styled(a.div)`
   div {
     overflow: hidden;
   }
-
+  ${MEDIA.TABLET`
+    height: 10rem;
+    line-height: 10rem;
+    font-size: 5em;
+ `};
   ${MEDIA.MOBILE`
     height: 6rem;
     line-height: 6rem;

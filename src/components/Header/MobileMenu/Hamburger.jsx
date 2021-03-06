@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
+import MEDIA from '../../../helpers/mediaTemplates';
+
 const HamburgerContainer = styled.div`
   position: absolute;
   top: 0;
@@ -12,7 +14,11 @@ const HamburgerContainer = styled.div`
   align-items: center;
   flex-direction: column;
   z-index: 10;
-  margin: 2.3rem 2rem 0 0;
+  margin: 2.3rem 5rem 0 0;
+
+  ${MEDIA.MOBILE`
+    margin-right: 2rem;
+ `};
 `;
 const Bar = styled.div`
   position: relative;
@@ -21,6 +27,12 @@ const Bar = styled.div`
   background-color: #f7f7f7;
   margin-bottom: 0.7rem;
   transition: 0.5s;
+  ${MEDIA.TABLET`
+    width: 5rem;
+ `};
+  ${MEDIA.MOBILE`
+    width: 4rem;
+ `};
 `;
 
 const FirstBar = styled(Bar)`

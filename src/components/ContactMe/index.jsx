@@ -3,28 +3,31 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 
 import Text from '../Text';
-import MEDIA, { Desktop } from '../../helpers/mediaTemplates';
+import MEDIA from '../../helpers/mediaTemplates';
 
 import Boop from '../Boop';
 
 import ThemeContext from '../../store/theme';
 
-const Container = styled.div`
+const Background = styled.div`
   background-color: #ff3860;
   color: ${({ theme }) => theme.colorLight};}
-  padding: 10rem 0;
-  ${MEDIA.MOBILE`
-    padding: 5rem 2rem;
- `};
 `;
 
-// TODO rename or merge with Container
-const Flex = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: ${({ theme }) => theme.width};
   text-align: center;
+  padding: 10rem 0;
+
+  ${MEDIA.TABLET`
+    padding: 5rem 5rem;
+ `};
+  ${MEDIA.MOBILE`
+    padding: 5rem 2rem;
+ `};
 `;
 
 const TitleWrapper = styled.div`
@@ -52,8 +55,8 @@ const ContactMe = () => {
   const theme = useContext(ThemeContext);
 
   return (
-    <Container theme={theme}>
-      <Flex>
+    <Background theme={theme}>
+      <Container theme={theme}>
         <TitleWrapper>
           <Text size="xxlarge" as="h2">
             Pojďme si popovídat
@@ -64,14 +67,14 @@ const ContactMe = () => {
           nápomocen s vaším psím kamarádem.
         </Text>
         <ButtonWrapper>
-          <ContactLink to="/contact" theme={theme}>
+          <ContactLink to="/kontakt" theme={theme}>
             <Boop x={10}>
               <Text size="large">Zeptejte se na cokoliv</Text>
             </Boop>
           </ContactLink>
         </ButtonWrapper>
-      </Flex>
-    </Container>
+      </Container>
+    </Background>
   );
 };
 

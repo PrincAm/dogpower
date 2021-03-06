@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 
 import ThemeContext from '../../../store/theme';
+import MEDIA from '../../../helpers/mediaTemplates';
 
 const Link = styled.a`
   text-decoration: none;
@@ -17,6 +18,15 @@ const Link = styled.a`
   &:first-of-type {
     margin-top: 1.5rem;
   }
+
+  ${MEDIA.TABLET`
+    font-size: 6rem;
+    line-height: 6.8rem;
+ `};
+  ${MEDIA.MOBILE`
+    font-size: 4rem;
+    line-height: 4.4rem;
+ `};
 `;
 
 const PhoneNumber = () => {

@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 import ThemeContext from '../../../store/theme';
 import InstagramMeediaIcon from '../../../images/icons/instagram-brands.svg';
 import YoutubeMediaIcon from '../../../images/icons/youtube-brands.svg';
+import MEDIA from '../../../helpers/mediaTemplates';
 
 const Container = styled.div`
   display: flex;
@@ -18,6 +19,15 @@ const iconStyles = css`
   &:hover {
     color: ${({ theme }) => theme.linkColor};
   }
+
+  ${MEDIA.TABLET`
+    height: 8rem;
+    width: 8rem;
+ `};
+  ${MEDIA.MOBILE`
+    height: 6rem;
+    width: 6rem;
+ `};
 `;
 
 const YoutubeIcon = styled(YoutubeMediaIcon)`

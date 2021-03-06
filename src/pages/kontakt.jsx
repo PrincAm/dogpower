@@ -14,6 +14,10 @@ const TrainigContainer = styled.div`
   max-width: ${({ theme }) => theme.width};
   margin: ${({ theme }) => theme.marginHeader} auto 0 auto;
 
+  ${MEDIA.TABLET`
+    min-height: calc(100vh - 15rem);
+    margin: 10rem 5rem 5rem 5rem;
+ `};
   ${MEDIA.MOBILE`
     min-height: calc(100vh - 15rem);
     margin: 10rem 2rem 5rem 2rem;
@@ -79,6 +83,10 @@ const iconStyles = css`
   &:last-of-type {
     padding-left: 0.5rem;
   }
+  ${MEDIA.MOBILE`
+    width: 8rem;
+    height: 8rem;
+ `};
 `;
 
 const Instagram = styled(InstagramIcon)`

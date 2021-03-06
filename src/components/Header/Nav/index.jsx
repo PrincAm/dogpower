@@ -3,7 +3,6 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  padding-right: 12rem;
   ul {
     display: flex;
     list-style: none;

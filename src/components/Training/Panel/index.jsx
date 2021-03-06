@@ -20,6 +20,12 @@ const Part = styled.div`
   ${MEDIA.MOBILE`
     flex-direction: column;
     margin: 4rem auto;
+    align-items: center;
+ `};
+  ${MEDIA.TABLET`
+    flex-direction: column;
+    margin: 4rem auto;
+    align-items: center;
  `};
 `;
 
@@ -32,6 +38,9 @@ const TextContainer = styled.div`
 const Box = styled.div`
   margin-bottom: 4rem;
   ${MEDIA.MOBILE`
+    margin-top: 2rem;
+ `};
+  ${MEDIA.TABLET`
     margin-top: 2rem;
  `};
 `;
@@ -54,7 +63,7 @@ const StyledLink = styled(Link)`
 
 const ImgWrapper = styled.div`
   width: 100%;
-  max-width: 50rem;
+  max-width: 40rem;
 `;
 
 const Panel = ({ imageOnLeft = true, texts, imageFluid }) => {

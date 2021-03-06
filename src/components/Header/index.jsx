@@ -7,20 +7,30 @@ import dogpowerLogo from '../../images/dogpower-logo.png';
 import Nav from './Nav';
 import MobileMenu from './MobileMenu';
 import Hamburger from './MobileMenu/Hamburger';
-import { Mobile, Desktop } from '../../helpers/mediaTemplates';
+import { Mobile, Tablet, Desktop } from '../../helpers/mediaTemplates';
 import MEDIA from '../../helpers/mediaTemplates';
 
-const Container = styled.header`
+const Background = styled.header`
   position: fixed;
   top: 0;
   z-index: 1;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background-color: rgba(0, 0, 0, 0.6);
   font-weight: 800;
   height: ${({ theme }) => theme.heightHeader};
+
+  ${MEDIA.MOBILE`
+    background-color: transparent;
+ `};
+`;
+
+const Container = styled.div`
+  max-width: ${({ theme }) => theme.width};
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   a {
     color: ${({ theme }) => theme.colorSecondary};
@@ -33,9 +43,6 @@ const Container = styled.header`
       text-decoration: underline;
     }
   }
-  ${MEDIA.MOBILE`
-    background-color: transparent;
- `};
 `;
 
 const Logo = styled.img`
@@ -43,8 +50,9 @@ const Logo = styled.img`
 `;
 
 const HomeLink = styled(Link)`
-  padding-left: 12rem;
-
+  ${MEDIA.TABLET`
+    padding-left: 5rem;
+ `};
   ${MEDIA.MOBILE`
     padding-left: 2rem;
  `};
@@ -65,18 +73,24 @@ const Header = () => {
   }, [isMenuOpened]);
 
   return (
-    <Container theme={theme}>
-      <HomeLink to="/">
-        <Logo src={dogpowerLogo} />
-      </HomeLink>
-      <Desktop>
-        <Nav />
-      </Desktop>
-      <Mobile>
-        <MobileMenu isMenuOpened={isMenuOpened} onOpenMenu={setMenuOpened} />
-        <Hamburger isMenuOpened={isMenuOpened} onOpenMenu={setMenuOpened} />
-      </Mobile>
-    </Container>
+    <Background theme={theme}>
+      <Container theme={theme}>
+        <HomeLink to="/">
+          <Logo src={dogpowerLogo} />
+        </HomeLink>
+        <Desktop>
+          <Nav />
+        </Desktop>
+        <Mobile>
+          <MobileMenu isMenuOpened={isMenuOpened} onOpenMenu={setMenuOpened} />
+          <Hamburger isMenuOpened={isMenuOpened} onOpenMenu={setMenuOpened} />
+        </Mobile>
+        <Tablet>
+          <MobileMenu isMenuOpened={isMenuOpened} onOpenMenu={setMenuOpened} />
+          <Hamburger isMenuOpened={isMenuOpened} onOpenMenu={setMenuOpened} />
+        </Tablet>
+      </Container>
+    </Background>
   );
 };
 

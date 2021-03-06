@@ -12,7 +12,7 @@ import {
 import SocialMedias from './SocialMedias';
 import PhoneNumber from './PhoneNumber';
 import ThemeContext from '../../../store/theme';
-import logo from '../../../images/dogpower-logo.png';
+import MEDIA from '../../../helpers/mediaTemplates';
 
 const Nav = styled(animated.nav)`
   position: absolute;
@@ -32,11 +32,22 @@ const Nav = styled(animated.nav)`
     margin: 0;
     padding: 0;
   }
+  ${MEDIA.TABLET`
+    font-size: 8rem;
+    line-height: 9rem;
+ `};
+  ${MEDIA.MOBILE`
+    font-size: 5rem;
+    line-height: 5.7rem;
+ `};
 `;
 
 const Li = styled(animated.li)`
   list-style: none;
   margin-left: 2rem;
+  ${MEDIA.TABLET`
+    margin-left: 5rem;
+ `};
 `;
 
 const IconsContainer = styled.div`
@@ -47,10 +58,6 @@ const IconsContainer = styled.div`
   width: 100%;
   text-shadow: none;
   margin-top: 5rem;
-`;
-
-const LogoImage = styled.img`
-  height: 10rem;
 `;
 
 const menuItems = [
@@ -82,10 +89,6 @@ const menuItems = [
 ];
 
 const icons = [
-  {
-    name: 'logo',
-    component: <LogoImage src={logo} />,
-  },
   {
     name: 'phone',
     component: <PhoneNumber />,

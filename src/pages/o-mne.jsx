@@ -19,7 +19,10 @@ const TrainigContainer = styled.div`
   max-width: ${({ theme }) => theme.width};
   padding-top: ${({ theme }) => theme.marginHeader};
   margin: 0 auto 10rem auto;
-
+  ${MEDIA.TABLET`
+    min-height: calc(100vh - 15rem);
+    margin: 0 5rem 5rem 5rem;
+ `};
   ${MEDIA.MOBILE`
     min-height: calc(100vh - 15rem);
     margin: 0 2rem 5rem 2rem;

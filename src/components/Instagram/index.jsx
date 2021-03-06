@@ -20,7 +20,7 @@ const Background = styled.div`
 const Container = styled.div`
   color: ${({ theme }) => theme.colorDarkSec};
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: ${({ theme }) => theme.width};
 `;
 
 const TitleWrapper = styled.div`
@@ -56,6 +56,9 @@ const Icon = styled(InstagramIcon)`
     color: ${({ theme }) => theme.linkColor};
   }
 
+  ${MEDIA.TABLET`
+    margin: 0;
+ `};
   ${MEDIA.MOBILE`
     margin: 0;
  `};
