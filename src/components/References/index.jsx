@@ -8,7 +8,6 @@ import 'slick-carousel/slick/slick-theme.css';
 import ThemeContext from '../../store/theme';
 
 import Navigation from './Navigation';
-import Title from '../Title';
 import Text from '../Text';
 
 const Background = styled.div`
@@ -71,9 +70,9 @@ const References = ({ data }) => {
     <Background theme={theme}>
       <Container theme={theme}>
         <TitleWrapper theme={theme}>
-          <Title size="xxlarge" as="h2">
+          <Text size="xxlarge" as="h1">
             Milá slova
-          </Title>
+          </Text>
         </TitleWrapper>
         <SliderWrapper>
           <Slider {...settings}>

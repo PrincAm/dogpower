@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 
 import Layout from 'components/Layout';
-import Title from 'components/Title';
 import Text from 'components/Text';
 import ThemeContext from '../store/theme';
 
@@ -22,7 +21,9 @@ const NotFound = () => {
     <Layout>
       <TrainigContainer theme={theme}>
         <TitleWrapper>
-          <Title size="large">Nenašli jsme, co jste hledali :(</Title>
+          <Text size="large" as="h1">
+            Nenašli jsme, co jste hledali :(
+          </Text>
         </TitleWrapper>
         <Text as="p">Zkuste jinou stránku z menu.</Text>
       </TrainigContainer>
