@@ -38,9 +38,9 @@ const Trails = styled.div`
 
 const TrailText = styled(a.div)`
   position: relative;
-  height: 12rem;
-  line-height: 12rem;
-  font-size: 7em;
+  height: 10rem;
+  line-height: 10rem;
+  font-size: 6em;
   font-weight: 500;
   letter-spacing: -1rem;
   text-indent: -0.3rem;
