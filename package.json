@@ -9,7 +9,7 @@
     "format": "prettier --config ./.prettierrc --write src/**/*.js",
     "build:dir": "mkdirp ./public/icons/",
     "build:favicons": "node scripts/favicons",
-    "build": "npm run build:dir && npm run build:favicons && gatsby build",
+    "build": "gatsby build",
     "test": "ava **/*.test.js --verbose"
   },
   "greenkeeper": {
@@ -25,7 +25,6 @@
     "@reach/visually-hidden": "^0.1.1",
     "babel-plugin-styled-components": "^1.11.1",
     "babel-preset-gatsby": "^1.0.0",
-    "framer-motion": "^2.9.1",
     "gatsby": "^3.0.4",
     "gatsby-background-image": "^1.1.2",
     "gatsby-image": "^3.0.0",
