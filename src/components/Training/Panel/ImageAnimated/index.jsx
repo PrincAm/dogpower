@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useSpring, a } from 'react-spring';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
-const Image = ({ isVisible, imageFluid, translateYFrom, translateYTo }) => {
+const Image = ({ isVisible, image, translateYFrom, translateYTo }) => {
   const [isDisplayed, setIsDisplayed] = useState(false);
   useEffect(() => {
     if (!isDisplayed && isVisible) {
@@ -19,7 +19,7 @@ const Image = ({ isVisible, imageFluid, translateYFrom, translateYTo }) => {
 
   return (
     <a.div style={props}>
-      <Img fluid={imageFluid} />
+      <GatsbyImage image={image} imgStyle={{ borderRadius: '5px' }} />
     </a.div>
   );
 };

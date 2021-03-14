@@ -14,20 +14,32 @@ const Link = styled.span`
   left: ${({ isPrev }) => isPrev && 0};
   right: ${({ isNext }) => isNext && 0};
   cursor: ${({ isDisabled }) => !isDisabled && 'pointer'};
+  color: ${({ isDisabled, theme }) =>
+    isDisabled ? '#CECECE' : theme.linkColor};
 
   &:hover {
-    color: ${({ isDisabled, theme }) =>
-      isDisabled ? '#CECECE' : theme.linkColor};
     text-decoration: ${({ isDisabled }) => !isDisabled && 'underline'};
   }
 `;
 
-const Navigation = ({ className, onClick, children, isPrev, isNext }) => {
+const Navigation = ({
+  className,
+  onClick,
+  onLinkClick,
+  children,
+  isPrev,
+  isNext,
+}) => {
   const isDisabled = className.includes('slick-disabled');
   const theme = useContext(ThemeContext);
+
+  const handleClick = () => {
+    onClick();
+    onLinkClick();
+  };
   return (
     <Link
-      onClick={onClick}
+      onClick={isDisabled ? undefined : handleClick}
       aria-hidden="true"
       isDisabled={isDisabled}
       isPrev={isPrev}
@@ -44,6 +56,7 @@ export default Navigation;
 Navigation.propTypes = {
   className: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
+  onLinkClick: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
   isPrev: PropTypes.bool.isRequired,
   isNext: PropTypes.bool.isRequired,

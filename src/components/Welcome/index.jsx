@@ -77,14 +77,13 @@ const bounce = keyframes`
 `;
 
 const ArrowContainer = styled.div`
-  color: ${({ theme }) => theme.colorSecondary};
+  color: ${({ theme }) => theme.linkColor};
   font-size: 4rem;
   display: inline-flex;
   align-items: center;
   letter-spacing: 0;
   transition: color 0.2s ease;
   &:hover {
-    color: ${({ theme }) => theme.linkColor};
     cursor: pointer;
     text-decoration: underline;
   }
@@ -127,7 +126,7 @@ const Welcome = ({ data, trainingRef }) => {
   return (
     <div>
       <BackgroundImageStyled
-        fluid={data.landingImg.childImageSharp.fluid}
+        fluid={data.landingPhoto.childImageSharp.fluid}
         backgroundColor={theme.background}
       >
         <WelcomeContainer theme={theme}>

@@ -52,11 +52,10 @@ const TitleWrapper = styled.div`
 const StyledLink = styled(Link)`
   display: inline-block;
   text-decoration: none;
-  color: ${({ theme }) => theme.colorDarkSec};}
+  color: ${({ theme }) => theme.linkColor};
   transition: color 0.2s ease;
 
   &:hover {
-    color: ${({ theme }) => theme.linkColor};
     text-decoration: underline;
   }
 `;
@@ -66,7 +65,7 @@ const ImgWrapper = styled.div`
   max-width: 40rem;
 `;
 
-const Panel = ({ imageOnLeft = true, texts, imageFluid }) => {
+const Panel = ({ imageOnLeft = true, texts, image }) => {
   const theme = useContext(ThemeContext);
   return (
     <Part>
@@ -76,7 +75,7 @@ const Panel = ({ imageOnLeft = true, texts, imageFluid }) => {
             {({ isVisible }) => (
               <Image
                 isVisible={isVisible}
-                imageFluid={imageFluid}
+                image={image}
                 translateYFrom="10rem"
                 translateYTo="-2rem"
               />
@@ -137,7 +136,7 @@ const Panel = ({ imageOnLeft = true, texts, imageFluid }) => {
             {({ isVisible }) => (
               <Image
                 isVisible={isVisible}
-                imageFluid={imageFluid}
+                image={image}
                 translateYFrom="10rem"
                 translateYTo="-2rem"
               />

@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { animated } from 'react-spring';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-import ArrowIcon from '../../images/angle-right-regular.svg';
+import AngleRightIcon from '../../images/angle-right-regular.svg';
+import AngleDownIcon from '../../images/angle-down-regular.svg';
+import AngleUpIcon from '../../images/angle-up-regular.svg';
 import useBoop from './useBoop';
 
 const Container = styled.div`
@@ -12,20 +14,35 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-const Arrow = styled(ArrowIcon)`
+const smallAngleStyles = css`
+  height: 2.5rem;
+  width: 2.5rem;
+`;
+
+const AngleRight = styled(AngleRightIcon)`
   height: 4rem;
   width: 4rem;
   margin-left: 0.5rem;
 `;
 
-const Boop = ({ children, ...boopConfig }) => {
+const AngleDown = styled(AngleDownIcon)`
+  ${smallAngleStyles}
+`;
+
+const AngleUp = styled(AngleUpIcon)`
+  ${smallAngleStyles}
+`;
+
+const Boop = ({ children, direction = 'right', ...boopConfig }) => {
   const [style, trigger] = useBoop(boopConfig);
 
   return (
     <Container onMouseEnter={trigger}>
       {children}
       <animated.span style={style}>
-        <Arrow />
+        {direction === 'right' && <AngleRight />}
+        {direction === 'down' && <AngleDown />}
+        {direction === 'up' && <AngleUp />}
       </animated.span>
     </Container>
   );
@@ -40,4 +57,5 @@ Boop.propTypes = {
   scale: PropTypes.number,
   timing: PropTypes.number,
   children: PropTypes.node,
+  direction: PropTypes.string,
 };

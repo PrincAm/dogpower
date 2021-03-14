@@ -36,8 +36,12 @@ const Block = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
+
+  padding: 2rem;
+
   ${MEDIA.MOBILE`
     width: 100%;
+    padding: 0rem;
  `};
 `;
 
@@ -46,9 +50,10 @@ const Link = styled.a`
   font-size: 3.2rem;
   line-height: 4.4rem;
   transition: color 0.2s ease;
+  color: ${({ theme }) => theme.linkColor};
+  font-weight: 500;
 
   &:hover {
-    color: ${({ theme }) => theme.linkColor};
     text-decoration: underline;
   }
 
@@ -59,9 +64,13 @@ const Link = styled.a`
 
 const Content = styled.div`
   display: flex;
+  border-radius: 10px;
+  background-color: #fff;
 
   ${MEDIA.MOBILE`
     flex-direction: column;
+    padding: 1rem;
+    background-color: #fff;
  `};
 `;
 

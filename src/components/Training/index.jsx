@@ -1,5 +1,6 @@
 import React, { forwardRef, useContext } from 'react';
 import styled from 'styled-components';
+import { getImage } from 'gatsby-plugin-image';
 
 import Panel from './Panel';
 import { texts } from './data/texts';
@@ -26,30 +27,23 @@ const Container = styled.div`
 // eslint-disable-next-line react/display-name
 const Training = forwardRef(({ data }, ref) => {
   const theme = useContext(ThemeContext);
+  const image1 = getImage(data.photo1);
+  const image2 = getImage(data.photo2);
+  const image3 = getImage(data.photo3);
   return (
     <Background theme={theme}>
       <Container ref={ref} theme={theme}>
-        <Panel texts={texts} imageFluid={data.dog1Img.childImageSharp.fluid} />
+        <Panel texts={texts} image={image1} />
         <Desktop>
-          <Panel
-            texts={texts}
-            imageFluid={data.dog2Img.childImageSharp.fluid}
-            imageOnLeft={false}
-          />
+          <Panel texts={texts} image={image2} imageOnLeft={false} />
         </Desktop>
         <Mobile>
-          <Panel
-            texts={texts}
-            imageFluid={data.dog2Img.childImageSharp.fluid}
-          />
+          <Panel texts={texts} image={image2} />
         </Mobile>
         <Tablet>
-          <Panel
-            texts={texts}
-            imageFluid={data.dog2Img.childImageSharp.fluid}
-          />
+          <Panel texts={texts} image={image2} />
         </Tablet>
-        <Panel texts={texts} imageFluid={data.dog3Img.childImageSharp.fluid} />
+        <Panel texts={texts} image={image3} />
       </Container>
     </Background>
   );

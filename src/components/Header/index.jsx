@@ -1,9 +1,9 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import { StaticImage } from 'gatsby-plugin-image';
 
 import ThemeContext from '../../store/theme';
-import dogpowerLogo from '../../images/dogpower-logo.png';
 import Nav from './Nav';
 import MobileMenu from './MobileMenu';
 import Hamburger from './MobileMenu/Hamburger';
@@ -45,11 +45,8 @@ const Container = styled.div`
   }
 `;
 
-const Logo = styled.img`
-  height: 6rem;
-`;
-
 const HomeLink = styled(Link)`
+  width: 18rem;
   ${MEDIA.TABLET`
     padding-left: 5rem;
  `};
@@ -76,7 +73,11 @@ const Header = () => {
     <Background theme={theme}>
       <Container theme={theme}>
         <HomeLink to="/">
-          <Logo src={dogpowerLogo} />
+          <StaticImage
+            src="../../../content/images/dogpower-logo.png"
+            alt="dog power logo"
+            placeholder="blurred"
+          />
         </HomeLink>
         <Desktop>
           <Nav />

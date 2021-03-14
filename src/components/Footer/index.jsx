@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import styled, { css } from 'styled-components';
+import { StaticImage } from 'gatsby-plugin-image';
 
 import InstagramIcon from '../../images/icons/instagram-brands.svg';
 import YoutubeIcon from '../../images/icons/youtube-brands.svg';
-import dogpowerLogo from '../../images/dogpower-logo.png';
 import ThemeContext from '../../store/theme';
 
 const FooterContainer = styled.div`
@@ -14,8 +14,8 @@ const FooterContainer = styled.div`
   align-items: center;
 `;
 
-const Logo = styled.img`
-  height: 7rem;
+const LogoWrapper = styled.div`
+  width: 20rem;
   margin-top: 4rem;
 `;
 
@@ -72,7 +72,13 @@ const Footer = () => {
   const theme = useContext(ThemeContext);
   return (
     <FooterContainer theme={theme}>
-      <Logo src={dogpowerLogo} />
+      <LogoWrapper>
+        <StaticImage
+          src="../../../content/images/dogpower-logo.png"
+          alt="dog power logo"
+          placeholder="blurred"
+        />
+      </LogoWrapper>
       <Motto>Trénink po dobrém</Motto>
       <Link theme={theme} href="mailto:info@dogpower.cz">
         info@dogpower.cz

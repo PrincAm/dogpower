@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import Img from 'gatsby-image';
+import { StaticImage } from 'gatsby-plugin-image';
 
 import InstagramIcon from '../../images/icons/instagram-brands.svg';
 import Text from 'components/Text';
@@ -9,7 +9,7 @@ import MEDIA, { Desktop } from '../../helpers/mediaTemplates';
 import ThemeContext from '../../store/theme';
 
 const Background = styled.div`
-  background-color: #ffdc80;
+  background-color: #fff;
   padding: 10rem 0;
 
   ${MEDIA.MOBILE`
@@ -72,7 +72,7 @@ const IconWrapper = styled.div`
   width: 100%;
 `;
 
-const Instagram = ({ data }) => {
+const Instagram = () => {
   const theme = useContext(ThemeContext);
 
   return (
@@ -91,7 +91,29 @@ const Instagram = ({ data }) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Img fluid={data.photo1.childImageSharp.fluid} />
+                <StaticImage
+                  src="../../../content/images/instagram/insta1.jpg"
+                  alt="black dog"
+                  placeholder="blurred"
+                  layout="constrained"
+                  imgStyle={{ borderRadius: '5px' }}
+                />
+              </a>
+            </ImgWrapper>
+
+            <ImgWrapper>
+              <a
+                href="https://www.instagram.com/dogpower_cz/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <StaticImage
+                  src="../../../content/images/instagram/insta2.jpg"
+                  alt="man and dog giving highfive"
+                  placeholder="blurred"
+                  layout="constrained"
+                  imgStyle={{ borderRadius: '5px' }}
+                />
               </a>
             </ImgWrapper>
             <ImgWrapper>
@@ -100,16 +122,13 @@ const Instagram = ({ data }) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Img fluid={data.photo2.childImageSharp.fluid} />
-              </a>
-            </ImgWrapper>
-            <ImgWrapper>
-              <a
-                href="https://www.instagram.com/dogpower_cz/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Img fluid={data.photo3.childImageSharp.fluid} />
+                <StaticImage
+                  src="../../../content/images/instagram/insta3.jpg"
+                  alt="man and dog"
+                  placeholder="blurred"
+                  layout="constrained"
+                  imgStyle={{ borderRadius: '5px' }}
+                />
               </a>
             </ImgWrapper>
           </Images>
@@ -122,7 +141,6 @@ const Instagram = ({ data }) => {
           >
             <Icon theme={theme} />
           </a>
-          <Text size="small">@dogpower_cz</Text>
         </IconWrapper>
       </Container>
     </Background>

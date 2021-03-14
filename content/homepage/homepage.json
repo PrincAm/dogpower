@@ -1,13 +1,6 @@
 {
-  "title": "Home",
-  "backgroundImage": "../images/gallery/react-context.jpg",
-  "trainingImage1": "../images/gallery/page-transitions.jpg",
-  "trainingImage2": "../images/gallery/intersection-observer.jpg",
-  "landingImg": "../images/background.jpg",
-  "dog1Img": "../images/gallery/dog1.jpg",
-  "dog2Img": "../images/gallery/dog2.jpg",
-  "dog3Img": "../images/gallery/dog3.jpg",
-  "dog4Img": "../images/gallery/dog4.jpg",
-  "dog5Img": "../images/gallery/dog5.jpg",
-  "dog6Img": "../images/gallery/dog6.jpg"
+  "landingPhoto": "../images/background.jpg",
+  "photo1": "../images/instagram/insta1.jpg",
+  "photo2": "../images/instagram/insta2.jpg",
+  "photo3": "../images/instagram/insta3.jpg"
 }

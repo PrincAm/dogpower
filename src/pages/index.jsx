@@ -20,7 +20,7 @@ const Index = ({ data }) => {
       <Desktop>
         <References data={data.referencesJson} />
       </Desktop>
-      <Instagram data={data.instagramJson} />
+      <Instagram />
       <ContactMe />
     </Layout>
   );
@@ -38,58 +38,34 @@ export const query = graphql`
       references {
         name
         text
-      }
-    }
-    instagramJson {
-      photo1 {
-        childImageSharp {
-          fluid(maxHeight: 200, maxWidth: 200, quality: 90) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      photo2 {
-        childImageSharp {
-          fluid(maxHeight: 200, maxWidth: 200, quality: 90) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      photo3 {
-        childImageSharp {
-          fluid(maxHeight: 200, maxWidth: 200, quality: 90) {
-            ...GatsbyImageSharpFluid_withWebp
+        image {
+          childImageSharp {
+            gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
           }
         }
       }
     }
     homepageJson {
-      landingImg {
+      landingPhoto {
         childImageSharp {
           fluid(maxHeight: 500, quality: 90) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
-      dog1Img {
+      photo1 {
         childImageSharp {
-          fluid(maxHeight: 200, maxWidth: 200, quality: 90) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
         }
       }
-      dog2Img {
+      photo2 {
         childImageSharp {
-          fluid(maxHeight: 200, maxWidth: 200, quality: 90) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
         }
       }
-      dog3Img {
+      photo3 {
         childImageSharp {
-          fluid(maxHeight: 200, maxWidth: 200, quality: 90) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
         }
       }
     }
