@@ -128,6 +128,7 @@ const Welcome = ({ data, trainingRef }) => {
       <BackgroundImageStyled
         fluid={data.landingPhoto.childImageSharp.fluid}
         backgroundColor={theme.background}
+        alt="town and buildings"
       >
         <WelcomeContainer theme={theme}>
           <Trails>

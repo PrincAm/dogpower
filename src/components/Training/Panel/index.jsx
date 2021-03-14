@@ -78,6 +78,7 @@ const Panel = ({ imageOnLeft = true, texts, image }) => {
                 image={image}
                 translateYFrom="10rem"
                 translateYTo="-2rem"
+                altText="dog with owner"
               />
             )}
           </IO>
@@ -139,6 +140,7 @@ const Panel = ({ imageOnLeft = true, texts, image }) => {
                 image={image}
                 translateYFrom="10rem"
                 translateYTo="-2rem"
+                altText="dog with owner"
               />
             )}
           </IO>

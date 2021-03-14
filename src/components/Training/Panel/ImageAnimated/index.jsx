@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSpring, a } from 'react-spring';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
-const Image = ({ isVisible, image, translateYFrom, translateYTo }) => {
+const Image = ({ isVisible, image, translateYFrom, translateYTo, altText }) => {
   const [isDisplayed, setIsDisplayed] = useState(false);
   useEffect(() => {
     if (!isDisplayed && isVisible) {
@@ -19,7 +19,11 @@ const Image = ({ isVisible, image, translateYFrom, translateYTo }) => {
 
   return (
     <a.div style={props}>
-      <GatsbyImage image={image} imgStyle={{ borderRadius: '5px' }} />
+      <GatsbyImage
+        image={image}
+        imgStyle={{ borderRadius: '5px' }}
+        alt={altText}
+      />
     </a.div>
   );
 };

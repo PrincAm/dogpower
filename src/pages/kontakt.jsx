@@ -9,7 +9,7 @@ import InstagramIcon from '../images/icons/instagram-brands.svg';
 import YoutubeIcon from '../images/icons/youtube-brands.svg';
 import MEDIA from '../helpers/mediaTemplates';
 
-const TrainigContainer = styled.div`
+const Container = styled.div`
   min-height: calc(100vh - 14rem);
   max-width: ${({ theme }) => theme.width};
   margin: ${({ theme }) => theme.marginHeader} auto 0 auto;
@@ -36,7 +36,6 @@ const Block = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
-
   padding: 2rem;
 
   ${MEDIA.MOBILE`
@@ -110,7 +109,7 @@ const Contact = () => {
   const theme = useContext(ThemeContext);
   return (
     <Layout>
-      <TrainigContainer theme={theme}>
+      <Container theme={theme}>
         <Title size="xxlarge" as="h1">
           Kontakt
         </Title>
@@ -156,7 +155,7 @@ const Contact = () => {
             </SocialMedia>
           </Block>
         </Content>
-      </TrainigContainer>
+      </Container>
     </Layout>
   );
 };
