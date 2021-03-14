@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { useSpring, a } from 'react-spring';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
@@ -29,3 +30,11 @@ const Image = ({ isVisible, image, translateYFrom, translateYTo, altText }) => {
 };
 
 export default Image;
+
+Image.propTypes = {
+  isVisible: PropTypes.bool.isRequired,
+  image: PropTypes.shape({}).isRequired,
+  altText: PropTypes.string.isRequired,
+  translateYFrom: PropTypes.number,
+  translateYTo: PropTypes.number,
+};

@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -114,3 +115,9 @@ const References = ({ data }) => {
 };
 
 export default References;
+
+References.propTypes = {
+  data: PropTypes.shape({
+    references: PropTypes.arrayOf(PropTypes.shape({})),
+  }),
+};

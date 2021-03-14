@@ -1,4 +1,5 @@
 import React, { forwardRef, useContext } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { getImage } from 'gatsby-plugin-image';
 
@@ -50,3 +51,11 @@ const Training = forwardRef(({ data }, ref) => {
 });
 
 export default Training;
+
+Training.propTypes = {
+  data: PropTypes.shape({
+    photo1: PropTypes.shape({}),
+    photo2: PropTypes.shape({}),
+    photo3: PropTypes.shape({}),
+  }),
+};

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
@@ -151,3 +152,9 @@ const Panel = ({ imageOnLeft = true, texts, image }) => {
 };
 
 export default Panel;
+
+Panel.propTypes = {
+  texts: PropTypes.arrayOf(PropTypes.string).isRequired,
+  image: PropTypes.shape({}).isRequired,
+  imageOnLeft: PropTypes.bool,
+};

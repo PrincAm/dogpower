@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import BackgroundImage from 'gatsby-background-image';
 import { useTrail, a } from 'react-spring';
@@ -162,3 +163,14 @@ const Welcome = ({ data, trainingRef }) => {
 };
 
 export default Welcome;
+
+Welcome.propTypes = {
+  data: PropTypes.shape({
+    landingPhoto: PropTypes.shape({
+      childImageSharp: PropTypes.shape({
+        fluid: PropTypes.shape({}),
+      }),
+    }),
+  }),
+  trainingRef: PropTypes.func,
+};

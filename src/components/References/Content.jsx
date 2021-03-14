@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useMeasure } from 'react-use';
 import styled from 'styled-components';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
@@ -127,3 +128,11 @@ const Content = ({ text, name, image, isExpanded, onExpand }) => {
 };
 
 export default Content;
+
+Content.propTypes = {
+  text: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  image: PropTypes.shape({}).isRequired,
+  isExpanded: PropTypes.bool.isRequired,
+  onExpand: PropTypes.func.isRequired,
+};

@@ -1,4 +1,5 @@
 import React, { useRef, useContext } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import {
@@ -99,7 +100,7 @@ const icons = [
   },
 ];
 
-const MobileMenu = ({ isMenuOpened, onMenuOpen }) => {
+const MobileMenu = ({ isMenuOpened = false, onMenuOpen }) => {
   const theme = useContext(ThemeContext);
   const navRef = useRef();
   const liRef = useRef();
@@ -169,3 +170,8 @@ const MobileMenu = ({ isMenuOpened, onMenuOpen }) => {
 };
 
 export default MobileMenu;
+
+MobileMenu.propTypes = {
+  onMenuOpen: PropTypes.func,
+  isMenuOpened: PropTypes.bool,
+};

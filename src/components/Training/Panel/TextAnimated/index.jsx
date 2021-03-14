@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { useSpring, a } from 'react-spring';
 
@@ -32,3 +33,10 @@ const TextAnimated = ({
 };
 
 export default TextAnimated;
+
+TextAnimated.propTypes = {
+  isVisible: PropTypes.bool.isRequired,
+  children: PropTypes.node,
+  translateYFrom: PropTypes.number,
+  translateYTo: PropTypes.number,
+};
