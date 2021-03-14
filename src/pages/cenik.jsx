@@ -56,7 +56,7 @@ const Service = () => {
         <ImageContainer>
           <ImageWrapper>
             <StaticImage
-              src="../../../content/images/instagram/insta3.jpg"
+              src="../../content/images/instagram/insta3.jpg"
               alt="black dog"
               placeholder="blurred"
               layout="constrained"

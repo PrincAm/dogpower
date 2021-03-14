@@ -57,7 +57,7 @@ const Training = () => {
         <ImageContainer>
           <ImageWrapper>
             <StaticImage
-              src="../../../content/images/instagram/insta2.jpg"
+              src="../../content/images/instagram/insta2.jpg"
               alt="black dog"
               placeholder="blurred"
               layout="constrained"

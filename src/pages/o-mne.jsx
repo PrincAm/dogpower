@@ -50,7 +50,7 @@ const About = () => {
         </Title>
         <ImageContainer>
           <StaticImage
-            src="../../../content/images/instagram/insta1.jpg"
+            src="../../content/images/instagram/insta1.jpg"
             alt="black dog"
             placeholder="blurred"
             layout="constrained"
