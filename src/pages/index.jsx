@@ -48,9 +48,7 @@ export const query = graphql`
     homepageJson {
       landingPhoto {
         childImageSharp {
-          fluid(maxHeight: 500, quality: 90) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
         }
       }
       photo1 {

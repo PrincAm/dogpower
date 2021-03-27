@@ -10,8 +10,10 @@ import Boop from '../Boop';
 import ThemeContext from '../../store/theme';
 
 const Background = styled.div`
-  background-color: #ff3860;
-  color: ${({ theme }) => theme.colorLight};}
+  background-color: #f7f7fc;
+  background-image: radial-gradient(#ff3860 1px, #f7f7fc 1px);
+  background-size: 20px 20px;
+  padding: 5rem 0 10rem 0;
 `;
 
 const Container = styled.div`
@@ -20,7 +22,12 @@ const Container = styled.div`
   margin: 0 auto;
   max-width: ${({ theme }) => theme.width};
   text-align: center;
-  padding: 10rem 0;
+  padding: 5rem 0;
+  border-radius: 20px;
+
+  background-color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 80px 100px -25px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 
   ${MEDIA.TABLET`
     padding: 5rem 5rem;
@@ -42,11 +49,10 @@ const ButtonWrapper = styled.div`
 const ContactLink = styled(Link)`
   display: flex;
   text-decoration: none;
-  color: ${({ theme }) => theme.colorLight};}
+  color: ${({ theme }) => theme.linkColor};
   transition: color 0.2s ease;
 
   &:hover {
-    color: #FFDC80;
     text-decoration: underline;
   }
 `;

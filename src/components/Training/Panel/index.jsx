@@ -154,7 +154,9 @@ const Panel = ({ imageOnLeft = true, texts, image }) => {
 export default Panel;
 
 Panel.propTypes = {
-  texts: PropTypes.arrayOf(PropTypes.string).isRequired,
+  texts: PropTypes.arrayOf(
+    PropTypes.shape({ id: PropTypes.string, text: PropTypes.string })
+  ).isRequired,
   image: PropTypes.shape({}).isRequired,
   imageOnLeft: PropTypes.bool,
 };

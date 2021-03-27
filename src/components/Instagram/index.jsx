@@ -96,7 +96,7 @@ const Instagram = () => {
                   alt="black dog"
                   placeholder="blurred"
                   layout="constrained"
-                  imgStyle={{ borderRadius: '5px' }}
+                  imgStyle={{ borderRadius: '10px' }}
                 />
               </a>
             </ImgWrapper>
@@ -112,7 +112,7 @@ const Instagram = () => {
                   alt="man and dog giving highfive"
                   placeholder="blurred"
                   layout="constrained"
-                  imgStyle={{ borderRadius: '5px' }}
+                  imgStyle={{ borderRadius: '10px' }}
                 />
               </a>
             </ImgWrapper>
@@ -127,7 +127,7 @@ const Instagram = () => {
                   alt="man and dog"
                   placeholder="blurred"
                   layout="constrained"
-                  imgStyle={{ borderRadius: '5px' }}
+                  imgStyle={{ borderRadius: '10px' }}
                 />
               </a>
             </ImgWrapper>

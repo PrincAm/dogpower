@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
+import { getImage } from 'gatsby-plugin-image';
 import BackgroundImage from 'gatsby-background-image';
+import { convertToBgImage } from 'gbimage-bridge';
 import { useTrail, a } from 'react-spring';
 
 import ThemeContext from '../../store/theme';
@@ -109,6 +111,9 @@ const scrollToRef = ref =>
 const Welcome = ({ data, trainingRef }) => {
   const [animationReady, setAnimationReady] = useState(false);
   const theme = useContext(ThemeContext);
+  const { landingPhoto } = data;
+  const image = getImage(landingPhoto);
+  const bgImage = convertToBgImage(image);
 
   useEffect(() => {
     setTimeout(() => {
@@ -127,9 +132,10 @@ const Welcome = ({ data, trainingRef }) => {
   return (
     <div>
       <BackgroundImageStyled
-        fluid={data.landingPhoto.childImageSharp.fluid}
         backgroundColor={theme.background}
         alt="town and buildings"
+        preserveStackingContext
+        {...bgImage}
       >
         <WelcomeContainer theme={theme}>
           <Trails>
@@ -172,5 +178,5 @@ Welcome.propTypes = {
       }),
     }),
   }),
-  trainingRef: PropTypes.func,
+  trainingRef: PropTypes.object,
 };

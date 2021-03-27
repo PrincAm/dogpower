@@ -22,7 +22,7 @@ const Image = ({ isVisible, image, translateYFrom, translateYTo, altText }) => {
     <a.div style={props}>
       <GatsbyImage
         image={image}
-        imgStyle={{ borderRadius: '5px' }}
+        imgStyle={{ borderRadius: '10px' }}
         alt={altText}
       />
     </a.div>
@@ -35,6 +35,6 @@ Image.propTypes = {
   isVisible: PropTypes.bool.isRequired,
   image: PropTypes.shape({}).isRequired,
   altText: PropTypes.string.isRequired,
-  translateYFrom: PropTypes.number,
-  translateYTo: PropTypes.number,
+  translateYFrom: PropTypes.string,
+  translateYTo: PropTypes.string,
 };

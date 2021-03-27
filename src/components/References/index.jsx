@@ -12,7 +12,7 @@ import Content from './Content';
 import Text from '../Text';
 
 const Background = styled.div`
-  background-color: #f2f2f2;
+  background-color: #f7f7fc;
   color: ${({ theme }) => theme.colorDarkSec};
 `;
 

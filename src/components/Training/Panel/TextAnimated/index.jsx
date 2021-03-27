@@ -37,6 +37,6 @@ export default TextAnimated;
 TextAnimated.propTypes = {
   isVisible: PropTypes.bool.isRequired,
   children: PropTypes.node,
-  translateYFrom: PropTypes.number,
-  translateYTo: PropTypes.number,
+  translateYFrom: PropTypes.string,
+  translateYTo: PropTypes.string,
 };
