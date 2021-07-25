@@ -40,7 +40,7 @@ const ImgWrapper = styled.div`
   &:last-of-type {
     margin-right: 0;
   }
-  & + {Img}:hover {
+  &:hover {
     transform: scale(1.1);
   }
 `;
