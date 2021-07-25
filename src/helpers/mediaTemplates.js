@@ -1,6 +1,5 @@
 import React from 'react';
 import { css } from 'styled-components';
-import Responsive from 'react-responsive';
 
 import BREAKPOINTS from 'constants/breakpoints';
 
@@ -34,17 +33,3 @@ const MEDIA = Object.keys(BREAKPOINTS).reduce((acc, label) => {
 }, {});
 
 export default MEDIA;
-
-export const Mobile = props => (
-  <Responsive {...props} maxWidth={BREAKPOINTS.MOBILE} />
-);
-export const Tablet = props => (
-  <Responsive
-    {...props}
-    minWidth={BREAKPOINTS.MOBILE}
-    maxWidth={BREAKPOINTS.TABLET}
-  />
-);
-export const Desktop = props => (
-  <Responsive {...props} minWidth={BREAKPOINTS.DESKTOP} />
-);

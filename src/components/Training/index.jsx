@@ -6,7 +6,7 @@ import { getImage } from 'gatsby-plugin-image';
 import Panel from './Panel';
 import { texts } from './data/texts';
 import ThemeContext from '../../store/theme';
-import MEDIA, { Mobile, Tablet, Desktop } from '../../helpers/mediaTemplates';
+import MEDIA from '../../helpers/mediaTemplates';
 
 const Background = styled.div`
   background-color: #fff;
@@ -24,6 +24,23 @@ const Container = styled.div`
     padding: 5rem 2rem;
  `};
 `;
+const PanelDesktopWrapper = styled.div`
+  ${MEDIA.TABLET`
+    display: none;
+ `};
+  ${MEDIA.MOBILE`
+    display: none;
+ `};
+`;
+const PanelMobileWrapper = styled.div`
+  display: none;
+  ${MEDIA.TABLET`
+    display: block;
+ `};
+  ${MEDIA.MOBILE`
+    display: block;
+ `};
+`;
 
 // eslint-disable-next-line react/display-name
 const Training = forwardRef(({ data }, ref) => {
@@ -35,15 +52,12 @@ const Training = forwardRef(({ data }, ref) => {
     <Background theme={theme}>
       <Container ref={ref} theme={theme}>
         <Panel texts={texts} image={image1} />
-        <Desktop>
+        <PanelDesktopWrapper>
           <Panel texts={texts} image={image2} imageOnLeft={false} />
-        </Desktop>
-        <Mobile>
+        </PanelDesktopWrapper>
+        <PanelMobileWrapper>
           <Panel texts={texts} image={image2} />
-        </Mobile>
-        <Tablet>
-          <Panel texts={texts} image={image2} />
-        </Tablet>
+        </PanelMobileWrapper>
         <Panel texts={texts} image={image3} />
       </Container>
     </Background>

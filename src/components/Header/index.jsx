@@ -7,7 +7,6 @@ import ThemeContext from '../../store/theme';
 import Nav from './Nav';
 import MobileMenu from './MobileMenu';
 import Hamburger from './MobileMenu/Hamburger';
-import { Mobile, Tablet, Desktop } from '../../helpers/mediaTemplates';
 import MEDIA from '../../helpers/mediaTemplates';
 
 const Background = styled.header`
@@ -44,7 +43,23 @@ const Container = styled.div`
     }
   }
 `;
-
+const NavDesktopWrapper = styled.div`
+  ${MEDIA.TABLET`
+    display: none;
+ `};
+  ${MEDIA.MOBILE`
+    display: none;
+ `};
+`;
+const NavMobileWrapper = styled.div`
+  display: none;
+  ${MEDIA.TABLET`
+    display: block;
+ `};
+  ${MEDIA.MOBILE`
+    display: block;
+ `};
+`;
 const HomeLink = styled(Link)`
   width: 18rem;
   ${MEDIA.TABLET`
@@ -79,17 +94,13 @@ const Header = () => {
             placeholder="blurred"
           />
         </HomeLink>
-        <Desktop>
+        <NavDesktopWrapper>
           <Nav />
-        </Desktop>
-        <Mobile>
+        </NavDesktopWrapper>
+        <NavMobileWrapper>
           <MobileMenu isMenuOpened={isMenuOpened} onOpenMenu={setMenuOpened} />
           <Hamburger isMenuOpened={isMenuOpened} onOpenMenu={setMenuOpened} />
-        </Mobile>
-        <Tablet>
-          <MobileMenu isMenuOpened={isMenuOpened} onOpenMenu={setMenuOpened} />
-          <Hamburger isMenuOpened={isMenuOpened} onOpenMenu={setMenuOpened} />
-        </Tablet>
+        </NavMobileWrapper>
       </Container>
     </Background>
   );

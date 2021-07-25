@@ -2,9 +2,9 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { StaticImage } from 'gatsby-plugin-image';
 
-import InstagramIcon from '../../images/icons/instagram-brands.svg';
 import Text from 'components/Text';
-import MEDIA, { Desktop } from '../../helpers/mediaTemplates';
+import InstagramIcon from '../../images/icons/instagram-brands.svg';
+import MEDIA from '../../helpers/mediaTemplates';
 
 import ThemeContext from '../../store/theme';
 
@@ -36,12 +36,12 @@ const ImgWrapper = styled.div`
   width: 100%;
   transform: scale(1);
   margin-right: 2rem;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
   &:last-of-type {
     margin-right: 0;
   }
   & + {Img}:hover {
-  	transform: scale(1.1);
+    transform: scale(1.1);
   }
 `;
 
@@ -64,6 +64,15 @@ const Icon = styled(InstagramIcon)`
  `};
 `;
 
+const ImagesDesktopWrapper = styled.div`
+  ${MEDIA.TABLET`
+    display: none;
+ `};
+  ${MEDIA.MOBILE`
+    display: none;
+ `};
+`;
+
 const IconWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -83,7 +92,7 @@ const Instagram = () => {
             Navštivte nás na Instagramu
           </Text>
         </TitleWrapper>
-        <Desktop>
+        <ImagesDesktopWrapper>
           <Images>
             <ImgWrapper>
               <a
@@ -132,7 +141,7 @@ const Instagram = () => {
               </a>
             </ImgWrapper>
           </Images>
-        </Desktop>
+        </ImagesDesktopWrapper>
         <IconWrapper>
           <a
             href="https://www.instagram.com/dogpower_cz/"

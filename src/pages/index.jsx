@@ -1,5 +1,6 @@
 import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 import Layout from 'components/Layout';
 import Welcome from 'components/Welcome';
@@ -7,8 +8,17 @@ import Training from 'components/Training';
 import References from 'components/References';
 import ContactMe from 'components/ContactMe';
 import Instagram from 'components/Instagram';
-import { Desktop } from '../helpers/mediaTemplates';
+import MEDIA from '../helpers/mediaTemplates';
 import { graphql } from 'gatsby';
+
+const ReferencesDesktopWrapper = styled.div`
+  ${MEDIA.TABLET`
+    display: none;
+ `};
+  ${MEDIA.MOBILE`
+    display: none;
+ `};
+`;
 
 const Index = ({ data }) => {
   const trainingRef = createRef();
@@ -17,9 +27,9 @@ const Index = ({ data }) => {
     <Layout>
       <Welcome data={data.homepageJson} trainingRef={trainingRef} />
       <Training ref={trainingRef} data={data.homepageJson} />
-      <Desktop>
+      <ReferencesDesktopWrapper>
         <References data={data.referencesJson} />
-      </Desktop>
+      </ReferencesDesktopWrapper>
       <Instagram />
       <ContactMe />
     </Layout>
