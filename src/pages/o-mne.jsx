@@ -37,7 +37,7 @@ const ImageContainer = styled.div`
 const TextContainer = styled.div`
   background: #fff;
   border-radius: 10px;
-  padding: 2rem;
+  padding: 3rem;
 `;
 
 const About = () => {
@@ -50,7 +50,7 @@ const About = () => {
         </Title>
         <ImageContainer>
           <StaticImage
-            src="../../content/images/instagram/insta1.jpg"
+            src="../../content/images/training/dogpower2.jpg"
             alt="black dog"
             placeholder="blurred"
             layout="constrained"

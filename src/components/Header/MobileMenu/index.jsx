@@ -100,7 +100,7 @@ const icons = [
   },
 ];
 
-const MobileMenu = ({ isMenuOpened = false, onMenuOpen }) => {
+const MobileMenu = ({ isMenuOpened = false, onOpenMenu }) => {
   const theme = useContext(ThemeContext);
   const navRef = useRef();
   const liRef = useRef();
@@ -152,7 +152,7 @@ const MobileMenu = ({ isMenuOpened = false, onMenuOpen }) => {
       <ul>
         {liTransitions.map(({ item, key, props }) => (
           <Li key={key} style={props}>
-            <Link to={`/${item.link}`} onClick={() => onMenuOpen(false)}>
+            <Link to={`/${item.link}`} onClick={() => onOpenMenu(false)}>
               {item.title}
             </Link>
           </Li>
@@ -172,6 +172,6 @@ const MobileMenu = ({ isMenuOpened = false, onMenuOpen }) => {
 export default MobileMenu;
 
 MobileMenu.propTypes = {
-  onMenuOpen: PropTypes.func,
+  onOpenMenu: PropTypes.func,
   isMenuOpened: PropTypes.bool,
 };

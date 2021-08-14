@@ -31,7 +31,7 @@ const Index = ({ data }) => {
         <References data={data.referencesJson} />
       </ReferencesDesktopWrapper>
       <Instagram />
-      <ContactMe />
+      <ContactMe hasSecondaryBg={false} />
     </Layout>
   );
 };

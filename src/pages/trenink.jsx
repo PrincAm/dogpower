@@ -8,7 +8,7 @@ import ContactMe from 'components/ContactMe';
 import ThemeContext from '../store/theme';
 import MEDIA from '../helpers/mediaTemplates';
 
-const TrainigContainer = styled.div`
+const TrainingContainer = styled.div`
   min-height: calc(100vh - 14rem);
   max-width: ${({ theme }) => theme.width};
   padding-top: ${({ theme }) => theme.marginHeader};
@@ -43,21 +43,21 @@ const ImageWrapper = styled.div`
 const TextContainer = styled.div`
   background: #fff;
   border-radius: 10px;
-  padding: 2rem;
+  padding: 3rem;
 `;
 
 const Training = () => {
   const theme = useContext(ThemeContext);
   return (
     <Layout>
-      <TrainigContainer theme={theme}>
+      <TrainingContainer theme={theme}>
         <Title size="xxlarge" as="h1">
           Trénink
         </Title>
         <ImageContainer>
           <ImageWrapper>
             <StaticImage
-              src="../../content/images/instagram/insta2.jpg"
+              src="../../content/images/training/dogpower1.jpg"
               alt="black dog"
               placeholder="blurred"
               layout="constrained"
@@ -89,7 +89,7 @@ const Training = () => {
             to v době: pondělí – pátek, 9.00 – 17.00.
           </Text>
         </TextContainer>
-      </TrainigContainer>
+      </TrainingContainer>
       <ContactMe />
     </Layout>
   );

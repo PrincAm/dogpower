@@ -50,15 +50,13 @@ const ThirdBar = styled(Bar)`
     isMenuOpened ? 'rotate(45deg) translate(-0.94rem, -0.6rem)' : 'none'};
 `;
 
-const Hamburger = ({ onOpenMenu, isMenuOpened }) => {
-  return (
-    <HamburgerContainer onClick={() => onOpenMenu(!isMenuOpened)}>
-      <FirstBar isMenuOpened={isMenuOpened} />
-      <SecondBar isMenuOpened={isMenuOpened} />
-      <ThirdBar isMenuOpened={isMenuOpened} />
-    </HamburgerContainer>
-  );
-};
+const Hamburger = ({ onOpenMenu, isMenuOpened }) => (
+  <HamburgerContainer onClick={() => onOpenMenu(!isMenuOpened)}>
+    <FirstBar isMenuOpened={isMenuOpened} />
+    <SecondBar isMenuOpened={isMenuOpened} />
+    <ThirdBar isMenuOpened={isMenuOpened} />
+  </HamburgerContainer>
+);
 
 export default Hamburger;
 

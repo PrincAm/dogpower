@@ -19,7 +19,6 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
     font: inherit;
     vertical-align: baseline;
   }
@@ -39,7 +38,7 @@ export default createGlobalStyle`
     line-height: 2.5rem;
     font-size: 2.2rem;
     color: #1d1d2c;
-    background-color: #eeeeee;
+    background-color: #E4E4E4;
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

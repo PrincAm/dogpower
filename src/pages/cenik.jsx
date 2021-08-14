@@ -42,7 +42,7 @@ const ImageWrapper = styled.div`
 const TextContainer = styled.div`
   background: #fff;
   border-radius: 10px;
-  padding: 2rem;
+  padding: 3rem;
 `;
 
 const Service = () => {
@@ -56,7 +56,7 @@ const Service = () => {
         <ImageContainer>
           <ImageWrapper>
             <StaticImage
-              src="../../content/images/instagram/insta3.jpg"
+              src="../../content/images/training/dogpower3.jpg"
               alt="black dog"
               placeholder="blurred"
               layout="constrained"

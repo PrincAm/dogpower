@@ -36,7 +36,7 @@ const Block = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
-  padding: 2rem;
+  padding: 3rem;
 
   ${MEDIA.MOBILE`
     width: 100%;
@@ -125,13 +125,9 @@ const Contact = () => {
               info@dogpower.cz
             </Link>
             <Address>
-              <Text size="medium" as="h3">
-                Cvičebna i sídlo
-              </Text>
               <Text as="p">
                 Wiesenthalova 1034/6
                 <br /> 155 00, Praha 5 – Řeporyje
-                <br />
                 <br /> IČO 07655584
               </Text>
             </Address>
@@ -139,7 +135,7 @@ const Contact = () => {
           <Block>
             <SocialMedia>
               <a
-                href="https://www.instagram.com/dogpower.cz/"
+                href="https://www.instagram.com/dogpower_cz/"
                 target="_blank"
                 rel="noreferrer"
               >

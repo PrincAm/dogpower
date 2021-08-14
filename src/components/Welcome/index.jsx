@@ -20,17 +20,17 @@ const BackgroundImageStyled = styled(BackgroundImage)`
 
 const WelcomeContainer = styled.div`
   color: ${({ theme }) => theme.colorSecondary};
-  padding-top: 10%;
+  padding-top: 20%;
   max-width: ${({ theme }) => theme.width};
   margin: 0 auto;
   ${MEDIA.TABLET`
     margin-left: 5rem;
-    padding-top: 30%;
+    padding-top: 70%;
  `};
 
   ${MEDIA.MOBILE`
     margin-left: 2rem;
-    padding-top: 30%;
+    padding-top: 90%;
  `};
 `;
 
@@ -41,9 +41,9 @@ const Trails = styled.div`
 
 const TrailText = styled(a.div)`
   position: relative;
-  height: 10rem;
-  line-height: 10rem;
-  font-size: 6em;
+  height: 10.5rem;
+  line-height: 13rem;
+  font-size: 5em;
   font-weight: 500;
   letter-spacing: -1rem;
   text-indent: -0.3rem;
@@ -55,13 +55,15 @@ const TrailText = styled(a.div)`
   }
   ${MEDIA.TABLET`
     height: 10rem;
-    line-height: 10rem;
+    line-height: 12rem;
     font-size: 5em;
+    letter-spacing: -0.5rem;
  `};
   ${MEDIA.MOBILE`
     height: 6rem;
-    line-height: 6rem;
+    line-height: 7rem;
     font-size: 3em;
+    letter-spacing: -0.5rem;
  `};
 `;
 
@@ -103,7 +105,7 @@ const More = styled.span`
   font-weight: 400;
 `;
 
-const items = ['SUPER', 'GREAT', 'AWESOME', 'SUPREME', 'chci vědět více'];
+const items = ['TRÉNOVÁNÍ', 'PO', 'DOBRÉM', 'chci vědět více'];
 
 const scrollToRef = ref =>
   ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
@@ -10,10 +11,12 @@ import Boop from '../Boop';
 import ThemeContext from '../../store/theme';
 
 const Background = styled.div`
-  background-color: #f7f7fc;
-  background-image: radial-gradient(#ff3860 1px, #f7f7fc 1px);
+  background-image: ${({ hasSecondaryBg }) =>
+    `radial-gradient(#ff3860 1px, ${
+      hasSecondaryBg ? '#E4E4E4' : '#f7f7fc'
+    } 1px)`};
   background-size: 20px 20px;
-  padding: 5rem 0 10rem 0;
+  padding: 10rem 0 10rem 0;
 `;
 
 const Container = styled.div`
@@ -26,7 +29,7 @@ const Container = styled.div`
   border-radius: 20px;
 
   background-color: white;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 80px 100px -25px,
+  box-shadow: rgba(50, 50, 93, 0.25) 0 80px 100px -25px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 
   ${MEDIA.TABLET`
@@ -57,11 +60,11 @@ const ContactLink = styled(Link)`
   }
 `;
 
-const ContactMe = () => {
+const ContactMe = ({ hasSecondaryBg = true }) => {
   const theme = useContext(ThemeContext);
 
   return (
-    <Background theme={theme}>
+    <Background theme={theme} hasSecondaryBg={hasSecondaryBg}>
       <Container theme={theme}>
         <TitleWrapper>
           <Text size="xxlarge" as="h2">
@@ -85,3 +88,7 @@ const ContactMe = () => {
 };
 
 export default ContactMe;
+
+ContactMe.propTypes = {
+  hasSecondaryBg: PropTypes.bool,
+};
