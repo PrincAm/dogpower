@@ -30,8 +30,8 @@ const Navigation = ({
   isPrev,
   isNext,
 }) => {
-  const isDisabled = className.includes('slick-disabled');
   const theme = useContext(ThemeContext);
+  const isDisabled = className.includes('slick-disabled');
 
   const handleClick = () => {
     onClick();
@@ -54,10 +54,10 @@ const Navigation = ({
 export default Navigation;
 
 Navigation.propTypes = {
-  className: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
   onLinkClick: PropTypes.func.isRequired,
-  children: PropTypes.node.isRequired,
-  isPrev: PropTypes.bool.isRequired,
-  isNext: PropTypes.bool.isRequired,
+  className: PropTypes.string,
+  onClick: PropTypes.func,
+  children: PropTypes.node,
+  isPrev: PropTypes.bool,
+  isNext: PropTypes.bool,
 };
