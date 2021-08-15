@@ -2,31 +2,12 @@ import React, { useContext } from 'react';
 import styled, { css } from 'styled-components';
 
 import Layout from 'components/Layout';
-import Text from 'components/Text';
+import Text, { PageTitle } from 'components/Text';
+import { PageBox, TextBox } from 'components/Box';
 import ThemeContext from '../store/theme';
-
 import InstagramIcon from '../images/icons/instagram-brands.svg';
 import YoutubeIcon from '../images/icons/youtube-brands.svg';
 import MEDIA from '../helpers/mediaTemplates';
-
-const Container = styled.div`
-  min-height: calc(100vh - 14rem);
-  max-width: ${({ theme }) => theme.width};
-  margin: ${({ theme }) => theme.marginHeader} auto 0 auto;
-
-  ${MEDIA.TABLET`
-    min-height: calc(100vh - 15rem);
-    margin: 10rem 5rem 5rem 5rem;
- `};
-  ${MEDIA.MOBILE`
-    min-height: calc(100vh - 15rem);
-    margin: 10rem 2rem 5rem 2rem;
- `};
-`;
-
-const Title = styled(Text)`
-  margin-bottom: 4rem;
-`;
 
 const Address = styled.div`
   margin-top: 1rem;
@@ -36,7 +17,6 @@ const Block = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
-  padding: 3rem;
 
   ${MEDIA.MOBILE`
     width: 100%;
@@ -61,10 +41,8 @@ const Link = styled.a`
   }
 `;
 
-const Content = styled.div`
+const TextFlexBox = styled(TextBox)`
   display: flex;
-  border-radius: 10px;
-  background-color: #fff;
 
   ${MEDIA.MOBILE`
     flex-direction: column;
@@ -109,13 +87,11 @@ const Contact = () => {
   const theme = useContext(ThemeContext);
   return (
     <Layout>
-      <Container theme={theme}>
-        <Title size="xxlarge" as="h1">
-          Kontakt
-        </Title>
-        <Content>
+      <PageBox theme={theme}>
+        <PageTitle>Kontakt</PageTitle>
+        <TextFlexBox>
           <Block>
-            <Text size="large" as="h2">
+            <Text size="l" as="h2">
               Jakub Slavík
             </Text>
             <Link href="tel:+420775553021" theme={theme}>
@@ -150,8 +126,8 @@ const Contact = () => {
               </a>
             </SocialMedia>
           </Block>
-        </Content>
-      </Container>
+        </TextFlexBox>
+      </PageBox>
     </Layout>
   );
 };

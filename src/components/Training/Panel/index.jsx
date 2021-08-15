@@ -95,7 +95,7 @@ const Panel = ({ imageOnLeft = true, texts, image }) => {
             >
               <Box>
                 <TitleWrapper theme={theme}>
-                  <Text size="xxlarge" as="h1">
+                  <Text size="xl" as="h1">
                     {texts[0].text}
                   </Text>
                 </TitleWrapper>
@@ -110,7 +110,7 @@ const Panel = ({ imageOnLeft = true, texts, image }) => {
               translateYFrom="10rem"
               translateYTo="-2rem"
             >
-              <Text size="large" as="p">
+              <Text size="l" as="p">
                 {texts[1].text}
               </Text>
             </TextAnimated>
@@ -125,7 +125,7 @@ const Panel = ({ imageOnLeft = true, texts, image }) => {
             >
               <StyledLink to="/trenink" theme={theme}>
                 <Boop x={10}>
-                  <Text size="medium">{texts[2].text}</Text>
+                  <Text size="md">{texts[2].text}</Text>
                 </Boop>
               </StyledLink>
             </TextAnimated>

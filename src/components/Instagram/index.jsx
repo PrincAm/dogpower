@@ -88,7 +88,7 @@ const Instagram = () => {
     <Background theme={theme}>
       <Container theme={theme}>
         <TitleWrapper>
-          <Text size="xxlarge" as="h1">
+          <Text size="xl" as="h1">
             Navštivte nás na Instagramu
           </Text>
         </TitleWrapper>

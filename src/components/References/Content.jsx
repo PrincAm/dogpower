@@ -107,10 +107,10 @@ const Content = ({ text, name, image, isExpanded, onExpand }) => {
               imgStyle={{ borderRadius: '5px' }}
             />
           </ImageWrapper>
-          <Name size="small" as="h3">
+          <Name size="sm" as="h3">
             {name}
           </Name>
-          <Paragraph size="xsmall" as="p">
+          <Paragraph size="xsm" as="p">
             {text}
           </Paragraph>
         </div>

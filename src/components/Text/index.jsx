@@ -5,9 +5,9 @@ const Text = styled.span`
   display: block;
   font-weight: ${({ size }) => () => {
     switch (size) {
-      case 'xxlarge':
+      case 'xl':
         return '500';
-      case 'small':
+      case 'sm':
         return '200';
       default:
         return '400';
@@ -15,35 +15,31 @@ const Text = styled.span`
   }};
   font-size: ${({ size }) => () => {
     switch (size) {
-      case 'xxlarge':
+      case 'xl':
         return '6.0rem';
-      case 'xlarge':
-        return '4.0rem';
-      case 'large':
+      case 'l':
         return '3.2rem';
-      case 'medium':
+      case 'md':
       default:
         return '2.8rem';
-      case 'small':
+      case 'sm':
         return '2.0rem';
-      case 'xsmall':
+      case 'xsm':
         return '1.8rem';
     }
   }};
   line-height: ${({ size }) => () => {
     switch (size) {
-      case 'xxlarge':
+      case 'xl':
         return '6.0rem';
-      case 'xlarge':
-        return '5.6rem';
-      case 'large':
+      case 'l':
         return '4.6rem';
-      case 'medium':
+      case 'md':
       default:
         return '4.0rem';
-      case 'small':
+      case 'sm':
         return '2.8rem';
-      case 'xsmall':
+      case 'xsm':
         return '2.6rem';
     }
   }};
@@ -51,36 +47,32 @@ const Text = styled.span`
   ${MEDIA.MOBILE`
     font-size: ${({ size }) => () => {
       switch (size) {
-        case 'xxlarge':
+        case 'xl':
           return '4.0rem';
-        case 'xlarge':
-          return '3.0rem';
-        case 'large':
+        case 'l':
           return '2.4rem';
-        case 'medium':
+        case 'md':
         default:
           return '2rem';
-        case 'small':
+        case 'sm':
           return '1.8rem';
-        case 'xsmall':
+        case 'xsm':
           return '1.6rem';
       }
     }};
 
     line-height: ${({ size }) => () => {
       switch (size) {
-        case 'xxlarge':
+        case 'xl':
           return '4.0rem';
-        case 'xlarge':
-          return '3.0rem';
-        case 'large':
+        case 'l':
           return '2.4rem';
-        case 'medium':
+        case 'md':
         default:
           return '2rem';
-        case 'small':
+        case 'sm':
           return '1.8rem';
-        case 'xsmall':
+        case 'xsm':
           return '1.6rem';
       }
     }};
@@ -88,3 +80,10 @@ const Text = styled.span`
 `;
 
 export default Text;
+
+export const PageTitle = styled(Text).attrs(() => ({
+  size: 'xl',
+  as: 'h1',
+}))`
+  margin-bottom: 4rem;
+`;

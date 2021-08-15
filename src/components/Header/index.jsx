@@ -89,8 +89,8 @@ const Header = () => {
       <Container theme={theme}>
         <HomeLink to="/">
           <StaticImage
-            src="../../../content/images/dogpower-logo.png"
-            alt="dog power logo"
+            src="../../../content/images/logo.png"
+            alt="jumping dog"
             placeholder="blurred"
           />
         </HomeLink>

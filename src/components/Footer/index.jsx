@@ -74,8 +74,8 @@ const Footer = () => {
     <FooterContainer theme={theme}>
       <LogoWrapper>
         <StaticImage
-          src="../../../content/images/dogpower-logo.png"
-          alt="dog power logo"
+          src="../../../content/images/logo.png"
+          alt="jumping dog"
           placeholder="blurred"
         />
       </LogoWrapper>

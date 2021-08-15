@@ -31,7 +31,7 @@ const TitleWrapper = styled.div`
 const SliderWrapper = styled.div`
   .slick-center .content {
     background-color: white;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 80px 100px -25px,
+    box-shadow: rgba(50, 50, 93, 0.25) 0 80px 100px -25px,
       rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     transform: scale(1.1);
   }
@@ -57,13 +57,13 @@ const References = ({ data }) => {
     Object.fromEntries(data.references.map(({ name }) => [name, false]))
   );
 
-  const handleOnNextClick = name => {
+  const handleExpand = name => {
     const newIsExpanded = { ...isExpanded, [name]: !isExpanded[name] };
 
     setIsExpanded(newIsExpanded);
   };
 
-  const handleTestClick = () => {
+  const handleNavigationClick = () => {
     const newIsExpanded = Object.fromEntries(
       Object.keys(isExpanded).map(key => [key, false])
     );
@@ -75,12 +75,12 @@ const References = ({ data }) => {
     centerMode: true,
     slidesToShow: 1,
     nextArrow: (
-      <Navigation isNext onLinkClick={handleTestClick}>
+      <Navigation isNext onLinkClick={handleNavigationClick}>
         Další
       </Navigation>
     ),
     prevArrow: (
-      <Navigation isPrev onLinkClick={handleTestClick}>
+      <Navigation isPrev onLinkClick={handleNavigationClick}>
         Zpět
       </Navigation>
     ),
@@ -91,7 +91,7 @@ const References = ({ data }) => {
     <Background theme={theme}>
       <Container theme={theme}>
         <TitleWrapper theme={theme}>
-          <Text size="xxlarge" as="h1">
+          <Text size="xl" as="h1">
             Milá slova
           </Text>
         </TitleWrapper>
@@ -102,7 +102,7 @@ const References = ({ data }) => {
                 <Content
                   name={name}
                   isExpanded={isExpanded[name]}
-                  onExpand={handleOnNextClick}
+                  onExpand={handleExpand}
                   {...props}
                 />
               </div>

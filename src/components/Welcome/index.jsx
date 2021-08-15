@@ -122,6 +122,7 @@ const Welcome = ({ data, trainingRef }) => {
       setAnimationReady(true);
     }, 300);
   }, []);
+
   const trail = useTrail(items.length, {
     config: { mass: 5, tension: 800, friction: 200 },
     opacity: animationReady ? 1 : 0,

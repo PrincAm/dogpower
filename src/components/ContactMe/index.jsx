@@ -67,18 +67,18 @@ const ContactMe = ({ hasSecondaryBg = true }) => {
     <Background theme={theme} hasSecondaryBg={hasSecondaryBg}>
       <Container theme={theme}>
         <TitleWrapper>
-          <Text size="xxlarge" as="h2">
+          <Text size="xl" as="h1">
             Pojďme si popovídat
           </Text>
         </TitleWrapper>
-        <Text size="medium" as="p">
+        <Text size="md" as="p">
           Neváhejte a obraťte se na mě. Velmi rád uslyším, jak vám můžu být
           nápomocen s vaším psím kamarádem.
         </Text>
         <ButtonWrapper>
           <ContactLink to="/kontakt" theme={theme}>
             <Boop x={10}>
-              <Text size="large">Zeptejte se na cokoliv</Text>
+              <Text size="l">Zeptejte se na cokoliv</Text>
             </Boop>
           </ContactLink>
         </ButtonWrapper>

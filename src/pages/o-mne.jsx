@@ -1,63 +1,27 @@
 import React, { useContext } from 'react';
-import styled from 'styled-components';
 import { StaticImage } from 'gatsby-plugin-image';
 
 import Layout from 'components/Layout';
-import Text from 'components/Text';
+import Text, { PageTitle } from 'components/Text';
+import { PageBox, TextBox, ImageBox } from 'components/Box';
 import ThemeContext from '../store/theme';
-import MEDIA from '../helpers/mediaTemplates';
-
-const Container = styled.div`
-  min-height: 100vh;
-  max-width: ${({ theme }) => theme.width};
-  padding-top: ${({ theme }) => theme.marginHeader};
-  margin: 0 auto 10rem auto;
-  ${MEDIA.TABLET`
-    min-height: calc(100vh - 15rem);
-    margin: 0 5rem 5rem 5rem;
- `};
-  ${MEDIA.MOBILE`
-    min-height: calc(100vh - 15rem);
-    margin: 0 2rem 5rem 2rem;
- `};
-`;
-
-const Title = styled(Text)`
-  margin-bottom: 4rem;
-`;
-
-const ImageContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-bottom: 3rem;
-  width: 100%;
-  max-height: 30rem;
-`;
-
-const TextContainer = styled.div`
-  background: #fff;
-  border-radius: 10px;
-  padding: 3rem;
-`;
 
 const About = () => {
   const theme = useContext(ThemeContext);
   return (
     <Layout>
-      <Container theme={theme}>
-        <Title size="xxlarge" as="h1">
-          O mně
-        </Title>
-        <ImageContainer>
+      <PageBox theme={theme}>
+        <PageTitle>O mně</PageTitle>
+        <ImageBox>
           <StaticImage
             src="../../content/images/training/dogpower2.jpg"
             alt="black dog"
             placeholder="blurred"
             layout="constrained"
-            imgStyle={{ borderRadius: '10px' }}
+            style={{ borderRadius: '10px', maxHeight: '30rem' }}
           />
-        </ImageContainer>
-        <TextContainer>
+        </ImageBox>
+        <TextBox>
           <Text as="p">
             Jmenuji se Jakub Slavík a rád bych se Vám prostřednictvím tohoto
             textu představil. V mé rodině se vášeň pro přírodu, a zejména pro
@@ -89,8 +53,8 @@ const About = () => {
             nabízím široké veřejnosti, a tím můžu pomoci třeba i právě Vám k
             harmonickému soužití s Vaším čtyřnohým kamarádem.
           </Text>
-        </TextContainer>
-      </Container>
+        </TextBox>
+      </PageBox>
     </Layout>
   );
 };
