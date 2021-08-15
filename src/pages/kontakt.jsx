@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 import Layout from 'components/Layout';
 import Text, { PageTitle } from 'components/Text';
 import { PageBox, TextBox } from 'components/Box';
+import GoogleMap from 'components/GoogleMap';
 import ThemeContext from '../store/theme';
 import InstagramIcon from '../images/icons/instagram-brands.svg';
 import YoutubeIcon from '../images/icons/youtube-brands.svg';
@@ -127,6 +128,7 @@ const Contact = () => {
             </SocialMedia>
           </Block>
         </TextFlexBox>
+        <GoogleMap />
       </PageBox>
     </Layout>
   );
