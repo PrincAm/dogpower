@@ -63,6 +63,7 @@ const iconStyles = css`
   width: 12rem;
   height: 12rem;
   transition: color 0.2s ease;
+  color: ${({ theme }) => theme.color};
 
   &:hover {
     color: ${({ theme }) => theme.linkColor};
