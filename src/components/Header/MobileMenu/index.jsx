@@ -25,7 +25,7 @@ const Nav = styled(animated.nav)`
   height: 100vh;
   padding-top: 1.6rem;
   color: ${({ theme }) => theme.colorSecondary};
-  background-color: ${({ theme }) => theme.backgroundSecondary};
+  background-color: ${({ theme }) => theme.color};
   font-size: 5rem;
   line-height: 5.7rem;
 

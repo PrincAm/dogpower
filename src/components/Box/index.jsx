@@ -18,7 +18,7 @@ export const PageBox = styled.div`
 `;
 
 export const TextBox = styled.div`
-  background: #fff;
+  background: ${({ theme }) => theme.background};
   border-radius: 10px;
   padding: 3rem;
 `;

@@ -9,8 +9,8 @@ import ThemeContext from '../../store/theme';
 import MEDIA from '../../helpers/mediaTemplates';
 
 const Background = styled.div`
-  background-color: #fff;
-  color: ${({ theme }) => theme.colorDarkSec};
+  background-color: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.color};
 `;
 const Container = styled.div`
   padding: 10rem 0 7rem 0;

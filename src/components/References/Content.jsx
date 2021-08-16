@@ -61,7 +61,7 @@ const MoreButton = styled(animated.button)`
   width: 5rem;
   border-radius: 10rem;
   display: block;
-  color: #fff;
+  color: ${({ theme }) => theme.background};
   border: none;
 
   &:focus {

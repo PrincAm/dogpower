@@ -9,7 +9,7 @@ import MEDIA from '../../helpers/mediaTemplates';
 import ThemeContext from '../../store/theme';
 
 const Background = styled.div`
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.background};
   padding: 10rem 0;
 
   ${MEDIA.MOBILE`
@@ -18,7 +18,7 @@ const Background = styled.div`
 `;
 
 const Container = styled.div`
-  color: ${({ theme }) => theme.colorDarkSec};
+  color: ${({ theme }) => theme.color};
   margin: 0 auto;
   max-width: ${({ theme }) => theme.width};
 `;

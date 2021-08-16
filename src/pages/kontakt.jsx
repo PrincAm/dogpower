@@ -48,7 +48,7 @@ const TextFlexBox = styled(TextBox)`
   ${MEDIA.MOBILE`
     flex-direction: column;
     padding: 1rem;
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.background};
  `};
 `;
 
@@ -90,7 +90,7 @@ const Contact = () => {
     <Layout>
       <PageBox theme={theme}>
         <PageTitle>Kontakt</PageTitle>
-        <TextFlexBox>
+        <TextFlexBox theme={theme}>
           <Block>
             <Text size="l" as="h2">
               Jakub Slavík

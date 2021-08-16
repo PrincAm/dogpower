@@ -8,7 +8,7 @@ import ThemeContext from '../../store/theme';
 
 const FooterContainer = styled.div`
   color: ${({ theme }) => theme.colorSecondary};
-  background-color: ${({ theme }) => theme.backgroundSecondary};
+  background-color: ${({ theme }) => theme.color};
   display: flex;
   flex-direction: column;
   align-items: center;

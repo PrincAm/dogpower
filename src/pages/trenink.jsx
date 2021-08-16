@@ -26,7 +26,7 @@ const Training = () => {
             }}
           />
         </ImageBox>
-        <TextBox>
+        <TextBox theme={theme}>
           <Text as="p">
             Výběrem a koupí psa vše začíná a záleží jen na Vás, jak bude
             probíhat Váš společný život. Snad všichni znají nějaké takové obecné

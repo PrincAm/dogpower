@@ -37,7 +37,7 @@ export default createGlobalStyle`
     font-family: "Rubik","Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     line-height: 2.5rem;
     font-size: 2.2rem;
-    color: #1d1d2c;
+    color: #222222;
     background-color: #E4E4E4;
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
@@ -58,8 +58,7 @@ export default createGlobalStyle`
   }
 
   a {
-    /* TODO replace color */
-    color: #222222;
+    color: #FF4634;
   }
 
   pre {

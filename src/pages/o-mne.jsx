@@ -21,7 +21,7 @@ const About = () => {
             style={{ borderRadius: '10px', maxHeight: '30rem' }}
           />
         </ImageBox>
-        <TextBox>
+        <TextBox theme={theme}>
           <Text as="p">
             Jmenuji se Jakub Slavík a rád bych se Vám prostřednictvím tohoto
             textu představil. V mé rodině se vášeň pro přírodu, a zejména pro

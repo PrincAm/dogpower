@@ -12,8 +12,8 @@ import Content from './Content';
 import Text from '../Text';
 
 const Background = styled.div`
-  background-color: #f7f7fc;
-  color: ${({ theme }) => theme.colorDarkSec};
+  background-color: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.color};
 `;
 
 const Container = styled.div`

@@ -11,9 +11,9 @@ import Boop from '../Boop';
 import ThemeContext from '../../store/theme';
 
 const Background = styled.div`
-  background-image: ${({ hasSecondaryBg }) =>
+  background-image: ${({ hasSecondaryBg, theme }) =>
     `radial-gradient(#ff3860 1px, ${
-      hasSecondaryBg ? '#E4E4E4' : '#f7f7fc'
+      hasSecondaryBg ? theme.backgroundSecondary : theme.background
     } 1px)`};
   background-size: 20px 20px;
   padding: 10rem 0 10rem 0;

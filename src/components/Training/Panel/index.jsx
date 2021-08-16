@@ -47,7 +47,7 @@ const Box = styled.div`
 `;
 
 const TitleWrapper = styled.div`
-  color: ${({ theme }) => theme.colorDarkSec};
+  color: ${({ theme }) => theme.color};
 `;
 
 const StyledLink = styled(Link)`
