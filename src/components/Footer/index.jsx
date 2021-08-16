@@ -15,7 +15,7 @@ const FooterContainer = styled.div`
 `;
 
 const LogoWrapper = styled.div`
-  width: 20rem;
+  width: 18rem;
   margin-top: 4rem;
 `;
 

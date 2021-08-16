@@ -36,8 +36,8 @@ const Container = styled(animated.div)`
 const ImageWrapper = styled.div`
   display: block;
   float: left;
-  max-width: 19.2rem;
-  max-height: 19.2rem;
+  max-width: 20rem;
+  max-height: 20rem;
   margin-right: 2rem;
 `;
 
