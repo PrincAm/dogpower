@@ -20,14 +20,11 @@
   },
   "dependencies": {
     "@fontsource/rubik": "^4.0.1",
-    "@reach/dialog": "^0.2.0",
     "@reach/router": "^1.2.1",
-    "@reach/visually-hidden": "^0.1.1",
     "babel-plugin-styled-components": "^1.11.1",
     "babel-preset-gatsby": "^1.0.0",
     "gatsby": "^3.10.0",
     "gatsby-background-image": "^1.5.3",
-    "gatsby-image": "^3.0.0",
     "gatsby-plugin-image": "^1.10.0",
     "gatsby-plugin-manifest": "^3.11.0",
     "gatsby-plugin-offline": "^4.0.0",
@@ -70,7 +67,6 @@
     "gatsby-plugin-eslint": "^2.0.3",
     "lighthouse": "^4.0.0",
     "mkdirp": "^0.5.1",
-    "node-gyp": "^3.8.0",
     "prettier": "^1.16.0"
   }
 }
