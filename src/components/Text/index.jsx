@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import MEDIA from 'helpers/mediaTemplates';
+import MEDIA from 'src/helpers/mediaTemplates';
 
 const Text = styled.span`
   display: block;
