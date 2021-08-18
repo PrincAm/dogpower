@@ -147,6 +147,7 @@ const Instagram = () => {
             href="https://www.instagram.com/dogpower_cz/"
             target="_blank"
             rel="noreferrer"
+            aria-label="go to instagram"
           >
             <Icon theme={theme} />
           </a>

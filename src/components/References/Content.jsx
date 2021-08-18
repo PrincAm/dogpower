@@ -107,7 +107,7 @@ const Content = ({ text, name, image, isExpanded, onExpand }) => {
               imgStyle={{ borderRadius: '5px' }}
             />
           </ImageWrapper>
-          <Name size="sm" as="h3">
+          <Name size="sm" as="h2">
             {name}
           </Name>
           <Paragraph size="xsm" as="p">
@@ -116,10 +116,11 @@ const Content = ({ text, name, image, isExpanded, onExpand }) => {
         </div>
       </Container>
       <MoreButton
-        className="test"
+        className="button-expand"
         onClick={() => onExpand(name)}
         theme={theme}
         style={spin}
+        aria-label="expand card"
       >
         <Boop y={5} direction="down" />
       </MoreButton>

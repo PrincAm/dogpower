@@ -91,6 +91,7 @@ const Footer = () => {
           href="https://www.instagram.com/dogpower.cz/"
           target="_blank"
           rel="noreferrer"
+          aria-label="go to instagram"
         >
           <Instagram theme={theme} />
         </a>
@@ -98,6 +99,7 @@ const Footer = () => {
           href="https://www.youtube.com/channel/UCvUMW1zxD2ZX1ORkNfUklSw"
           target="_blank"
           rel="noreferrer"
+          aria-label="go to youtube"
         >
           <Youtube theme={theme} />
         </a>

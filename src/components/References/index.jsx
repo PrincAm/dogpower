@@ -40,12 +40,12 @@ const SliderWrapper = styled.div`
     outline: none;
   }
 
-  .slick-slide .test {
+  .slick-slide .button-expand {
     opacity: 0;
     transition: opacity 0.7s;
   }
 
-  .slick-center .test {
+  .slick-center .button-expand {
     opacity: 1;
   }
 `;
@@ -71,6 +71,7 @@ const References = ({ data }) => {
     setIsExpanded(newIsExpanded);
   };
 
+  // FIXME lighthouse accessibility issue https://github.com/akiran/react-slick/issues/1535
   const settings = {
     centerMode: true,
     slidesToShow: 1,

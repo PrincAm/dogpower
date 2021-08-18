@@ -83,7 +83,7 @@ const Head = ({
       name="msapplication-square310x310"
     />
 
-    <link href="/manifest.json" rel="manifest" />
+    <link href="/manifest.webmanifest" rel="manifest" />
 
     <link
       href="/icons/apple-touch-icon-57x57.png"
@@ -201,7 +201,9 @@ const HeadWithQuery = props => (
     render={data => (
       <Location>
         {({ location }) => (
-          <Head {...data.site.siteMetadata} {...props} location={location} />
+          <Head {...data.site.siteMetadata} {...props} location={location}>
+            <title>{data.site.siteMetadata.siteTitle}</title>
+          </Head>
         )}
       </Location>
     )}
