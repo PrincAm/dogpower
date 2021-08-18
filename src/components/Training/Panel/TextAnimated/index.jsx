@@ -20,7 +20,7 @@ const TextAnimated = ({
     if (!isDisplayed && isVisible) {
       setIsDisplayed(true);
     }
-  }, [isVisible]);
+  }, [isVisible, isDisplayed]);
   const props = useSpring({
     config: { mass: 15, tension: 200, friction: 100 },
     opacity: isDisplayed ? 1 : 0,

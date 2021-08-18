@@ -20,6 +20,7 @@ const BackgroundImageStyled = styled(BackgroundImage)`
 
 const WelcomeContainer = styled.div`
   color: ${({ theme }) => theme.colorSecondary};
+  // TODO revise padding top after photo update
   padding-top: 20%;
   max-width: ${({ theme }) => theme.width};
   margin: 0 auto;

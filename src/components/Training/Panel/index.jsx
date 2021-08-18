@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-import IO from 'components/IO';
+import Io from 'components/IO';
 import Text from 'components/Text';
 import Boop from 'components/Boop';
 import Image from './ImageAnimated';
@@ -72,7 +72,7 @@ const Panel = ({ imageOnLeft = true, texts, image }) => {
     <Part>
       {imageOnLeft && (
         <ImgWrapper>
-          <IO rootMargin="0px">
+          <Io rootMargin="0px">
             {({ isVisible }) => (
               <Image
                 isVisible={isVisible}
@@ -82,11 +82,11 @@ const Panel = ({ imageOnLeft = true, texts, image }) => {
                 altText="dog with owner"
               />
             )}
-          </IO>
+          </Io>
         </ImgWrapper>
       )}
       <TextContainer imageOnLeft={imageOnLeft}>
-        <IO rootMargin="0px">
+        <Io rootMargin="0px">
           {({ isVisible }) => (
             <TextAnimated
               isVisible={isVisible}
@@ -102,8 +102,8 @@ const Panel = ({ imageOnLeft = true, texts, image }) => {
               </Box>
             </TextAnimated>
           )}
-        </IO>
-        <IO rootMargin="0px">
+        </Io>
+        <Io rootMargin="0px">
           {({ isVisible }) => (
             <TextAnimated
               isVisible={isVisible}
@@ -115,8 +115,8 @@ const Panel = ({ imageOnLeft = true, texts, image }) => {
               </Text>
             </TextAnimated>
           )}
-        </IO>
-        <IO rootMargin="0px">
+        </Io>
+        <Io rootMargin="0px">
           {({ isVisible }) => (
             <TextAnimated
               isVisible={isVisible}
@@ -130,11 +130,11 @@ const Panel = ({ imageOnLeft = true, texts, image }) => {
               </StyledLink>
             </TextAnimated>
           )}
-        </IO>
+        </Io>
       </TextContainer>
       {!imageOnLeft && (
         <ImgWrapper>
-          <IO rootMargin="0px">
+          <Io rootMargin="0px">
             {({ isVisible }) => (
               <Image
                 isVisible={isVisible}
@@ -144,7 +144,7 @@ const Panel = ({ imageOnLeft = true, texts, image }) => {
                 altText="dog with owner"
               />
             )}
-          </IO>
+          </Io>
         </ImgWrapper>
       )}
     </Part>

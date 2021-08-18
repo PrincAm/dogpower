@@ -42,7 +42,6 @@ const PanelMobileWrapper = styled.div`
  `};
 `;
 
-// eslint-disable-next-line react/display-name
 const Training = forwardRef(({ data }, ref) => {
   const theme = useContext(ThemeContext);
   const image1 = getImage(data.photo1);

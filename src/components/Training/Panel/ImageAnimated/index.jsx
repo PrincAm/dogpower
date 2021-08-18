@@ -9,7 +9,7 @@ const Image = ({ isVisible, image, translateYFrom, translateYTo, altText }) => {
     if (!isDisplayed && isVisible) {
       setIsDisplayed(true);
     }
-  }, [isVisible]);
+  }, [isVisible, isDisplayed]);
   const props = useSpring({
     config: { mass: 15, tension: 200, friction: 100 },
     opacity: isDisplayed ? 1 : 0,
