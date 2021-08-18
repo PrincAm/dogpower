@@ -1,5 +1,5 @@
 import React from 'react';
-import AppProvider from 'src/store/provider';
+import AppProvider from 'store/provider';
 
 // React Context in Browser
 // eslint-disable-next-line react/prop-types
