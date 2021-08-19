@@ -42,7 +42,6 @@ const Link = styled.a`
 
 const IconsContainer = styled.div`
   display: flex;
-  margin-bottom: 4rem;
 `;
 
 const iconStyles = css`
@@ -66,6 +65,17 @@ const Instagram = styled(InstagramIcon)`
 const Youtube = styled(YoutubeIcon)`
   ${iconStyles};
   color: ${({ theme }) => theme.colorSecondary};
+`;
+
+const MadeByLink = styled.a`
+  margin: 0.5rem 0 4rem 0;
+  font-size: 1.6rem;
+  color: ${({ theme }) => theme.colorSecondary};
+  text-decoration: none;
+  &:hover {
+    color: ${({ theme }) => theme.linkColor};
+    text-decoration: underline;
+  }
 `;
 
 const Footer = () => {
@@ -104,6 +114,15 @@ const Footer = () => {
           <Youtube theme={theme} />
         </a>
       </IconsContainer>
+      <MadeByLink
+        href="https://www.adamblazek.com/"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="adam blazek personal blog"
+        theme={theme}
+      >
+        vytvořil AB
+      </MadeByLink>
     </FooterContainer>
   );
 };
