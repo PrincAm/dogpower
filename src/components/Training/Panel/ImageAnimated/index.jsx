@@ -5,11 +5,13 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 
 const Image = ({ isVisible, image, translateYFrom, translateYTo, altText }) => {
   const [isDisplayed, setIsDisplayed] = useState(false);
+
   useEffect(() => {
     if (!isDisplayed && isVisible) {
       setIsDisplayed(true);
     }
   }, [isVisible, isDisplayed]);
+
   const props = useSpring({
     config: { mass: 15, tension: 200, friction: 100 },
     opacity: isDisplayed ? 1 : 0,

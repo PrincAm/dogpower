@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useSpring, a } from 'react-spring';
 
 const AnimatedContainer = styled(a.div)`
-  max-width: 500px;
+  max-width: 500px; // needs to be px
   font-size: 3rem;
   line-height: 4.2rem;
 `;
@@ -16,11 +16,13 @@ const TextAnimated = ({
   translateYTo,
 }) => {
   const [isDisplayed, setIsDisplayed] = useState(false);
+
   useEffect(() => {
     if (!isDisplayed && isVisible) {
       setIsDisplayed(true);
     }
   }, [isVisible, isDisplayed]);
+
   const props = useSpring({
     config: { mass: 15, tension: 200, friction: 100 },
     opacity: isDisplayed ? 1 : 0,

@@ -8,6 +8,7 @@ import Training from 'components/Training';
 import References from 'components/References';
 import ContactMe from 'components/ContactMe';
 import Instagram from 'components/Instagram';
+import Media from 'components/Media';
 import MEDIA from '../helpers/mediaTemplates';
 import { graphql } from 'gatsby';
 
@@ -30,6 +31,7 @@ const Index = ({ data }) => {
       <ReferencesDesktopWrapper>
         <References data={data.referencesJson} />
       </ReferencesDesktopWrapper>
+      <Media />
       <Instagram />
       <ContactMe hasSecondaryBg={false} />
     </Layout>

@@ -6,7 +6,6 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import ThemeContext from '../../store/theme';
-
 import Navigation from './Navigation';
 import Content from './Content';
 import Text from '../Text';
@@ -25,7 +24,6 @@ const Container = styled.div`
 const TitleWrapper = styled.div`
   margin-bottom: 6rem;
   text-align: center;
-  color: ${({ theme }) => theme.color};
 `;
 
 const SliderWrapper = styled.div`
@@ -91,7 +89,7 @@ const References = ({ data }) => {
   return (
     <Background theme={theme}>
       <Container theme={theme}>
-        <TitleWrapper theme={theme}>
+        <TitleWrapper>
           <Text size="xl" as="h1">
             Milá slova
           </Text>

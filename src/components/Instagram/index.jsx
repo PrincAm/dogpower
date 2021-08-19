@@ -5,7 +5,6 @@ import { StaticImage } from 'gatsby-plugin-image';
 import Text from 'components/Text';
 import InstagramIcon from '../../images/icons/instagram-brands.svg';
 import MEDIA from '../../helpers/mediaTemplates';
-
 import ThemeContext from '../../store/theme';
 
 const Background = styled.div`
@@ -89,7 +88,7 @@ const Instagram = () => {
       <Container theme={theme}>
         <TitleWrapper>
           <Text size="xl" as="h1">
-            Navštivte nás na Instagramu
+            Sledujte nás na Instagramu
           </Text>
         </TitleWrapper>
         <ImagesDesktopWrapper>
