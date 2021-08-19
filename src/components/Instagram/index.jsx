@@ -11,6 +11,9 @@ const Background = styled.div`
   background-color: ${({ theme }) => theme.background};
   padding: 10rem 0;
 
+  ${MEDIA.TABLET`
+    padding: 5rem 2rem;
+ `};
   ${MEDIA.MOBILE`
     padding: 5rem 2rem;
  `};

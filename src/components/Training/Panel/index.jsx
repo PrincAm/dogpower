@@ -20,7 +20,7 @@ const Part = styled.div`
   margin: 5rem auto;
   ${MEDIA.MOBILE`
     flex-direction: column;
-    margin: 4rem auto;
+    margin: 2rem auto;
     align-items: center;
  `};
   ${MEDIA.TABLET`
@@ -61,9 +61,12 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const ImgWrapper = styled.div`
-  width: 100%;
+const ImageWrapper = styled.div`
   max-width: 40rem;
+
+  ${MEDIA.TABLET`
+    max-width: 50rem;
+ `};
 `;
 
 const Panel = ({ imageOnLeft = true, texts, image }) => {
@@ -71,7 +74,7 @@ const Panel = ({ imageOnLeft = true, texts, image }) => {
   return (
     <Part>
       {imageOnLeft && (
-        <ImgWrapper>
+        <ImageWrapper>
           <Io rootMargin="0px">
             {({ isVisible }) => (
               <Image
@@ -83,7 +86,7 @@ const Panel = ({ imageOnLeft = true, texts, image }) => {
               />
             )}
           </Io>
-        </ImgWrapper>
+        </ImageWrapper>
       )}
       <TextContainer imageOnLeft={imageOnLeft}>
         <Io rootMargin="0px">
@@ -133,7 +136,7 @@ const Panel = ({ imageOnLeft = true, texts, image }) => {
         </Io>
       </TextContainer>
       {!imageOnLeft && (
-        <ImgWrapper>
+        <ImageWrapper>
           <Io rootMargin="0px">
             {({ isVisible }) => (
               <Image
@@ -145,7 +148,7 @@ const Panel = ({ imageOnLeft = true, texts, image }) => {
               />
             )}
           </Io>
-        </ImgWrapper>
+        </ImageWrapper>
       )}
     </Part>
   );

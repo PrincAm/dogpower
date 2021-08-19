@@ -86,4 +86,8 @@ export const PageTitle = styled(Text).attrs(() => ({
   as: 'h1',
 }))`
   margin-bottom: 4rem;
+
+  ${MEDIA.MOBILE`
+    margin-bottom: 2rem;
+  `}
 `;

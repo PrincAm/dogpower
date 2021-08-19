@@ -21,7 +21,7 @@ const Container = styled.div`
   margin: 0 auto;
 
   ${MEDIA.MOBILE`
-    padding: 5rem 2rem;
+    padding: 2rem;
  `};
 `;
 const PanelDesktopWrapper = styled.div`

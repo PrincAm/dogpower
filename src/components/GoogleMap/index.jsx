@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 
 import ThemeContext from '../../store/theme';
+import MEDIA from '../../helpers/mediaTemplates';
 
 const Container = styled.div`
   height: 30rem;
@@ -9,6 +10,10 @@ const Container = styled.div`
   border-radius: 10px;
   background: ${({ theme }) => theme.background};
   padding: 3rem;
+
+  ${MEDIA.MOBILE`
+    padding: 2rem;
+ `};
 `;
 
 const GoogleMap = () => {

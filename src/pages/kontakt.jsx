@@ -47,7 +47,7 @@ const TextFlexBox = styled(TextBox)`
 
   ${MEDIA.MOBILE`
     flex-direction: column;
-    padding: 1rem;
+    padding: 2rem;
     background-color: ${({ theme }) => theme.background};
  `};
 `;

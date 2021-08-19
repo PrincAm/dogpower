@@ -17,10 +17,6 @@ const Background = styled.header`
   background-color: rgba(0, 0, 0, 0.6);
   font-weight: 800;
   height: ${({ theme }) => theme.heightHeader};
-
-  ${MEDIA.MOBILE`
-    background-color: transparent;
- `};
 `;
 
 const Container = styled.div`
@@ -43,6 +39,7 @@ const Container = styled.div`
     }
   }
 `;
+
 const NavDesktopWrapper = styled.div`
   ${MEDIA.TABLET`
     display: none;

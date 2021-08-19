@@ -4,6 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 import Text from 'components/Text';
 import ThemeContext from '../../store/theme';
+import MEDIA from '../../helpers/mediaTemplates';
 
 const Background = styled.div`
   background-color: ${({ theme }) => theme.background};
@@ -14,6 +15,12 @@ const Container = styled.div`
   padding: 10rem 0;
   margin: 0 auto;
   max-width: ${({ theme }) => theme.width};
+  ${MEDIA.MOBILE`
+    padding: 5rem 0;
+ `};
+  ${MEDIA.TABLET`
+    padding: 5rem 0;
+ `};
 `;
 
 const TitleWrapper = styled.div`

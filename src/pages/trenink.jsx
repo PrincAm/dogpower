@@ -7,10 +7,29 @@ import Text, { PageTitle } from 'components/Text';
 import ContactMe from 'components/ContactMe';
 import { PageBox, TextBox } from 'components/Box';
 import ThemeContext from '../store/theme';
+import MEDIA from '../helpers/mediaTemplates';
 
 const ImageTextBox = styled.div`
   display: flex;
   margin-bottom: 3rem;
+
+  ${MEDIA.MOBILE`
+    flex-direction: column;
+ `};
+`;
+
+const ImageWrapper = styled.div`
+  margin-right: 3rem;
+  flex-shrink: 0;
+  max-width: 30rem;
+  max-height: 30rem;
+
+  ${MEDIA.MOBILE`
+    margin-right: 0;
+    margin-bottom: 2rem;
+    max-width: 100%;
+    max-height: 100%;
+  `};
 `;
 
 const Training = () => {
@@ -20,19 +39,17 @@ const Training = () => {
       <PageBox theme={theme}>
         <PageTitle>Trénink</PageTitle>
         <ImageTextBox>
-          <StaticImage
-            src="../../content/images/training/dogpower1.jpg"
-            alt="black dog"
-            placeholder="blurred"
-            layout="constrained"
-            style={{
-              borderRadius: '10px',
-              maxWidth: '30rem',
-              maxHeight: '30rem',
-              flexShrink: 0,
-              marginRight: '3rem',
-            }}
-          />
+          <ImageWrapper>
+            <StaticImage
+              src="../../content/images/training/dogpower1.jpg"
+              alt="black dog"
+              placeholder="blurred"
+              layout="constrained"
+              style={{
+                borderRadius: '10px',
+              }}
+            />
+          </ImageWrapper>
           <TextBox theme={theme}>
             <Text size="sm" as="p">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
