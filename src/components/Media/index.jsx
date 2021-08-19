@@ -63,8 +63,10 @@ const Media = () => {
             rel="noreferrer"
           >
             <Reference theme={theme}>
-              <Text size="l" as="h2">„Mít po svém boku psa není samozřejmostí!“</Text>
-              <Text size="m">Rozhovor pro eCanis.cz</Text>
+              <Text size="md" as="h2">
+                „Mít po svém boku psa není samozřejmostí!“
+              </Text>
+              <Text size="sm">Rozhovor pro eCanis.cz</Text>
               <StaticImage
                 src="../../../content/images/media/ecanis-logo.png"
                 alt="ecanis logo"

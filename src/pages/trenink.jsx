@@ -1,11 +1,17 @@
 import React, { useContext } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
+import styled from 'styled-components';
 
 import Layout from 'components/Layout';
 import Text, { PageTitle } from 'components/Text';
 import ContactMe from 'components/ContactMe';
-import { PageBox, TextBox, ImageBox } from 'components/Box';
+import { PageBox, TextBox } from 'components/Box';
 import ThemeContext from '../store/theme';
+
+const ImageTextBox = styled.div`
+  display: flex;
+  margin-bottom: 3rem;
+`;
 
 const Training = () => {
   const theme = useContext(ThemeContext);
@@ -13,7 +19,7 @@ const Training = () => {
     <Layout>
       <PageBox theme={theme}>
         <PageTitle>Trénink</PageTitle>
-        <ImageBox>
+        <ImageTextBox>
           <StaticImage
             src="../../content/images/training/dogpower1.jpg"
             alt="black dog"
@@ -23,11 +29,24 @@ const Training = () => {
               borderRadius: '10px',
               maxWidth: '30rem',
               maxHeight: '30rem',
+              flexShrink: 0,
+              marginRight: '3rem',
             }}
           />
-        </ImageBox>
+          <TextBox theme={theme}>
+            <Text size="sm" as="p">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </Text>
+          </TextBox>
+        </ImageTextBox>
         <TextBox theme={theme}>
-          <Text as="p">
+          <Text size="sm" as="p">
             Výběrem a koupí psa vše začíná a záleží jen na Vás, jak bude
             probíhat Váš společný život. Snad všichni znají nějaké takové obecné
             moudro. Ale jak to udělat, aby se náš pes stal tím správným

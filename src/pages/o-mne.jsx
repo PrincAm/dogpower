@@ -22,7 +22,7 @@ const About = () => {
           />
         </ImageBox>
         <TextBox theme={theme}>
-          <Text as="p">
+          <Text size="sm" as="p">
             Jmenuji se Jakub Slavík a rád bych se Vám prostřednictvím tohoto
             textu představil. V mé rodině se vášeň pro přírodu, a zejména pro
             trénování psů, dědí po generace. Tak jsem se mohl již od útlého věku
