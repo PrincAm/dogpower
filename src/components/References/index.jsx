@@ -16,7 +16,7 @@ const Background = styled.div`
 `;
 
 const Container = styled.div`
-  padding-top: 10rem;
+  padding-top: 6rem;
   margin: 0 auto;
   max-width: ${({ theme }) => theme.width};
 `;
