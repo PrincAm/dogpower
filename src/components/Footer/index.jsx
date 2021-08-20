@@ -5,6 +5,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import InstagramIcon from '../../images/icons/instagram-brands.svg';
 import YoutubeIcon from '../../images/icons/youtube-brands.svg';
 import ThemeContext from '../../store/theme';
+import MEDIA from '../../helpers/mediaTemplates';
 
 const FooterContainer = styled.div`
   color: ${({ theme }) => theme.colorSecondary};
@@ -38,6 +39,10 @@ const Link = styled.a`
   &:last-of-type {
     margin-bottom: 1rem;
   }
+
+  ${MEDIA.MOBILE`
+    margin-top: 0.5rem
+ `};
 `;
 
 const IconsContainer = styled.div`
@@ -54,7 +59,15 @@ const iconStyles = css`
   }
   &:last-of-type {
     padding-left: 0.5rem;
+
+    ${MEDIA.MOBILE`
+      padding-left: 1rem;
+   `};
   }
+
+  ${MEDIA.MOBILE`
+    margin-top: 1rem
+ `};
 `;
 
 const Instagram = styled(InstagramIcon)`
