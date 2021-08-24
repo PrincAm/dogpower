@@ -83,6 +83,11 @@ const menuItems = [
     link: 'cenik',
   },
   {
+    id: 'reference',
+    title: 'Reference',
+    link: 'reference',
+  },
+  {
     id: 'kontakt',
     title: 'Kontakt',
     link: 'kontakt',

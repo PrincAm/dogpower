@@ -58,7 +58,7 @@ const PriceBox = styled.div`
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
-  border: 5px solid #38817A;
+  border: 5px solid #38817a;
   padding: 1.2rem;
   text-align: center;
 

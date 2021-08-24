@@ -1,6 +1,7 @@
 import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { graphql } from 'gatsby';
 
 import Layout from 'components/Layout';
 import Welcome from 'components/Welcome';
@@ -10,7 +11,6 @@ import ContactMe from 'components/ContactMe';
 import Instagram from 'components/Instagram';
 import Media from 'components/Media';
 import MEDIA from '../helpers/mediaTemplates';
-import { graphql } from 'gatsby';
 
 const ReferencesDesktopWrapper = styled.div`
   ${MEDIA.TABLET`
