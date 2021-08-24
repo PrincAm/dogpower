@@ -45,7 +45,7 @@ const Training = () => {
               alt="black dog"
               placeholder="blurred"
               layout="constrained"
-              style={{
+              imgStyle={{
                 borderRadius: '10px',
               }}
             />

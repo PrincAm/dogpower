@@ -111,7 +111,7 @@ const Conditions = styled(Text)`
   font-style: italic;
 `;
 
-const Service = () => {
+const PriceList = () => {
   const theme = useContext(ThemeContext);
   return (
     <Layout>
@@ -124,7 +124,7 @@ const Service = () => {
               alt="black dog"
               placeholder="blurred"
               layout="constrained"
-              style={{
+              imgStyle={{
                 borderRadius: '10px',
               }}
             />
@@ -166,4 +166,4 @@ const Service = () => {
   );
 };
 
-export default Service;
+export default PriceList;

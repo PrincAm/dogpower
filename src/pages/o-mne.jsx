@@ -18,7 +18,8 @@ const About = () => {
             alt="black dog"
             placeholder="blurred"
             layout="constrained"
-            style={{ borderRadius: '10px', maxHeight: '30rem' }}
+            style={{ maxHeight: '30rem' }}
+            imgStyle={{ borderRadius: '10px' }}
           />
         </ImageBox>
         <TextBox theme={theme}>
