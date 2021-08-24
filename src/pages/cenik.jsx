@@ -147,7 +147,7 @@ const Service = () => {
             </PriceContainer>
             <Text size="sm">
               Lekce se platí převodem na bankovní účet{' '}
-              <Bold>1024304695/6100</Bold> nejpozději dva dny od konání lekce
+              <Bold>1024304695/6100</Bold> nejpozději dva dny od jejího konání
             </Text>
           </TextBox>
         </ImageTextBox>
