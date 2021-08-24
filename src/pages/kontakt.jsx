@@ -107,6 +107,7 @@ const Contact = () => {
                 Wiesenthalova 1034/6
                 <br /> 155 00, Praha 5 – Řeporyje
                 <br /> IČO 07655584
+                <br /> Číslo účtu 1024304695/6100
               </Text>
             </Address>
           </Block>
