@@ -107,6 +107,10 @@ const Bold = styled.span`
   font-weight: 500;
 `;
 
+const Conditions = styled(Text)`
+  font-style: italic;
+`;
+
 const Service = () => {
   const theme = useContext(ThemeContext);
   return (
@@ -148,13 +152,13 @@ const Service = () => {
           </TextBox>
         </ImageTextBox>
         <TextBox theme={theme}>
-          <Text size="sm" as="p">
+          <Conditions size="sm" as="p">
             * Přihlášení na lekci je závazné. Odhlášení bez storno poplatku je
             možné nejpozději 48 hodin před konáním lekce. V případě pozdějšího
             odhlášení bude účtován storno poplatek ve výši 50% z domluvené ceny.
             V případě odhlášení později než 24 hodin před konáním lekce bude
             účtován poplatek ve výši 100% z domluvené ceny.
-          </Text>
+          </Conditions>
         </TextBox>
       </PageBox>
       <ContactMe />
