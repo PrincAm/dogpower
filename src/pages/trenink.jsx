@@ -48,6 +48,9 @@ const Training = () => {
               imgStyle={{
                 borderRadius: '10px',
               }}
+              style={{
+                borderRadius: '10px',
+              }}
             />
           </ImageWrapper>
           <TextBox theme={theme}>

@@ -56,6 +56,9 @@ const Reference = ({ data }) => {
                     image={imageSharp}
                     alt={`dog ${name}`}
                     imgStyle={{ borderRadius: '10px' }}
+                    style={{
+                      borderRadius: '10px',
+                    }}
                   />
                 </ImageWrapper>
               </CenterContainer>
