@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
 import styled, { css } from 'styled-components';
 
 import Layout from 'components/Layout';
@@ -12,9 +11,15 @@ import MEDIA from '../helpers/mediaTemplates';
 import DogIcon from '../images/dog-regular.svg';
 import TravelIcon from '../images/route-regular.svg';
 
-const ImageTextBox = styled.div`
+const CenterContainer = styled.div`
+  width: 100%;
   display: flex;
+  justify-content: center;
+`;
+
+const NarrowTextBox = styled(TextBox)`
   margin-bottom: 3rem;
+  max-width: 70rem;
 
   ${MEDIA.TABLET`
     flex-direction: column;
@@ -23,24 +28,6 @@ const ImageTextBox = styled.div`
   ${MEDIA.MOBILE`
     flex-direction: column;
  `};
-`;
-
-const ImageWrapper = styled.div`
-  margin-right: 3rem;
-  flex-shrink: 0;
-  max-width: 30rem;
-  max-height: 30rem;
-
-  ${MEDIA.TABLET`
-    margin-right: 0;
-    margin-bottom: 2rem;;
-  `};
-  ${MEDIA.MOBILE`
-    margin-right: 0;
-    margin-bottom: 2rem;
-    max-width: 100%;
-    max-height: 100%;
-  `};
 `;
 
 const PriceContainer = styled.div`
@@ -109,6 +96,7 @@ const Bold = styled.span`
 
 const Conditions = styled(Text)`
   font-style: italic;
+  margin-bottom: 0;
 `;
 
 const PriceList = () => {
@@ -117,20 +105,8 @@ const PriceList = () => {
     <Layout>
       <PageBox theme={theme}>
         <PageTitle>Ceník</PageTitle>
-        <ImageTextBox>
-          <ImageWrapper>
-            <StaticImage
-              src="../../content/images/training/dogpower3.jpg"
-              alt="black dog"
-              placeholder="blurred"
-              layout="constrained"
-              imgStyle={{
-                borderRadius: '10px',
-              }}
-              style={{ borderRadius: '10px' }}
-            />
-          </ImageWrapper>
-          <TextBox theme={theme}>
+        <CenterContainer>
+          <NarrowTextBox theme={theme}>
             <PriceContainer>
               <PriceBox>
                 <Bold>Cena 1 lekce</Bold>
@@ -148,10 +124,10 @@ const PriceList = () => {
             </PriceContainer>
             <Text size="sm">
               Lekce se platí převodem na bankovní účet{' '}
-              <Bold>1024304695/6100</Bold> nejpozději dva dny od jejího konání
+              <Bold>1024304695/6100</Bold> nejpozději dva dny od jejího konání. Do poznámky pro příjemce uveďte datum lekce a jméno vašeho psího parťáka.
             </Text>
-          </TextBox>
-        </ImageTextBox>
+          </NarrowTextBox>
+        </CenterContainer>
         <TextBox theme={theme}>
           <Conditions size="sm" as="p">
             * Přihlášení na lekci je závazné. Odhlášení bez storno poplatku je
