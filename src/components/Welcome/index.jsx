@@ -106,7 +106,7 @@ const More = styled.span`
   font-weight: 400;
 `;
 
-const items = ['TRÉNOVÁNÍ', 'PO', 'DOBRÉM', 'chci vědět více'];
+const items = ['TRÉNINK PSŮ', 'PRO ŽIVOT', 'chci vědět více'];
 
 const scrollToRef = ref =>
   ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });

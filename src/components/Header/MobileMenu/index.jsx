@@ -78,6 +78,11 @@ const menuItems = [
     link: 'o-mne',
   },
   {
+    id: 'media',
+    title: 'Média',
+    link: 'media',
+  },
+  {
     id: 'cenik',
     title: 'Ceník',
     link: 'cenik',

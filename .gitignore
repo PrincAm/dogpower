@@ -35,6 +35,9 @@ build
 # Mongo Explorer plugin:
 .idea/mongoSettings.xml
 
+.idea/dogpower.iml
+.idea/modules.xml
+
 ## File-based project format:
 *.iws
 

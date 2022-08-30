@@ -26,6 +26,9 @@ const Nav = () => (
         <Link to="/o-mne">O mně</Link>
       </li>
       <li>
+        <Link to="/media">Média</Link>
+      </li>
+      <li>
         <Link to="/cenik">Ceník</Link>
       </li>
       <li>
